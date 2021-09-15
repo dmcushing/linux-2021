@@ -1,0 +1,32 @@
+%SYS-3-CPUHOG: Task ran for 18428 msec (22/9), process = IP SNMP, PC = 32976EC.
+%LINEPROTO-5-UPDOWN: Line protocol on Interface Serial4/0, changed state to up
+%LINEPROTO-5-UPDOWN: Line protocol on Interface Serial4/0, changed state to down
+%OSPF-5-ADJCHG: Process 100, Nbr 1.2.3.4 on Serial2/1.2 from FULL to DOWN, Neighbor Down: Interface down or detached
+%OSPF-5-ADJCHG: Process 100, Nbr 1.2.3.4 on Serial2/1.2 from LOADING to FULL, Loading Done
+%BGP-5-ADJCHANGE: neighbor 202.43.137.17 Down Peer closed the session
+%BGP-5-ADJCHANGE: neighbor 202.43.137.17 Down Peer closed the session
+%DUAL-5-NBRCHANGE: IP-EIGRP 109: Neighbor 10.1.1.1 (ATM3/0.1) is down: holding time expired
+%DUAL-5-NBRCHANGE: IP-EIGRP 109: Neighbor 10.1.1.1 (GigabitEthernet1/2) is down: peer restarted
+%DUAL-5-NBRCHANGE: IP-EIGRP 109: Neighbor 10.1.1.1 (GigabitEthernet1/2) is down: interface down
+%DUAL-5-NBRCHANGE: IP-EIGRP 109: Neighbor 10.1.1.1 (GigabitEthernet1/2) is up: new adjacency
+%SYS-5-CONFIG_I: Configured from console by admin on vty0 (10.10.10.1) 
+%SYS-6-LOGGINGHOST_STARTSTOP: Logging to host 1.1.1.1 started - CLI initiated 
+%SYS-5-CONFIG_I: Configured from console by admin on vty0 (10.10.10.1) 
+%SYS-6-LOGGINGHOST_STARTSTOP: Logging to host 10.10.10.10 stopped - CLI initiated 
+%SYS-6-LOGGINGHOST_STARTSTOP: Logging to host 10.10.10.1 started - CLI initiated 
+%SYS-5-CONFIG_I: Configured from console by admin on vty0 (10.10.10.1) 
+SSH2 0: Unexpected message received 
+%SEC-6-IPACCESSLOGP: list 120 denied udp 10.0.0.66(137) -> 10.0.0.11(137), 33 packets
+%SEC-6-IPACCESSLOGP: list 102 denied tcp 10.0.6.56(3067) -> 172.36.4.7(139), 1 packet
+%SEC-6-IPACCESSLOGP: list 199 permitted tcp 10.0.40.16(3059) -> 10.0.4.101(1060), 2 packets 
+%SEC-6-IPACCESSLOGP: list 199 permitted tcp 10.0.16.16(2179) -> 10.0.4.101(1060), 1 packet
+%SEC-6-IPACCESSLOGP: list 199 permitted tcp 10.0.32.16(4206) -> 10.0.4.101(1060), 2 packets
+%SEC-6-IPACCESSLOGP: list 199 permitted tcp 10.131.5.17(3737) -> 10.0.4.101(445), 1 packet
+%SEC-6-IPACCESSLOGP: list 199 denied tcp 10.0.61.108(1477) -> 10.0.127.20(445), 1 packet
+%SEC-6-IPACCESSLOGP: list 199 denied tcp 10.0.61.108(1469) -> 10.0.127.12(445), 1 packet
+%SEC-6-IPACCESSLOGP: list 199 denied tcp 10.0.61.108(1473) -> 10.0.127.16(445), 1 packet
+%SEC-6-IPACCESSLOGP: list 199 denied tcp 10.0.61.108(1478) -> 10.0.127.21(445), 1 packet
+%SEC-6-IPACCESSLOGP: list 199 denied tcp 10.0.61.108(1496) -> 10.0.127.39(445), 1 packet 
+%SEC-6-IPACCESSLOGP: list 199 denied tcp 10.0.61.108(1484) -> 10.0.127.27(445), 1 packet
+%SEC-6-IPACCESSLOGP: list 100 denied udp 200.174.153.126(1028) -> 66.81.85.65(137), 1 packet 
+%SEC-6-IPACCESSLOGP: list 100 denied udp 195.23.72.148(1026) -> 66.81.85.65(137), 1 packet
