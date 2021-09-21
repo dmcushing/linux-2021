@@ -1,5 +1,5 @@
 ﻿#!/bin/bash
-# CLI Practice 1 - Cleanup Script
+# Potter Practice - Cleanup Script
 
 clear
 echo -e "CLI practice set up - ignore any errors below"
