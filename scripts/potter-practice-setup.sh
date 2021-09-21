@@ -20,9 +20,10 @@ sudo useradd -G slytherin,rowling -m -s /bin/bash draco
 sudo useradd -G muggles,rowling -m -s /bin/bash bryce
 sudo useradd -G muggles,rowling -m -s /bin/bash burbidge
 sudo useradd -G muggles,rowling -m -s /bin/bash bayliss
-potters=( "harry" "hermione" "ron" "godric" "snapes" "lucius" "draco" "bryce" "burbidge" "bayliss" )
 
-for potters in ${potters[@]}
+potters=("harry" "hermione" "ron" "godric" "snapes" "lucius" "draco" "bryce" "burbidge" "bayliss")
+
+for potters in ${potters[*]}
 do
 	echo $potters
 	echo -e "potter\npotter\n" | passwd $potters >> /dev/null
