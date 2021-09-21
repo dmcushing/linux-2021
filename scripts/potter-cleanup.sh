@@ -2,7 +2,7 @@
 # Potter Practice - Cleanup Script
 
 clear
-echo -e "CLI practice set up - ignore any errors below"
+echo -e "Potter practice clean up - ignore any errors below"
 if [[ $EUID -ne 0 ]]
 then
         echo "Insufficient permissions. Run this script as root, or with sudo."
