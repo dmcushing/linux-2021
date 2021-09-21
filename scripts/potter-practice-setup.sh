@@ -19,11 +19,11 @@ sudo useradd -G slytherin,rowling -m -s /bin/bash draco
 sudo useradd -G muggles,rowling -m -s /bin/bash bryce
 sudo useradd -G muggles,rowling -m -s /bin/bash burbidge
 sudo useradd -G muggles,rowling -m -s /bin/bash bayliss
-users=("harry" "hermione" "ron" "godric" "snapes" "lucius" "draco" "bryce" "burbidge" "bayliss")
+potters=("harry" "hermione" "ron" "godric" "snapes" "lucius" "draco" "bryce" "burbidge" "bayliss")
 
-for users in ${users[*]}
+for potters in ${potters[*]}
 do
-	echo $users
+	echo $potters
 	echo -e "potter\npotter\n" | passwd $users >> /dev/null
 done
 clear
