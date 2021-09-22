@@ -12,7 +12,7 @@ student_info Quiz 1 - Avengers
 #
 echo -e "All these files should *NOT* exist *EXCEPT* for Loki" | tee -a $outfile
 
-FILES=( "~/Quiz1/Scene1/AlexisDenisof" "~/Quiz1/Scene1/Loki" "~/Quiz1/Scene1/Thor" "~/Quiz1/Scene2/Hulk" "~/Quiz1/Scene2/BlackWidow" "~/Quiz1/Scene2/ClarkGregg" "~/Quiz1/Scene2/ChrisEvans" "~/Quiz1/Scene3/IronMan" "~/Quiz1/Scene3/PepperPots" "~/Quiz1/Scene3/Jarvis" "~/Quiz1/AgentMariaHill" "~/Quiz1/NickFury" )
+FILES=( "/home/linuxuser/Quiz1/Scene1/AlexisDenisof" "/home/linuxuser/Quiz1/Scene1/Loki" "/home/linuxuser/Quiz1/Scene1/Thor" "/home/linuxuser/Quiz1/Scene2/Hulk" "/home/linuxuser/Quiz1/Scene2/BlackWidow" "/home/linuxuser/Quiz1/Scene2/ClarkGregg" "/home/linuxuser/Quiz1/Scene2/ChrisEvans" "/home/linuxuser/Quiz1/Scene3/IronMan" "/home/linuxuser/Quiz1/Scene3/PepperPots" "/home/linuxuser/Quiz1/Scene3/Jarvis" "/home/linuxuser/Quiz1/AgentMariaHill" "/home/linuxuser/Quiz1/NickFury" )
 
 for FILES in ${FILES[*]}
 do
