@@ -190,6 +190,7 @@ else
         echo -e "Question $1: $2 - does not exist." | tee -a $outfile
 	return 0
 fi
+}
 
 # Check if user or group exists
 # Parameters question, username/groupname, passwd group
@@ -309,4 +310,3 @@ fi
 esac
 return 0
 }
-
