@@ -21,6 +21,6 @@ done
 #
 # Does Loki exist?
 # 
-
-check_existence - /home/linuxuser/Quiz1/Scene1/Loki files
+echo -e "Does Loki exist? (He should!)" | tee -a $outfile
+check_existence - /home/linuxuser/Quiz1/Scene1/Loki f
 
