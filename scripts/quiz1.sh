@@ -11,6 +11,7 @@ mkdir -p ~/Quiz1/SHIELD/Characters
 mkdir -p ~/Quiz1/BadGuys
 mkdir -p ~/Quiz1/Scene1
 mkdir -p ~/Quiz1/Scene2
+mkdir -p ~/Quiz1/Scene3
 touch ~/Quiz1/Scene1/AlexisDenisof
 touch ~/Quiz1/Scene1/Loki
 touch ~/Quiz1/Scene1/Thor
