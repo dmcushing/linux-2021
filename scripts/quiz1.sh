@@ -3,7 +3,7 @@
 
 clear
 echo -e "Avengers Assemble! (actually, just moving files around)"
-rm -f ~/Quiz1
+rm -Rf ~/Quiz1
 mkdir -p ~/Quiz1/Avengers/Actors
 mkdir -p ~/Quiz1/Avengers/Characters
 mkdir -p ~/Quiz1/SHIELD/Actors
