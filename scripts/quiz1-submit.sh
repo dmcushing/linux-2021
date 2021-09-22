@@ -4,7 +4,6 @@
 
 source /scripts/functions.sh
 
-clear
 student_info Quiz 1 - Avengers
 
 #
