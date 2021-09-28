@@ -97,30 +97,16 @@ exit 0
 mail_out_test(){
 
 content=`base64 -w0 $outfile`
-content=$(cat $outfile)
+attachment="$1_$2-$lname-$fname.txt"
 
-read -p "Mail your work to Dave? (y/n) "
+read -p "Mail your work to your instructor? (y/n) "
 
-[ "$REPLY" != "y" ] || curl -s \
-  -X POST \
-  --user "0e05bb443d2de5778386c9c8424b3a4a:f7015386c733813f5235787dec722700" \
-  https://api.mailjet.com/v3/send \
-  -H 'Content-Type: application/json' \
-  -d '{
-    "FromEmail":"dave.cushing@cambriancollege.ca",
-    "FromName":"Dave Cushing",
-    "Subject":"'"$fname $lname: $1 $2"'",
-    "Inline_attachments":[
-	{
-	    "Content-type":"text/plain",
-	    "Filename":"test.txt",
-	    "content":"'"$content "'"}],
-    "Recipients":[
-        {
-            "Email": "dmc1208@gmail.com"
-        }
-    ]
-  }'
+read -p "Mail your work to your instructor? (y/n) "
+curl --request POST \
+  --url https://api.sendgrid.com/v3/mail/send \
+  --header "Authorization: Bearer $SENDGRID_API_KEY" \
+  --header 'Content-Type: application/json' \
+  --data '{"personalizations": [{"to": [{"email": "dave@davecushing.ca"}]}],"from": {"email": "dave@davecushing.ca"},"subject": "'"$fname $lname: $1 $2"'","content": [{"type": "text/plain", "value": "Sent as attachment:"}] , "attachments": [{"content": "'"$content"'", "type": "text/plain", "filename": "'"$attachment"'"}]}'
 
 exit 0
 }
