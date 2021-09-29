@@ -34,7 +34,7 @@ blank_line
 check_existence 6 ~/Quiz2/TomHanks/2020/SubsequentMovie f
 blank_line
 check_permissions 7 ~/Quiz2/TomHanks/2019/ABeautifulDay -rw-rw----
-check_permissions 7 ~/Quiz2/TomHanks/2019/ToyStory4 -rw-rw----
+check_permissions 7 ~/Quiz2/TomHanks/2019/MrRogers -rw-rw----
 blank_line
 check_permissions 8 ~/Quiz2/TomHanks/2019/ToyStory4 -rw-------
 #
