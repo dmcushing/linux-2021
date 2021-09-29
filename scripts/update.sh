@@ -6,8 +6,8 @@ clear
 is_super_user
 
 echo -e "Beginning Update..."
-git config user.email "dave@davecushing.ca"
-git config user.name "Dave Cushing"
+git -C /linux-2021/ config user.email "dave@davecushing.ca"
+git -C /linux-2021/ config user.name "Dave Cushing"
 
 git -C /linux-2021/ stash
 git -C /linux-2021/ pull origin
