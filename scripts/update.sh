@@ -6,7 +6,10 @@ clear
 is_super_user
 
 echo -e "Beginning Update..."
-rm -Rf /linux-2021/
-git clone https://github.com/dmcushing/linux-2021.git /linux-2021/
+git config user.email "dave@davecushing.ca"
+git config user.name "Dave Cushing"
+
+git -C /linux-2021/ stash
+git -C /linux-2021/ pull origin
 chmod 777 /linux-2021/scripts/*.sh
 echo -e "Done Update."
