@@ -8,6 +8,7 @@ useradd -m -s /bin/bash tomhanks
 groupadd toystory
 groupadd 2020
 groupadd 2019
+rm -Rf /home/linuxuser/Quiz2
 mkdir /home/linuxuser/Quiz2
 chown linuxuser:linuxuser /home/linuxuser/Quiz2
 echo -e "Done setting up."
