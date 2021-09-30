@@ -1,8 +1,9 @@
 echo -n "Enter your email address: "
 read mailaddy
 
-read -p "Send test mail? (y/n) "
-[ "$REPLY" != "y" ] || curl --request POST \
+# read -p "Send test mail? (y/n) "
+# [ "$REPLY" != "y" ] || 
+curl --request POST \
   --url https://api.sendgrid.com/v3/mail/send \
   --header "Authorization: Bearer $SENDGRID_API_KEY" \
   --header 'Content-Type: application/json' \
