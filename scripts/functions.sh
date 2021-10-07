@@ -82,16 +82,13 @@ mail_out(){
 content=`base64 -w 0 $outfile`
 attachment="$1_$2-$lname-$fname.txt"
 
-read -p "Mail your work to your instructor? (y/n) "
-curl --request POST \
+read -p "Mail your work to your instructor? (y or CTRL-C to exit) "
+[ "$REPLY" != "y" ] || curl --request POST \
   --url https://api.sendgrid.com/v3/mail/send \
   --header "Authorization: Bearer $SENDGRID_API_KEY" \
   --header 'Content-Type: application/json' \
   --data '{"personalizations": [{"to": [{"email": "dave@davecushing.ca"}],"cc": [{"email":"'"$mailaddy"'"}]}],"from": {"email": "dave@davecushing.ca"},"subject": "'"$fname $lname: $1 $2"'","content": [{"type": "text/plain", "value": "Sent as attachment:"}] , "attachments": [{"content": "'"$content"'", "type": "text/plain", "filename": "'"$attachment"'"}]}'
 
-
-
-#[ "$REPLY" != "y" ] || curl -s \
 exit 0
 }
 mail_out_test(){
@@ -99,10 +96,8 @@ mail_out_test(){
 content=`base64 -w0 $outfile`
 attachment="$1_$2-$lname-$fname.txt"
 
-read -p "Mail your work to your instructor? (y/n) "
-
-read -p "Mail your work to your instructor? (y/n) "
-curl --request POST \
+read -p "Mail your work to your instructor? (y or CTRL-C to exit) "
+[ "$REPLY" != "y" ] || curl --request POST \
   --url https://api.sendgrid.com/v3/mail/send \
   --header "Authorization: Bearer $SENDGRID_API_KEY" \
   --header 'Content-Type: application/json' \

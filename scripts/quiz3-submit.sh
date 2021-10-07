@@ -16,10 +16,10 @@ check_existence 2 /home/linuxuser/Quiz3/dbury.txt f
 tail -5 /home/linuxuser/Quiz3/dbury.txt | tee -a $outfile
 blank_line
 check_existence 3 /home/linuxuser/Quiz3/A0K.txt f
-tail -5 /home/linuxuser/Quiz3/A0K.txt
+tail -5 /home/linuxuser/Quiz3/A0K.txt | tee -a $outfile
 blank_line
 check_existence 4 /home/linuxuser/Quiz3/ag.txt f
-tail -5 /home/linuxuser/Quiz3/ag.txt
+tail -5 /home/linuxuser/Quiz3/ag.txt |tee -a $outfile
 blank_line
 check_existence 5 /home/linuxuser/Quiz3/test.txt f
 check_owner 5 /home/linuxuser/Quiz3/test.txt quiz3
