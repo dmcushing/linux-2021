@@ -25,3 +25,5 @@ check_existence 5 /home/linuxuser/Quiz3/test.txt f
 check_owner 5 /home/linuxuser/Quiz3/test.txt quiz3
 check_group 5 /home/linuxuser/Quiz3/test.txt quiz3
 check_perms 5 /home/linuxuser/Quiz3/test.txt -rw-r-----
+
+mail_out Postal Codes Quiz3
