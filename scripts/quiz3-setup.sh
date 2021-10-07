@@ -1,4 +1,4 @@
-!#/bin/bash
+#!/bin/bash
 # Set Up for Postal Codes Quiz
 source /scripts/functions.sh
 clear

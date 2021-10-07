@@ -1,4 +1,4 @@
-!#/bin/bash
+#!/bin/bash
 # Set Up for Tom Hanks Quiz
 source /scripts/functions.sh
 clear
