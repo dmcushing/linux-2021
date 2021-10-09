@@ -79,11 +79,11 @@ check_owner 2.3 /home/linuxuser/Madagascar/thezoo/meat alex
 check_owner 2.4 /home/linuxuser/Madagascar/thezoo/fish kowalski
 check_permissions 2.5 /home/linuxuser/Madagascar/thezoo/meat -rw-------
 check_permissions 2.6 /home/linuxuser/Madagascar/thezoo/fish -rw----rw-
-
+blank_line
 # Tar file created?
 
-check_existence 3.1 ~/Madagascar/madagascar.tar.gz f
-tar tzvf ~/nethack.tar.gz | tail -5 | tee -a $outfile
+check_existence 3.1 ~/madagascar.tar.gz f
+tar tzvf ~/madagascar.tar.gz | tail -5 | tee -a $outfile
 blank_line
 
 # Submit the work
