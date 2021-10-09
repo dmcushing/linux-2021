@@ -5,7 +5,7 @@ source /scripts/functions.sh
 
 clear
 is_super_user
-student_info Potter Assignment
+student_info Potter Lab
 
 # Question 1
 

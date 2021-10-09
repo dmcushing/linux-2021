@@ -1,12 +1,11 @@
 #!/bin/bash
-# A simple bash script used to check and submit the lab
 
 source /scripts/functions.sh
 
 # Gather Student Work
 clear
 is_super_user
-student_info Lab 02
+student_info Madagascar Lab
 
 
 # Make sure the users exist
@@ -50,11 +49,12 @@ do
 	user_param 1.2 user_in_group $user penguins
 done
 blank_line
-users=("melman" "skipper" "private" "kowalski" "julien")
+users=("melman" "skipper" "private" "kowalski")
 for user in ${users[*]}
 do
 	user_param 1.2 account_expiry $user 2025-01-31
 done
+user_param 1.2 account_expiry julien 2027-01-31
 blank_line
 
 #Check comments
@@ -69,19 +69,21 @@ user_param 1.3 comment julien "Julien"
 user_param 1.3 comment maurice "Maurice"
 blank_line
 
-
-#Check if software is installed
-
-package_check 3 iftop
-blank_line
-package_check 4 nethack-common
-package_check 4 nethack
-blank_line
+# Ownerships and Permissions
+check_group 2.1 /home/linuxuser/Madagascar/thejungle/fruit jungle
+check_group 2.1 /home/linuxuser/Madagascar/thejungle/trees jungle
+check_group 2.2 /home/linuxuser/Madagascar/thezoo zoo
+check_group 2.2 /home/linuxuser/Madagascar/thezoo/meat zoo
+check_group 2.2 /home/linuxuser/Madagascar/thezoo/fish zoo
+check_owner 2.3 /home/linuxuser/Madagascar/thezoo/meat alex
+check_owner 2.4 /home/linuxuser/Madagascar/thezoo/fish kowalski
+check_permissions 2.5 /home/linuxuser/Madagascar/thezoo/meat -rw-------
+check_permissions 2.6 /home/linuxuser/Madagascar/thezoo/fish -rw----rw-
 
 # Tar file created?
 
-check_existence 5 ~/nethack.tar.gz f
-tar xzvf ~/nethack.tar.gz | tail -5 | tee -a $outfile
+check_existence 3.1 ~/Madagascar/madagascar.tar.gz f
+tar tzvf ~/nethack.tar.gz | tail -5 | tee -a $outfile
 blank_line
 
 # Submit the work
