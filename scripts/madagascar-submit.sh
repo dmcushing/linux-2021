@@ -85,9 +85,12 @@ blank_line
 
 check_existence 3.1 ~/madagascar.tar.gz f
 tar tzvf ~/madagascar.tar.gz | tail -5 | tee -a $outfile
+blank_line
 check_existence 3.2 ~/TheZoo h
+blank_line
 check_existence 3.3 ~/Madagascar/zoowords.txt f
 tail -5 ~/Madagascar/zoowords.txt | tee -a $outfile
+blank_line
 check_existence 3.4 ~/Madagascar/ayey.txt f
 tail -5 ~/Madagascar/ayey.txt | tee -a $outfile
 blank_line
