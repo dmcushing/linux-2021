@@ -119,7 +119,7 @@ do
     FILES=("/home/bond/post80s/pierce/goldeneye-1995" "/home/bond/post80s/pierce/tomorrowneverdies-1997" "/home/bond/post80s/pierce/worldisnotenough-1999" "/home/bond/post80s/pierce/dieanotherday-2002")
     fi
     if [[ "$GROUPID" == "post80s" && "$USERID" == "daniel" ]]; then
-    FILES=("/home/bond/post80s/daniel/casinoroyale-2006" "/home/bond/post80s/daniel/quantumofsolace-2008" "/home/bond/post80s/daniel/skyfall-2012")
+    FILES=("/home/bond/post80s/daniel/casinoroyale-2006" "/home/bond/post80s/daniel/quantumofsolace-2008" "/home/bond/post80s/daniel/skyfall-2012" "/home/bond/daniel/spectre-2015" "/home/bond/daniel/notimetodie-2021")
     fi
     echo $GROUPID $USERID | tee -a $outfile
     echo " " | tee -a $outfile
