@@ -171,7 +171,7 @@ else
 fi
 if [[ "`cat /home/bond/scaramanga.txt | wc -l`" == "31" ]]; then
     echo -e "file: /home/bond/scaramanga.txt - correct number of lines" | tee -a $outfile
-    cat /home/bond/scaramanga.txt >> $outfile
+    cat /home/bond/scaramanga.txt | tail -5 | tee -a $outfile
 else
     echo -e "file: /home/bond/scaramanga.txt - incorrect number of lines `wc -l < /home/bond/scaramanga.txt` - try again" | tee -a $outfile
 fi
