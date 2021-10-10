@@ -190,12 +190,6 @@ else
 fi
 echo " " | tee -a $outfile
 
-if [[ "`stat -c %A /home/bond/allbonds/`" == "drwxrws---" ]]; then
-    echo -e "SETGID: /home/bond/allbonds - correct" | tee -a $outfile
-else
-    echo -e "SETGID: /home/bond/allbonds - DOES NOT exist - try again" | tee -a $outfile
-fi 
-echo " " | tee -a $outfile
 
 if [ -e /home/bond/usedspace.txt ]; then
     echo -e "file: /home/bond/usedspace.txt - exists" | tee -a $outfile
@@ -204,9 +198,9 @@ else
     echo -e "file: /home/bond/usedspace.txt - DOES NOT exist - try again" | tee -a $outfile
 fi
 
-if [ -e /tmp/bondassignment.tar.gz ]; then
-    echo -e "file: /tmp/bondassignment.tar.gz - exists" | tee -a $outfile
-    ls -l /tmp/bondassignment.tar.gz | tee -a $outfile
+if [ -e /home/linuxuser/bondassignment.tar.gz ]; then
+    echo -e "file: /home/linuxuser/bondassignment.tar.gz - exists" | tee -a $outfile
+    tar -tzvf /home/linuxuser/bondassignment.tar.gz | tail -5 | tee -a $outfile
 else
     echo -e "file: /tmp/bondassignment.tar.gz - DOES NOT exist - try again" | tee -a $outfile
 fi

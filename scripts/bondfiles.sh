@@ -30,7 +30,7 @@ georgeFILES=("/home/bond/pre80s/george/onhermajestyssecretservice-1969")
 pre80srogerFILES=("/home/bond/roger/liveandletdie-1973" "/home/bond/roger/manwiththegoldengun-1974" "/home/bond/roger/spywholovedme-1977" "/home/bond/roger/moonraker-1979")
 post80srogerFILES=("/home/bond/roger/foryoureyesonly-1981" "/home/bond/roger/octopussy-1983" "/home/bond/roger/aviewtoakill-1985") 
 timothyFILES=("/home/bond/post80s/timothy/livingdaylights-1987" "/home/bond/post80s/timothy/licencetokill-1989")
-pierceFILES=("/home/bond/post80s/pierce/goldeneye-1995" "/home/bond/post80s/pierce/tomorrowneverdies-1997" "/home/bond/post80s/pierce/worldisnotenough-1999" "/home/bond/post80s/pierce/dieanotherday-2002")
+pierceFILES=("/home/bond/post80s/pierce/goldeneye-1995" "/home/bond/post80s/pierce/tomorrowneverdies-1997" "/home/bond/post80s/pierce/worldisnotenough-1999" "/home/bond/post80s/pierce/dieanotherday-2002" "/home/bond/post80s/pierce/script-run")
 danielFILES=("/home/bond/post80s/daniel/casinoroyale-2006" "/home/bond/post80s/daniel/quantumofsolace-2008" "/home/bond/post80s/daniel/skyfall-2012" "/home/bond/post80s/daniel/spectre-2015" "/home/bond/post80s/daniel/notimetodie-2021")
 
 for seanFILES in ${seanFILES[*]}
@@ -75,3 +75,18 @@ do
 	chown daniel:post80s $danielFILES
 	chmod 660 $danielFILES
 done
+
+# Everything Else
+
+ln -s /home/bond/roger /home/bond/pre80s/roger
+ln -s /home/bond/roger /home/bond/post80s/roger
+
+cp /scripts/themanwiththegoldengun.txt /home/bond/roger/
+chown roger:pre80s /home/bond/roger/themanwiththegoldengun.txt
+chmod 660 /home/bond/roger/themanwiththegoldengun.txt
+
+grep -n 'Scramanga' | nl > /home/bond/scramanga.txt
+
+find /home/bond -iname "*197?" | nl > /home/bond/70sflicks.txt
+
+du -sh /home/bond > /home/bond/usedspace.txt
