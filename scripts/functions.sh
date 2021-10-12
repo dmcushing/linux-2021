@@ -105,6 +105,17 @@ read -p "Mail your work to your instructor? (y to send mail or CTRL-C to exit) "
 
 exit 0
 }
+# Check Line Count
+# parameters question, filename, expected lines
+
+check_line_count(){
+if [[ "`wc -l < $2`" == $3 ]]; then
+    echo -e "Question $1: $2 - correct number of lines $3" | tee -a $outfile
+    tail -5 $2 | tee -a $outfile
+else
+    echo -e "!! ERROR !! Question $1: $2 - incorrect number of lines - expected $3 lines - actual lines: `wc -l < $2`" | tee -a $outfile
+fi
+}
 
 # Check Permissions
 # parameters question, filename, permissions -rwxrwxrwx

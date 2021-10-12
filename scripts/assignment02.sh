@@ -1,5 +1,5 @@
 #!/bin/bash
-# Assignment 03
+# Archiving and Stuff Lab
 
 source /scripts/functions.sh
 
@@ -70,4 +70,4 @@ check_existence 9 ~/sorted.txt f
 tail -5 ~/sorted.txt | tee -a $outfile
 blank_line
 
-mail_out Assignment 02
+mail_out Archiving
