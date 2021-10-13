@@ -24,14 +24,14 @@ blank_line
 check_existence 4 /home/linuxuser/Quiz4/etc.txt f
 head -5 /home/linuxuser/Quiz4/etc.txt 2>/dev/null| tee -a $outfile
 blank_line
-check_existence 4 /home/linuxuser/Quiz4/sda1.txt f
+check_existence 5 /home/linuxuser/Quiz4/sda1.txt f
 head -5 /home/linuxuser/Quiz4/sda1.txt 2>/dev/null| tee -a $outfile
 blank_line
-check_existence 1 /home/linuxuser/Quiz4/reawords.txt f
-check_line_count 1 /home/linuxuser/Quiz4/reawords.txt 4
+check_existence 6 /home/linuxuser/Quiz4/reawords.txt f
+check_line_count 6 /home/linuxuser/Quiz4/reawords.txt 4
 head -5 /home/linuxuser/Quiz4/reawords.txt 2>/dev/null | tee -a $outfile
 blank_line
-check_existence 1 /home/linuxuser/quiz4.tar.gz f
+check_existence 7 /home/linuxuser/quiz4.tar.gz f
 tar -tzvf /home/linuxuser/quiz4.tar.gz 2>/dev/null | tee -a $outfile
 
 mail_out Archiving and Stuff Quiz4
