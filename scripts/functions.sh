@@ -109,7 +109,7 @@ exit 0
 # parameters question, filename, expected lines
 
 check_line_count(){
-if [ -$3 $2 ];
+if [ -f $2 ];
 then
 	if [[ "`wc -l < $2`" == $3 ]]; then
 		echo -e "Question $1: $2 - correct number of lines $3" | tee -a $outfile
