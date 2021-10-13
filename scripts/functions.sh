@@ -109,10 +109,17 @@ exit 0
 # parameters question, filename, expected lines
 
 check_line_count(){
-if [[ "`wc -l < $2`" == $3 ]]; then
-    echo -e "Question $1: $2 - correct number of lines $3" | tee -a $outfile
+if [ -$3 $2 ];
+then
+	if [[ "`wc -l < $2`" == $3 ]]; then
+		echo -e "Question $1: $2 - correct number of lines $3" | tee -a $outfile
+	else
+		echo -e "!! ERROR !! Question $1: $2 - incorrect number of lines - expected $3 lines - actual lines: `wc -l < $2`" | tee -a $outfile
+	fi
+	return 0
 else
-    echo -e "!! ERROR !! Question $1: $2 - incorrect number of lines - expected $3 lines - actual lines: `wc -l < $2`" | tee -a $outfile
+        echo -e "!! ERROR !! Question $1: $2 - doesn't exist, can't determine line count." | tee -a $outfile
+	return 0
 fi
 }
 
