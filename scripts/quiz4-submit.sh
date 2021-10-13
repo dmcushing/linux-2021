@@ -34,4 +34,4 @@ blank_line
 check_existence 7 /home/linuxuser/quiz4.tar.gz f
 tar -tzvf /home/linuxuser/quiz4.tar.gz 2>/dev/null | tee -a $outfile
 
-mail_out Archiving and Stuff Quiz4
+mail_out Archiving_and_Stuff Quiz4
