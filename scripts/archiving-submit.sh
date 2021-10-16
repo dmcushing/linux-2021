@@ -70,4 +70,4 @@ check_existence 9 ~/sorted.txt f
 tail -5 ~/sorted.txt | tee -a $outfile
 blank_line
 
-mail_out Archiving
+mail_out Archiving_Lab
