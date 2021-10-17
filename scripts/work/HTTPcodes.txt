@@ -1,0 +1,41 @@
+414 Request-URI Too Long
+202 Accepted
+410 Gone
+505 HTTP Version Not Supported
+416 Requested Range Not Satisfiable
+417 Expectation Failed
+403 Forbidden
+204 No Content
+406 Not Acceptable
+201 Created
+307 Temporary Redirect
+305 Use Proxy
+300 Multiple Choices
+306 (Unused)
+504 Gateway Timeout
+407 Proxy Authentication Required
+200 OK
+101 Switching Protocols
+302 Found
+100 Continue
+206 Partial Content
+400 Bad Request
+409 Conflict
+205 Reset Content
+415 Unsupported Media Type
+503 Service Unavailable
+301 Moved Permanently
+408 Request Timeout
+413 Request Entity Too Large
+404 Not Found
+405 Method Not Allowed
+411 Length Required
+502 Bad Gateway
+401 Unauthorized
+412 Precondition Failed
+203 Non-Authoritative Information
+501 Not Implemented
+500 Internal Server Error
+402 Payment Required
+303 See Other
+304 Not Modified
