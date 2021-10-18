@@ -44,7 +44,7 @@ user_param 2 comment collector "Billy Zane"
 user_param 2 comment brayker "Bill Sadler"
 user_param 2 comment jeryline "Jada Pinkett"
 blank_line
-echo -e "Comments:" | tee -a $outfile
+echo -e "Shell:" | tee -a $outfile
 
 user_param 2 shell collector "/bin/bash"
 user_param 2 shell brayker "/bin/bash"
@@ -88,6 +88,8 @@ check_existence 4 /home/linuxuser/midterm/demonknight/basement/key f
 check_owner 4 /home/linuxuser/midterm/demonknight/basement/key brayker
 check_group 4 /home/linuxuser/midterm/demonknight/basement/key human
 check_permissions 4 /home/linuxuser/midterm/demonknight/basement/key -rw-r-----
+check_owner 4 /home/linuxuser/midterm/demonknight/basement brayker
+check_group 4 /home/linuxuser/midterm/demonknight/basement human
 blank_line
 
 echo -e "Find:" | tee -a $outfile
@@ -135,6 +137,9 @@ fi
 blank_line
 check_existence 7 /home/linuxuser/midterm/psaux.txt f
 tail -3 /home/linuxuser/midterm/psaux.txt | tee -a $outfile
+blank_line
+check_existence 7 ~/midterm/SK.txt f
+tail -5 ~/midterm/SK.txt | tee -a $outfile
 blank_line
 check_existence 7 /home/linuxuser/midterm/midterm.tar.gz f
 tar -tzvf /home/linuxuser/midterm/midterm.tar.gz | tee -a $outfile
