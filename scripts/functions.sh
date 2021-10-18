@@ -219,7 +219,7 @@ fi
 account_expiry)
 	userexpdate=`chage -l $3 | grep 'Account expires' | cut -d: -f2`
 	noexpire="never"
-	if [[ $userexpdate == $noexpire ]]; then
+	if [[ $userexpdate == " never" ]]; then
         	echo -e "** ERROR ** Question $1: $3: INCORRECT account expiry date." | tee -a $outfile
 	else
 		convexpdate=`date -d "$userexpdate" +%s`
