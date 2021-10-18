@@ -14,7 +14,7 @@ student_info_midterm Midterm
 #
 
 echo -e "Users:" | tee -a $outfile
-USERID=("gru" "dave" "phil")
+USERID=("captain" "ironman" "thanos")
 
 for USERID in ${USERID[*]}
 do
@@ -23,7 +23,7 @@ done
 blank_line
 
 echo -e "Groups:" | tee -a $outfile
-GROUPID=("gru" "dave" "phil" "basement" "minion" "human" "blaster")
+GROUPID=("captain" "ironman" "thanos" "earth" "titan" "human" "madtitan")
 
 for GROUPID in ${GROUPID[*]}
 do
