@@ -122,7 +122,7 @@ blank_line
 echo -e "Miscellaneous:" | tee -a $outfile
 
 check_existence 7 ~/midterm/postalcodes.txt h
-ls -l ~/midterm/postalcodes.txt 2>/dev/null | tee -a $ outfile
+ls -l ~/midterm/postalcodes.txt 2>/dev/null | tee -a $outfile
 blank_line
 check_existence 7 ~/midterm/usedspace.txt f
 tail -3 ~/midterm/usedspace.txt | tee -a $outfile
