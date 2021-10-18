@@ -236,6 +236,16 @@ comment)
         	echo -e "!! ERROR !! Question $1: $3: INCORRECT comment field - should be $4" | tee -a $outfile
 	fi
 ;;
+shell)
+	# Check shell field for correct string
+	# Parameters question, shell, username, shell string
+
+	if [ "`grep $3 /etc/passwd | cut -d: -f7`" == "$4" ]; then
+	        echo -e "Question $1: $3: Correct shell $4" | tee -a $outfile
+	else
+        	echo -e "!! ERROR !! Question $1: $3: INCORRECT shell - should be $4" | tee -a $outfile
+	fi
+;;
 pass_exists)
 	# Check if password exists for a user
 	# Parameters question, pass_exists, username

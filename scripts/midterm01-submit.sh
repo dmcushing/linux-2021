@@ -10,19 +10,6 @@ student_info_midterm Midterm
 
 
 #
-# Check to see if software is installed and appropriate files found
-#
-echo -e "Packages:" | tee -a $outfile
-package_check 1a bwm-ng
-check_existence 1b ~/bwm-status.txt f
-head -3 ~/bwm-status.txt | tee -a $outfile
-blank_line
-package_check 1c calcurse
-check_existence 1d ~/calcurse-list.txt f
-head -3 ~/calcurse-list.txt | tee -a $outfile
-blank_line
-
-#
 # Check to see if users and groups created
 #
 
@@ -57,10 +44,16 @@ user_param 2 comment collector "Billy Zane"
 user_param 2 comment brayker "Bill Sadler"
 user_param 2 comment jeryline "Jada Pinkett"
 blank_line
+echo -e "Comments:" | tee -a $outfile
+
+user_param 2 shell collector "/bin/bash"
+user_param 2 shell brayker "/bin/bash"
+user_param 2 shell jeryline "/bin/bash"
+blank_line
 
 echo -e "Expiry Dates:" | tee -a $outfile
-user_param 2 account_expiry brayker 2021-01-01
-user_param 2 account_expiry jeryline 2021-01-01
+user_param 2 account_expiry brayker 2029-01-03
+user_param 2 account_expiry jeryline 2029-01-03
 blank_line
 
 #
@@ -89,8 +82,9 @@ blank_line
 # Check to see if files exist
 #
 
-echo -e "Changing Ownerships, Permissions, Copying:" | tee -a $outfile
+echo -e "Changing Ownerships, Permissions, Moving:" | tee -a $outfile
 
+check_no_existence 4 ~/midterm/demonknight/hotel/key f
 check_existence 4 /home/linuxuser/midterm/demonknight/basement/key f
 check_owner 4 /home/linuxuser/midterm/demonknight/basement/key brayker
 check_group 4 /home/linuxuser/midterm/demonknight/basement/key human
@@ -99,33 +93,40 @@ blank_line
 
 echo -e "Find:" | tee -a $outfile
 
-check_existence 5 /home/linuxuser/midterm/find/webm.txt f
-tail /home/linuxuser/midterm/find/webm.txt | tee -a $outfile
+check_existence 5 ~/midterm/find/we.txt f
+check_line_count 5 ~/midterm/find/we.txt 7
+tail ~/midterm/find/we.txt | tee -a $outfile
 blank_line
-check_existence 5 /home/linuxuser/midterm/find/nanonand.txt f
-tail /home/linuxuser/midterm/find/nanonand.txt | tee -a $outfile
+check_existence 5 ~/midterm/find/nas.txt f
+check_line_count 5 ~/midterm/find/nas.txt 4
+tail ~/midterm/find/nas.txt | tee -a $outfile
 blank_line
+
 echo -e "Grep:" | tee -a $outfile
 
-check_existence 6 /home/linuxuser/midterm/grep/sudbury.txt f
-tail -5 /home/linuxuser/midterm/grep/sudbury.txt | tee -a $outfile
+check_existence 6 ~/midterm/grep/truro.txt f
+check_line_count 6 ~/midterm/find/truro.txt 280
+tail -5 ~/midterm/grep/truro.txt | tee -a $outfile
 blank_line
-check_existence 6 /home/linuxuser/midterm/grep/P3A.txt f
-tail -5 /home/linuxuser/midterm/grep/P3A.txt | tee -a $outfile
+check_existence 6 ~/midterm/grep/M9A5.txt f
+check_line_count 6 ~/midterm/find/M9A5.txt 90
+tail -5 ~/midterm/grep/M9A5.txt | tee -a $outfile
 blank_line
-check_existence 6 /home/linuxuser/midterm/grep/PCODES.txt f
-tail -5 /home/linuxuser/midterm/grep/PCODES.txt | tee -a $outfile
+check_existence 6 ~/midterm/grep/fly.txt f
+check_line_count 6 ~/midterm/find/fly.txt 1
+tail -5 ~/midterm/grep/fly.txt | tee -a $outfile
 blank_line
 
 echo -e "Miscellaneous:" | tee -a $outfile
 
-check_existence 7 /home/linuxuser/midterm/PCODES2.txt h
+check_existence 7 ~/midterm/postalcodes.txt h
+ls -l ~/midterm/postalcodes.txt 2>/dev/null | tee -a $ outfile
 blank_line
-check_existence 7 /home/linuxuser/midterm/usedspace.txt f
-tail -3 /home/linuxuser/midterm/usedspace.txt | tee -a $outfile
+check_existence 7 ~/midterm/usedspace.txt f
+tail -3 ~/midterm/usedspace.txt | tee -a $outfile
 blank_line
-check_existence 7 /home/linuxuser/midterm/freespace.txt f
-tail -3 /home/linuxuser/midterm/freespace.txt | tee -a $outfile
+check_existence 7 ~/midterm/freespace.txt f
+tail -3 ~/midterm/freespace.txt | tee -a $outfile
 blank_line
 if [ -d "/home/linuxuser/midterm/demonknight/hotel" ]; then
 	echo -e "Directory ~/midterm/demonknight/hotel exist - you have to DELETE it." | tee -a $outfile
@@ -140,4 +141,4 @@ check_existence 7 /home/linuxuser/midterm/midterm.tar.gz f
 tar -tzvf /home/linuxuser/midterm/midterm.tar.gz | tee -a $outfile
 blank_line
 
-mail_out_test Midterm
+mail_out_test 01-Midterm
