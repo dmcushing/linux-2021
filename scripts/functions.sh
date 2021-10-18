@@ -218,12 +218,16 @@ fi
 ;;
 account_expiry)
 	userexpdate=`chage -l $3 | grep 'Account expires' | cut -d: -f2`
-	convexpdate=`date -d "$userexpdate" +%s`
-	conv2expdate=`date -d "$4" +%s`
-	if [ $convexpdate == $conv2expdate ]; then
-        	echo -e "Question $1: $3: Correct account expiry date $4" | tee -a $outfile
-	else
+	if [ $userexpdate == " never" ]; then
         	echo -e "!! ERROR !! Question $1: $3: INCORRECT account expiry date." | tee -a $outfile
+	else
+		convexpdate=`date -d "$userexpdate" +%s`
+		conv2expdate=`date -d "$4" +%s`
+		if [ $convexpdate == $conv2expdate ]; then
+				echo -e "Question $1: $3: Correct account expiry date $4" | tee -a $outfile
+		else
+				echo -e "!! ERROR !! Question $1: $3: INCORRECT account expiry date." | tee -a $outfile
+		fi
 	fi
 ;;
 comment)
