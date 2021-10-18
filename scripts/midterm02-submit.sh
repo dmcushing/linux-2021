@@ -146,4 +146,4 @@ check_existence 7 /home/linuxuser/midterm/midterm.tar.gz f
 tar -tzvf /home/linuxuser/midterm/midterm.tar.gz | tee -a $outfile
 blank_line
 
-mail_out_test 01-Midterm
+mail_out_test 02-Midterm
