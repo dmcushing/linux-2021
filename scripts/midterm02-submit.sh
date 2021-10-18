@@ -53,8 +53,8 @@ user_param 2 shell phil "/bin/bash"
 blank_line
 
 echo -e "Expiry Dates:" | tee -a $outfile
-user_param 2 account_expiry brayker 2031-01-05
-user_param 2 account_expiry jeryline 2031-01-05
+user_param 2 account_expiry dave 2031-01-05
+user_param 2 account_expiry phil 2031-01-05
 blank_line
 
 #
