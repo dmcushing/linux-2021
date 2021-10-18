@@ -96,11 +96,11 @@ echo -e "Find:" | tee -a $outfile
 
 check_existence 5 ~/midterm/find/we.txt f
 check_line_count 5 ~/midterm/find/we.txt 7
-tail ~/midterm/find/we.txt | tee -a $outfile
+tail -5 ~/midterm/find/we.txt | tee -a $outfile
 blank_line
 check_existence 5 ~/midterm/find/nas.txt f
 check_line_count 5 ~/midterm/find/nas.txt 4
-tail ~/midterm/find/nas.txt | tee -a $outfile
+tail -5 ~/midterm/find/nas.txt | tee -a $outfile
 blank_line
 
 echo -e "Grep:" | tee -a $outfile

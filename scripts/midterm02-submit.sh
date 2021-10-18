@@ -97,11 +97,11 @@ echo -e "Find:" | tee -a $outfile
 
 check_existence 5 ~/midterm/find/lmite.txt f
 check_line_count 5 ~/midterm/find/lmite.txt 3
-tail ~/midterm/find/lmite.txt | tee -a $outfile
+tail -5 ~/midterm/find/lmite.txt | tee -a $outfile
 blank_line
 check_existence 5 ~/midterm/find/baei.txt f
 check_line_count 5 ~/midterm/find/baei.txt 9
-tail ~/midterm/find/baei.txt | tee -a $outfile
+tail -5 ~/midterm/find/baei.txt | tee -a $outfile
 blank_line
 
 echo -e "Grep:" | tee -a $outfile
