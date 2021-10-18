@@ -84,7 +84,6 @@ blank_line
 
 echo -e "Changing Ownerships, Permissions, Moving:" | tee -a $outfile
 
-check_no_existence 4 ~/midterm/demonknight/hotel/key f
 check_existence 4 /home/linuxuser/midterm/demonknight/basement/key f
 check_owner 4 /home/linuxuser/midterm/demonknight/basement/key brayker
 check_group 4 /home/linuxuser/midterm/demonknight/basement/key human
@@ -105,15 +104,15 @@ blank_line
 echo -e "Grep:" | tee -a $outfile
 
 check_existence 6 ~/midterm/grep/truro.txt f
-check_line_count 6 ~/midterm/find/truro.txt 280
+check_line_count 6 ~/midterm/grep/truro.txt 280
 tail -5 ~/midterm/grep/truro.txt | tee -a $outfile
 blank_line
 check_existence 6 ~/midterm/grep/M9A5.txt f
-check_line_count 6 ~/midterm/find/M9A5.txt 90
+check_line_count 6 ~/midterm/grep/M9A5.txt 90
 tail -5 ~/midterm/grep/M9A5.txt | tee -a $outfile
 blank_line
 check_existence 6 ~/midterm/grep/fly.txt f
-check_line_count 6 ~/midterm/find/fly.txt 1
+check_line_count 6 ~/midterm/grep/fly.txt 1
 tail -5 ~/midterm/grep/fly.txt | tee -a $outfile
 blank_line
 
