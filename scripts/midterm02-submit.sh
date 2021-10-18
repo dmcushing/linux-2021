@@ -87,7 +87,7 @@ echo -e "Changing Ownerships, Permissions, Moving:" | tee -a $outfile
 
 check_existence 4 ~/midterm/grusplace/basement/fartblaster f
 check_owner 4 ~/midterm/grusplace/basement/fartblaster dave
-check_group 4 ~/midterm/grusplace/basement/fartblaster~/midterm/grusplace/basement/fartblaster dave minion
+check_group 4 ~/midterm/grusplace/basement/fartblaster minion
 check_permissions 4 ~/midterm/grusplace/basement/fartblaster -rw-r-----
 check_owner 4 ~/midterm/grusplace/basement dave
 check_group 4 ~/midterm/grusplace/basement minion
