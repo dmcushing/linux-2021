@@ -72,7 +72,7 @@ done
 blank_line
 echo -e "Directories:" | tee -a $outfile
 
-DIRECTORY=("~/midterm" "~/midterm/find" "~/midterm/grep" "~/midterm/grusplace" "~/midterm/grusplace/basement" "~/midterm/grusplace/upstairs")
+DIRECTORY=("/home/linuxuser/midterm" "/home/linuxuser/midterm/find" "/home/linuxuser/midterm/grep" "/home/linuxuser/midterm/grusplace" "/home/linuxuser/midterm/grusplace/basement")
 for DIRECTORY in ${DIRECTORY[*]}
 do
 	check_existence 3 $DIRECTORY d
