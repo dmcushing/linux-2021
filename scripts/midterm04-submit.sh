@@ -87,7 +87,7 @@ echo -e "Changing Ownerships, Permissions, Moving:" | tee -a $outfile
 check_existence 4 ~/midterm/helicarrier/above/the-cure f
 check_owner 4 ~/midterm/helicarrier/above/the-cure ajax
 check_group 4 ~/midterm/helicarrier/above/the-cure francis
-check_permissions 4 ~/midterm/earth/desert/timestone -rw-r-----
+check_permissions 4 ~/midterm/helicarrier/above/the-cure -rw-r-----
 check_owner 4 ~/midterm/helicarrier/above ajax
 check_group 4 ~/midterm/helicarrier/above badguy
 blank_line
