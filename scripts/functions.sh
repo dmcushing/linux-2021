@@ -63,6 +63,7 @@ outfile=/tmp/$filename
 
 echo -e "Work will be saved in $outfile \n"
 echo -e "CET1025 $1 $2 - ($snumber) $fname $lname \n" | tee -a $outfile
+echo -e "first: $fname last: $lname file: $filename"
 echo $HOSTNAME >> $outfile
 return 0
 }
