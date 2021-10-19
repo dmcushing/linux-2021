@@ -35,6 +35,7 @@ echo -n "Enter your Student number: "
 read snumber
 echo -n "Enter your email address: "
 read mailaddy
+lname=`echo $lname | tr [:space:] '_'`
 filename=$snumber-$1_$2_${fname:0:1}_$lname.txt
 tarfile=$snumber-$1_$2_${fname:0:1}_$lname.tar.gz
 outfile=/tmp/$filename
