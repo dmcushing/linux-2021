@@ -35,13 +35,14 @@ echo -n "Enter your Student number: "
 read snumber
 echo -n "Enter your email address: "
 read mailaddy
-lname=`echo $lname | tr [:space:] '_'`
+fname=`echo $fname | sed 's/ /_/g'`
+lname=`echo $lname | sed 's/ /_/g'`
 filename=$snumber-$1_$2_${fname:0:1}_$lname.txt
 tarfile=$snumber-$1_$2_${fname:0:1}_$lname.tar.gz
 outfile=/tmp/$filename
 
 echo -e "Work will be saved in $outfile \n"
-echo -e "CET1025 $1 $2 - ($snumber) $fname $lname \n" > $outfile
+echo -e "CET1025 $1 $2 - ($snumber) $fname $lname \n" | tee -a $outfile
 echo $HOSTNAME >> $outfile
 return 0
 }
@@ -54,12 +55,14 @@ echo -n "Enter your last name: "
 read lname
 echo -n "Enter your Student number: "
 read snumber
+fname=`echo $fname | sed 's/ /_/g'`
+lname=`echo $lname | sed 's/ /_/g'`
 filename=$snumber-$1_$2_${fname:0:1}_$lname.txt
 tarfile=$snumber-$1_$2_${fname:0:1}_$lname.tar.gz
 outfile=/tmp/$filename
 
 echo -e "Work will be saved in $outfile \n"
-echo -e "CET1025 $1 $2 - ($snumber) $fname $lname \n" > $outfile
+echo -e "CET1025 $1 $2 - ($snumber) $fname $lname \n" | tee -a $outfile
 echo $HOSTNAME >> $outfile
 return 0
 }
