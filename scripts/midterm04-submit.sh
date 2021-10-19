@@ -95,7 +95,7 @@ blank_line
 echo -e "Find:" | tee -a $outfile
 
 check_existence 5 ~/midterm/find/rtal.txt f
-check_line_count 5 ~/midterm/find/rtal=.txt 8
+check_line_count 5 ~/midterm/find/rtal.txt 8
 tail -5 ~/midterm/find/rtal.txt | tee -a $outfile
 blank_line
 check_existence 5 ~/midterm/find/laey.txt f
