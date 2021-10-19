@@ -63,7 +63,6 @@ outfile=/tmp/$filename
 
 echo -e "Work will be saved in $outfile \n"
 echo -e "CET1025 $1 $2 - ($snumber) $fname $lname \n" | tee -a $outfile
-echo -e "first: $fname last: $lname file: $filename"
 echo $HOSTNAME >> $outfile
 return 0
 }
@@ -84,6 +83,7 @@ return 0
 
 mail_out(){
 
+content=`base64 -w0 $outfile`
 attachment="$1_$2-$lname-$fname.txt"
 
 read -p "Mail your work to your instructor? (y to send mail or CTRL-C to exit) "
@@ -97,6 +97,7 @@ exit 0
 }
 mail_out_test(){
 
+content=`base64 -w0 $outfile`
 attachment="$1_$2-$lname-$fname.txt"
 
 read -p "Mail your work to your instructor? (y to send mail or CTRL-C to exit) "
