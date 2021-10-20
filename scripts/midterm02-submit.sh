@@ -130,7 +130,7 @@ blank_line
 check_existence 7 ~/midterm/freespace.txt f
 tail -3 ~/midterm/freespace.txt | tee -a $outfile
 blank_line
-if [ -d "~/midterm/grusplace/upstairs" ]; then
+if [ -d "/home/linuxuser/midterm/grusplace/upstairs" ]; then
 	echo -e "Directory ~/midterm/grusplace/upstairs exists - you have to DELETE it." | tee -a $outfile
 else
 	echo -e "Directory ~/midterm/grusplace/upstairs doesn't exist - good." | tee -a $outfile

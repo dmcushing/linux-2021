@@ -129,7 +129,7 @@ blank_line
 check_existence 7 ~/midterm/freespace.txt f
 tail -3 ~/midterm/freespace.txt | tee -a $outfile
 blank_line
-if [ -d "~/midterm/helicarrier/below" ]; then
+if [ -d "/home/linuxuser/midterm/helicarrier/below" ]; then
 	echo -e "Directory ~/midterm/helicarrier/below exists - you have to DELETE it." | tee -a $outfile
 else
 	echo -e "Directory ~/midterm/helicarrier/below doesn't exist - good." | tee -a $outfile

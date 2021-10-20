@@ -90,7 +90,7 @@ check_owner 4 ~/midterm/earth/desert/timestone thanos
 check_group 4 ~/midterm/earth/desert/timestone madtitan
 check_permissions 4 ~/midterm/earth/desert/timestone -rw-r-----
 check_owner 4 ~/midterm/earth/desert thanos
-check_group 4 ~/midterm/earth/desert madtitan
+check_group 4 ~/midterm/earth/desert titan
 blank_line
 
 echo -e "Find:" | tee -a $outfile
@@ -130,7 +130,7 @@ blank_line
 check_existence 7 ~/midterm/freespace.txt f
 tail -3 ~/midterm/freespace.txt | tee -a $outfile
 blank_line
-if [ -d "~/midterm/earth/agamotto" ]; then
+if [ -d "/home/linuxuser/midterm/earth/agamotto" ]; then
 	echo -e "Directory ~/midterm/earth/agamotto exists - you have to DELETE it." | tee -a $outfile
 else
 	echo -e "Directory ~/midterm/earth/agamotto doesn't exist - good." | tee -a $outfile
