@@ -231,7 +231,7 @@ account_expiry)
 		if [ $convexpdate == $conv2expdate ]; then
 				echo -e "Question $1: $3: Correct account expiry date $4" | tee -a $outfile
 		else
-				echo -e "!! ERROR !! Question $1: $3: INCORRECT account expiry date." | tee -a $outfile
+				echo -e "!! ERROR !! Question $1: $3: INCORRECT account expiry date. Should be $4" | tee -a $outfile
 		fi
 	fi
 ;;
