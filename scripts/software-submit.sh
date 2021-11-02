@@ -76,7 +76,7 @@ blank_line
 
 # Question 4.3
 check_existence 4.3 ~/software/Hfiles.txt f
-tail -5 ~/Hfiles.txt | tee -a $outfile
+tail -5 ~/software/Hfiles.txt | tee -a $outfile
 blank_line
 
 # Question 4.4
