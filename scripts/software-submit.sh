@@ -1,5 +1,5 @@
 #!/bin/bash
-# Assignment 03 Software Installs
+# Software Packages
 
 source /scripts/functions.sh
 
@@ -7,7 +7,7 @@ source /scripts/functions.sh
 
 clear
 is_super_user
-student_info Assignment 03
+student_info Software Packages
 
 # Question 1.1
 package_check 1.1 joe
