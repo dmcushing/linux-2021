@@ -1,5 +1,5 @@
 #!/bin/bash
-# Quiz 02 - Tom Hanks
+# Quiz 05
 
 source /scripts/functions.sh
 
@@ -7,31 +7,74 @@ source /scripts/functions.sh
 
 clear
 is_super_user
-student_info Quiz 03 Postal Codes
-tree /home/linuxuser/Quiz | tee -a $outfile
+student_info Quiz 05 Users and Groups
+tree /home/linuxuser/Quiz05 | tee -a $outfile
 
-check_existence 1 /home/linuxuser/Quiz4/polysort1.txt f
-check_line_count 1 /home/linuxuser/Quiz4/polysort1.txt 20
-head -5 /home/linuxuser/Quiz4/polysort1.txt 2>/dev/null | tee -a $outfile
-blank_line
-check_existence 2 /home/linuxuser/Quiz4/polysort2.txt f
-check_line_count 2 /home/linuxuser/Quiz4/polysort2.txt 20
-head -5 /home/linuxuser/Quiz4/polysort2.txt 2>/dev/null| tee -a $outfile
-blank_line
-check_existence 3 /home/linuxuser/Quiz4/daemon.txt f
-head -5 /home/linuxuser/Quiz4/daemon.txt 2>/dev/null| tee -a $outfile
-blank_line
-check_existence 4 /home/linuxuser/Quiz4/etc.txt f
-head -5 /home/linuxuser/Quiz4/etc.txt 2>/dev/null| tee -a $outfile
-blank_line
-check_existence 5 /home/linuxuser/Quiz4/sda1.txt f
-head -5 /home/linuxuser/Quiz4/sda1.txt 2>/dev/null| tee -a $outfile
-blank_line
-check_existence 6 /home/linuxuser/Quiz4/reawords.txt f
-check_line_count 6 /home/linuxuser/Quiz4/reawords.txt 4
-head -5 /home/linuxuser/Quiz4/reawords.txt 2>/dev/null | tee -a $outfile
-blank_line
-check_existence 7 /home/linuxuser/quiz4.tar.gz f
-tar -tzvf /home/linuxuser/quiz4.tar.gz 2>/dev/null | tee -a $outfile
+echo -e "Users:" | tee -a $outfile
+USERID=("roy" "moss" "jen")
 
-mail_out Archiving_and_Stuff Quiz4
+for USERID in ${USERID[*]}
+do
+	entity_exists 1 $USERID passwd
+done
+blank_line
+
+echo -e "Groups:" | tee -a $outfile
+GROUPID=("IT" "countdown" "management")
+
+for GROUPID in ${GROUPID[*]}
+do
+	entity_exists 1 $GROUPID group
+done
+blank_line
+
+echo -e "Users in Correct Groups:" | tee -a $outfile
+user_param 1 user_in_group roy IT
+user_param 1 user_in_group moss IT
+user_param 1 user_in_group jen IT
+user_param 1 user_in_group moss countdown
+user_param 1 user_in_group jen management
+blank_line
+
+echo -e "Comments:" | tee -a $outfile
+user_param 1 comment roy "Roy Trenneman"
+user_param 1 comment moss "Maurice Moss"
+user_param 1 comment jen "Jen Barber"
+blank_line
+echo -e "Shell:" | tee -a $outfile
+
+user_param 1 shell roy "/bin/bash"
+user_param 1 shell moss "/bin/bash"
+user_param 1 shell jen "/bin/bash"
+blank_line
+
+echo -e "Expiry Dates:" | tee -a $outfile
+user_param 1 account_expiry jen 2013-06-05
+blank_line
+
+echo -e "Home Directories:" | tee -a $outfile
+
+DIRECTORY=("/home/roy" "/home/moss" "/home/jen")
+for DIRECTORY in ${DIRECTORY[*]}
+do
+	check_existence 1 $DIRECTORY d
+done
+blank_line
+
+check_existence 1 /home/linuxuser/Quiz5/mimesort.txt f
+check_line_count 1 /home/linuxuser/Quiz4/mimesort.txt 72
+tail -5 /home/linuxuser/Quiz5/mimesort.txt 2>/dev/null | tee -a $outfile
+blank_line
+
+check_owner 2 /home/linuxuser/Quiz5/basement/IT roy
+check_group 2 /home/linuxuser/Quiz5/basement/IT IT
+check_owner 2 /home/linuxuser/Quiz5/basement/office jen
+check_group 2 /home/linuxuser/Quiz5/basement/office management
+check_permissions 2 /home/linuxuser/Quiz5/basement/IT drwxr-x---
+blank_line
+
+check_existence 3 /home/linuxuser/quiz5.tar.bz2 f
+file /home/linuxuser/quiz5.tar.bz2 2>/dev/null | tee -a $outfile
+tar -tjvf /home/linuxuser/quiz4.tar.gz 2>/dev/null | tee -a $outfile
+
+mail_out Users_and_Groups Quiz5

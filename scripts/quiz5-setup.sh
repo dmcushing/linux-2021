@@ -4,9 +4,9 @@ source /scripts/functions.sh
 clear
 is_super_user
 echo -e "Setting up..."
-rm -Rf /home/linuxuser/Quiz5
-mkdir /home/linuxuser/Quiz5
-mkdir -p /home/linuxuser/Quiz5/basement/IT
-mkdir -p /home/linuxuser/Quiz5/basement/office
-chown linuxuser:linuxuser /home/linuxuser/Quiz5
+rm -Rf /home/linuxuser/Quiz05
+mkdir /home/linuxuser/Quiz05
+mkdir -p /home/linuxuser/Quiz05/basement/IT
+mkdir -p /home/linuxuser/Quiz05/basement/office
+chown linuxuser:linuxuser /home/linuxuser/Quiz05
 echo -e "Done setting up."
