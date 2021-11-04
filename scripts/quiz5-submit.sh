@@ -75,6 +75,6 @@ blank_line
 
 check_existence 3 /home/linuxuser/quiz5.tar.bz2 f
 file /home/linuxuser/quiz5.tar.bz2 2>/dev/null | tee -a $outfile
-tar -tjvf /home/linuxuser/quiz5.tar.gz 2>/dev/null | tee -a $outfile
+tar -tjvf /home/linuxuser/quiz5.tar.bz2 2>/dev/null | tee -a $outfile
 
 mail_out Users_and_Groups Quiz5
