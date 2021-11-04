@@ -61,20 +61,20 @@ do
 done
 blank_line
 
-check_existence 1 /home/linuxuser/Quiz5/mimesort.txt f
-check_line_count 1 /home/linuxuser/Quiz4/mimesort.txt 72
-tail -5 /home/linuxuser/Quiz5/mimesort.txt 2>/dev/null | tee -a $outfile
+check_existence 1 /home/linuxuser/Quiz05/mimesort.txt f
+check_line_count 1 /home/linuxuser/Quiz05/mimesort.txt 72
+tail -5 /home/linuxuser/Quiz05/mimesort.txt 2>/dev/null | tee -a $outfile
 blank_line
 
-check_owner 2 /home/linuxuser/Quiz5/basement/IT roy
-check_group 2 /home/linuxuser/Quiz5/basement/IT IT
-check_owner 2 /home/linuxuser/Quiz5/basement/office jen
-check_group 2 /home/linuxuser/Quiz5/basement/office management
-check_permissions 2 /home/linuxuser/Quiz5/basement/IT drwxr-x---
+check_owner 2 /home/linuxuser/Quiz05/basement/IT roy
+check_group 2 /home/linuxuser/Quiz05/basement/IT IT
+check_owner 2 /home/linuxuser/Quiz05/basement/office jen
+check_group 2 /home/linuxuser/Quiz05/basement/office management
+check_permissions 2 /home/linuxuser/Quiz05/basement/IT drwxr-x---
 blank_line
 
 check_existence 3 /home/linuxuser/quiz5.tar.bz2 f
 file /home/linuxuser/quiz5.tar.bz2 2>/dev/null | tee -a $outfile
-tar -tjvf /home/linuxuser/quiz4.tar.gz 2>/dev/null | tee -a $outfile
+tar -tjvf /home/linuxuser/quiz5.tar.gz 2>/dev/null | tee -a $outfile
 
 mail_out Users_and_Groups Quiz5
