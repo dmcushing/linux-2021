@@ -1,0 +1,7 @@
+[Unit]
+Description = Time to Get Coffee!
+After = network.target
+[Service]
+ExecStart = /usr/local/sbin/coffeed.sh
+[Install]
+WantedBy = multi-user.target

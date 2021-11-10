@@ -62,8 +62,8 @@ tarfile=$snumber-$1_$2_${fname:0:1}_$lname.tar.gz
 outfile=/tmp/$filename
 
 echo -e "Work will be saved in $outfile \n"
+echo $HOSTNAME > $outfile
 echo -e "CET1025 $1 $2 - ($snumber) $fname $lname \n" | tee -a $outfile
-echo $HOSTNAME >> $outfile
 return 0
 }
 
