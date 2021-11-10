@@ -14,4 +14,4 @@ echo -e "/dev/sdd2 mounted read-only:" | tee -a $outfile
 mount | grep "sdd2" | tee -a $outfile
 blank_line
 # Submit the work
-mail_out Filesystes_and_Mountpoints
+mail_out Filesystems_and_Mountpoints
