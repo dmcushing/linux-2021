@@ -2,7 +2,7 @@
 source /scripts/functions.sh
 clear
 is_super_user
-student_info Filesystes_and_Mountpoints
+student_info Filesystems_and_Mountpoints
 
 #
 # Check mounts and fstab
