@@ -11,6 +11,6 @@ echo -e "Partitions/Filesystems/Mountpoints" | tee -a $outfile
 lsblk -l -o NAME,SIZE,FSTYPE,MOUNTPOINT /dev/sdd /dev/sde | tee -a $outfile
 blank_line
 echo -e "/dev/sdd2 mounted read-only:" | tee -a $outfile
-mount | grep "sdd2" | tee -a $outfile 2>/dev/null
+mount | grep "sdd2" | tee -a $outfile
 # Submit the work
 mail_out Filesystes_and_Mountpoints
