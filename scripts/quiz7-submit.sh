@@ -9,10 +9,10 @@ clear
 is_super_user
 student_info File System Quiz
 
-tree ~/Quiz07
+tree ~/Quiz07 | tee -a $outfile
 blank_line
 
-lsblk -l -o NAME,SIZE,RO,FSTYPE,MOUNTPOINT /dev/sdb
+lsblk -l -o NAME,SIZE,RO,FSTYPE,MOUNTPOINT /dev/sdb | tee -a $outfile
 blank_line
 
 entity_exists 4 quiz7 passwd
