@@ -12,7 +12,7 @@ student_info File System Quiz
 tree ~/Quiz07
 blank_line
 
-lsblk -l -o NAME,SIZE,RO,FSTYPE,MOUNTPOINT /dev/sdb1
+lsblk -l -o NAME,SIZE,RO,FSTYPE,MOUNTPOINT /dev/sdb
 blank_line
 
 entity_exists 4 quiz7 passwd
@@ -24,7 +24,7 @@ blank_line
 package_check 5 fortune
 blank_line
 
-check_existence 6 ~/quiz7.tar.gz f
+check_existence 6 ~/Quiz07/YaBa.tar.gz f
 tar tzvf ~/Quiz07/YaBa.tar.gz | nl 2</dev/null | tee -a $outfile
 blank_line
 
