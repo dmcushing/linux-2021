@@ -19,8 +19,6 @@ student_info Core Services Lab
    cat /usr/bin/testservice.sh | tee -a $outfile
    blank_line
    cat /etc/xinetd.d/telnet | tee -a $outfile
-   blank_line
-   grep -w "telnet" /etc/services | tee -a $outfile
 
 # Submit the work
 mail_out Core Services Lab
