@@ -10,8 +10,10 @@ student_info Core Services Lab
 #
    echo -e "The xinetd service is `systemctl is-enabled xinetd.service 2</dev/null`" | tee -a $outfile
    blank_line
-   nc -z -vv localhost 2323 | tee -a $outfile
-   nc -z -vv localhost 5900 | tee -a $outfile
+   nc -z -vv localhost 2323
+   nc -z -vv localhost 5900
+   nc -z -vv localhost 2323 >> $outfile 2>&1
+   nc -z -vv localhost 5900 >> $outfile 2>&1
    blank_line
    echo -e "Configuration Files" | tee -a $outfile
    cat /etc/xinetd.d/testservice | tee -a $outfile
