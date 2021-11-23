@@ -3,15 +3,15 @@ source /scripts/functions.sh
 
 clear
 is_super_user
-student_info Lab 04
+student_info Core Services Lab
 
 #
 # Do the services exist?
 #
-   echo -e "Services enabled" | tee -a $outfile
+   echo -e "The xinetd services is `systemctl is-enabled xinetd`" | tee -a $outfile
    blank_line
-   sudo systemctl is-enabled xinetd | tee -a $outfile
-   netstat -natu | grep ":5900\|:2323\|:23 " | tee -a $outfile
+   nc -zv localhost 2323 | tee -a $outfile
+   nc -zv localhost 5900 | tee -a $outfile
    blank_line
    echo -e "Configuration Files" | tee -a $outfile
    cat /etc/xinetd.d/testservice | tee -a $outfile
@@ -23,4 +23,4 @@ student_info Lab 04
    grep -w "telnet" /etc/services | tee -a $outfile
 
 # Submit the work
-mail_out Lab 04
+mail_out Core Services Lab
