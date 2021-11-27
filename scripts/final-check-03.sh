@@ -29,20 +29,20 @@ user_param 1 user_in_group morpheus redpill
 user_param 1 user_in_group morpheus ship
 blank_line
 entity_exists 1 trinity passwd
-user_param 1 comment penny "Carrie-Ann Moss"
+user_param 1 comment trinity "Carrie-Ann Moss"
 user_param 1 user_in_group trinity ship
 user_param 1 user_in_group trinity matrix
-user_param 1 account_expiry penny 2125-01-01
+user_param 1 account_expiry trinity 2125-01-01
 blank_line
 entity_exists 1 smith passwd
-user_param 1 comment penny "Hugo Weaving"
+user_param 1 comment smith "Hugo Weaving"
 user_param 1 user_in_group smith construct
 user_param 1 account_expiry smith 2125-01-01
 blank_line
 entity_exists 1 oracle passwd
-user_param 1 comment penny "Gloria Foster"
-user_param 1 user_in_group smith construct
-user_param 1 account_expiry smith 2125-01-01
+user_param 1 comment oracle "Gloria Foster"
+user_param 1 user_in_group oracle construct
+user_param 1 account_expiry oracle 2125-01-01
 blank_line
 
 check_existence 2 ~/Matrix d
