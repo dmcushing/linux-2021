@@ -20,110 +20,104 @@ user_param 1 comment sheldon "Sheldon Cooper"
 user_param 1 user_in_group sheldon apartment
 user_param 1 user_in_group sheldon physics
 user_param 1 user_in_group sheldon caltech
-user_param 1 pass_exists sheldon
 blank_line
 entity_exists 1 leonard passwd
 user_param 1 comment leonard "Leonard Hofstadter"
 user_param 1 user_in_group leonard apartment
 user_param 1 user_in_group leonard physics
 user_param 1 user_in_group leonard caltech
-user_param 1 pass_exists leonard
 blank_line
 entity_exists 1 penny passwd
 user_param 1 comment penny "Penny"
 user_param 1 user_in_group penny apartment
 user_param 1 account_expiry penny 2025-01-01
-user_param 1 pass_exists penny
 blank_line
 entity_exists 1 howard passwd
 user_param 1 comment howard "Howard Wolowitz"
 user_param 1 user_in_group howard caltech
 user_param 1 account_expiry howard 2025-01-01
-user_param 1 pass_exists howard
 blank_line
 entity_exists 1 raj passwd
 user_param 1 comment raj "Rajesh Koothrappali"
 user_param 1 user_in_group raj caltech
 user_param 1 account_expiry raj 2025-01-01
-user_param 1 pass_exists raj
 blank_line
 
-check_existence 2 /home/BigBang d
-check_existence 2 /home/BigBang/Apartment d
-check_existence 2 /home/BigBang/University d
-check_existence 2 /home/BigBang/University/PhysicsLab d
-check_existence 2 /home/BigBang/University/BarryKripke f
-check_existence 2 /home/BigBang/ComicBookStore d
-check_existence 2 /home/BigBang/ComicBookStore/CaptainSweatpants f
-check_existence 2 /home/BigBang/ComicBookStore/StuartsApartment d
+check_existence 2 ~/BigBang d
+check_existence 2 ~/BigBang/Apartment d
+check_existence 2 ~/BigBang/University d
+check_existence 2 ~/BigBang/University/PhysicsLab d
+check_existence 2 ~/BigBang/ComicBookStore d
+check_existence 2 ~/BigBang/ComicBookStore/StuartsApartment d
+check_existence 2 /media/BigBang-sdb1
+check_existence 2 /media/BigBang-sdb2
+check_existence 2 /media/BigBang-lv_final
+blank_line
+
+check_existence 2 ~/BigBang/ComicBookStore/CaptainSweatpants f
+check_existence 2 ~/BigBang/University/BarryKripke f
 blank_line
 
 check_existence 3 /dev/sdb1 b
 check_part 3 is_mounted /dev/sdb1
-check_part 3 mount_point /home/BigBang/Apartment /dev/sdb1
+check_part 3 mount_point /media/BigBang-sdb1 /dev/sdb1
 check_part 3 fs_type /dev/sdb1 vfat
 blank_line
 
 check_existence 3 /dev/sdb2 b
 check_part 3 is_mounted /dev/sdb2
-check_part 3 mount_point /home/BigBang/ComicBookStore/StuartsApartment /dev/sdb2
+check_part 3 mount_point /media/BigBang-sdb2 /dev/sdb2
 check_part 3 fs_type /dev/sdb2 ext4
 blank_line
 
 check_existence 3 /dev/vg_final/lv_final b
 check_part 3 is_mounted /dev/mapper/vg_final-lv_final
-check_part 3 mount_mount /home/BigBang/University/PhysicsLab
+check_part 3 mount_mount /media/BigBang-lv_final
 check_part 3 fs_type /dev/mapper/vg_final-lv_final ext4
-
-check_part 4 in_fstab /dev/sdb1
-check_part 4 in_fstab /dev/sdb2
-check_part 4 in_fstab /dev/vg_final/lv_final
+blank_line
+lsblk -l -o NAME,SIZE,FSTYPE,MOUNTPOINT /dev/sdb1 /dev/sdb2 /dev/vg_final/lv_final
 blank_line
 
-check_owner 5 /home/BigBang root
-check_group 5 /home/BigBang root
-check_permissions 5 /home/BigBang drwxrwxrwx
-check_owner 5 /home/BigBang/University/PhysicsLab sheldon
-check_group 5 /home/BigBang/University/PhysicsLab physics
-check_permissions 5 /home/BigBang/University/PhysicsLab drwxrwx---
-check_owner 5 /home/BigBang/University root
-check_group 5 /home/BigBang/University caltech
-check_permissions 5 /home/BigBang/University drwxrwxr-x
-check_owner 5 /home/BigBang/ComicBookStore root
-check_group 5 /home/BigBang/ComicBookStore apartment
-check_permissions 5 /home/BigBang/ComicBookStore dr-xr-x---
-check_owner 5 /home/BigBang/University/BarryKripke root
-check_group 5 /home/BigBang/University/BarryKripke caltech
-check_permissions 5 /home/BigBang/University/BarryKripke -r--r-----
+check_owner 5 ~/BigBang linuxuser
+check_group 5 ~/BigBang linuxuser
+check_permissions 5 ~/BigBang drwxrwxrwx
+check_owner 5 ~/BigBang/University/PhysicsLab sheldon
+check_group 5 ~/BigBang/University/PhysicsLab physics
+check_permissions 5 ~/BigBang/University/PhysicsLab drwxrwx---
+check_owner 5 ~/BigBang/University linuxuser
+check_group 5 ~/BigBang/University caltech
+check_permissions 5 ~/BigBang/University drwxrwxr-x
+check_owner 5 ~/BigBang/ComicBookStore linuxuser
+check_group 5 ~/BigBang/ComicBookStore apartment
+check_permissions 5 ~/BigBang/ComicBookStore dr-xr-x---
+check_owner 5 ~/BigBang/University/BarryKripke linuxuser
+check_group 5 ~/BigBang/University/BarryKripke caltech
+check_permissions 5 ~/BigBang/University/BarryKripke -r--r-----
 blank_line
 
 echo -e "Find Command Files:" | tee -a $outfile
-check_existence 6 /home/BigBang/Bangkok f
-check_existence 6 /home/BigBang/Bangui f
-ls -l /home/BigBang/Bang* | tee -a $outfile
+ls -l ~/BigBang/Bang* | tee -a $outfile
 blank_line
-echo -e "Find Command contents of /home/BigBang/bang.txt" | tee -a $outfile
-check_existence 6 /home/BigBang/bang.txt f
-tail -5 /home/BigBang/bang.txt | tee -a $outfile
+echo -e "Find Command contents of ~/BigBang/BLaong.txt" | tee -a $outfile
+check_existence 6 ~/BigBang/BLaong.txt f
+check_line_count 6 ~/BigBang/BLaong.txt 3
+tail -5 ~/BigBang/BLaong.txt | tee -a $outfile
 blank_line
-echo -e "Grep:" | tee -a $outfile
-check_existence 7 /home/BigBang/host.txt f
-tail -5 /home/BigBang/host.txt | tee -a $outfile
 
-check_existence 8 /tmp/BigBang.tar.gz f
-tar -tzvf /tmp/BigBang.tar.gz | tail -5 | tee -a $outfile
+echo -e "Grep:" | tee -a $outfile
+check_existence 7 ~/BigBang/big-bang.txt f
+check_line_count 7 ~/BigBang/big-bang.txt 33
+tail -5 ~/BigBang/big-bang.txt | tee -a $outfile
+
+check_existence 8 ~/BigBang.tar.gz f
+file ~/BigBang.tar.gz 2>/dev/null | tee -a $outfile
+tar -tzvf ~/BigBang.tar.gz 2> /dev/null | tail -5 | tee -a $outfile
 blank_line
 
 echo -e "cron jobs:" | tee -a $outfile
-crontab -l | tee -a $outfile
+crontab -l | tail -5 |  tee -a $outfile
 blank_line
 
-echo -e "/proc - is net.ipv4.ip_default_ttl = 32?" | tee -a $outfile
-sysctl net.ipv4.ip_default_ttl | tee -a $outfile
-blank_line
-echo -e "Is there an entry in the correct file?" | tee -a $outfile
-grep 'net.ipv4.ip_default_ttl' /etc/sysctl.conf | tee -a $outfile
-blank_line
 package_check 10 moon-buggy
 dpkg --list moon-buggy | tee -a $outfile
 package_check 10 nmap
