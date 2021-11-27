@@ -11,8 +11,8 @@ student_info_midterm Final Exam
 
 # Question 1
 
-entity_exists 1 matrix group
-entity_exists 1 redpill group
+entity_exists 1 group matrix
+entity_exists 1 group redpill
 entity_exists 1 group ship
 entity_exists 1 group construct
 blank_line
