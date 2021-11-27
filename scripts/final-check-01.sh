@@ -49,9 +49,9 @@ check_existence 2 ~/BigBang/University d
 check_existence 2 ~/BigBang/University/PhysicsLab d
 check_existence 2 ~/BigBang/ComicBookStore d
 check_existence 2 ~/BigBang/ComicBookStore/StuartsApartment d
-check_existence 2 /media/BigBang-sdb1
-check_existence 2 /media/BigBang-sdb2
-check_existence 2 /media/BigBang-lv_final
+check_existence 2 /media/BigBang-sdb1 d
+check_existence 2 /media/BigBang-sdb2 d
+check_existence 2 /media/BigBang-lv_final d
 blank_line
 
 check_existence 2 ~/BigBang/ComicBookStore/CaptainSweatpants f
@@ -108,6 +108,7 @@ echo -e "Grep:" | tee -a $outfile
 check_existence 7 ~/BigBang/big-bang.txt f
 check_line_count 7 ~/BigBang/big-bang.txt 33
 tail -5 ~/BigBang/big-bang.txt | tee -a $outfile
+blank_line
 
 check_existence 8 ~/BigBang.tar.gz f
 file ~/BigBang.tar.gz 2>/dev/null | tee -a $outfile
@@ -120,6 +121,7 @@ blank_line
 
 package_check 10 moon-buggy
 dpkg --list moon-buggy | tee -a $outfile
+blank_line
 package_check 10 nmap
 blank_line
 mail_out_test Final Exam
