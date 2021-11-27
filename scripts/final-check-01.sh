@@ -75,7 +75,8 @@ check_part 3 is_mounted /dev/mapper/vg_final-lv_final
 check_part 3 mount_mount /media/BigBang-lv_final
 check_part 3 fs_type /dev/mapper/vg_final-lv_final ext4
 blank_line
-lsblk -l -o NAME,SIZE,FSTYPE,MOUNTPOINT /dev/sdb1 /dev/sdb2 /dev/vg_final/lv_final
+
+lsblk -l -o NAME,SIZE,FSTYPE,MOUNTPOINT /dev/sdb1 /dev/sdb2 /dev/vg_final/lv_final | tee -a $outfile
 blank_line
 
 check_owner 5 ~/BigBang linuxuser
@@ -124,4 +125,4 @@ dpkg --list moon-buggy | tee -a $outfile
 blank_line
 package_check 10 nmap
 blank_line
-mail_out_test Final Exam
+mail_out_test 01 Final Exam
