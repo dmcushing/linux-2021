@@ -7,6 +7,7 @@ echo -e "Setting up..."
 apt -y install xinetd telnet telnetd fortune 2>&1>/dev/null
 rm -Rf /home/linuxuser/Quiz08
 mkdir /home/linuxuser/Quiz08
+mkdir /etc/xinetd.d 2>&1>/dev/null
 chown linuxuser:linuxuser /home/linuxuser/Quiz08
 chmod 775 /home/linuxuser/Quiz08
 cp -f /scripts/fortune /etc/xinetd.d/
