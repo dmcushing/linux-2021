@@ -8,4 +8,4 @@ blank_line
 crontab -u root -l
 blank_line
 
-mail_out_test cron Quiz
+mail_out cron Quiz
