@@ -73,10 +73,10 @@ check_part 3 fs_type /dev/sdb2 ext4
 mount | grep 'sdb2' | tee -a $outfile
 blank_line
 
-check_existence 3 /dev/vg_StarWars/lv_deathstar b
-check_part 3 is_mounted /dev/mapper/vg_StarWars-lv_deathstar
-check_part 3 mount_mount /media/StarWars-lv_deathstar
-check_part 3 fs_type /dev/mapper/vg_StarWars-lv_deathstar ext4
+check_existence 3 /dev/vg_starwars/lv_deathstar b
+check_part 3 is_mounted /dev/mapper/vg_starwars-lv_deathstar
+check_part 3 mount_mount /media/starwars-lv_deathstar
+check_part 3 fs_type /dev/mapper/vg_starwars-lv_deathstar ext4
 blank_line
 
 lsblk -l -o NAME,SIZE,FSTYPE,MOUNTPOINT /dev/sdb1 /dev/sdb2 /dev/vg_StarWars/lv_StarWars | tee -a $outfile
