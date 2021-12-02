@@ -24,7 +24,7 @@ user_param 1 user_in_group luke speeder
 user_param 1 user_in_group luke rebel
 blank_line
 entity_exists 1 han passwd
-user_param 1 comment han "Harrison Ford"
+# user_param 1 comment han "Harrison Ford"
 user_param 1 user_in_group han falcon
 user_param 1 user_in_group han speeder
 user_param 1 user_in_group han rebel
