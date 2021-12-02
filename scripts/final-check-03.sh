@@ -70,6 +70,7 @@ check_existence 3 /dev/sdb2 b
 check_part 3 is_mounted /dev/sdb2
 check_part 3 mount_point /media/Matrix-sdb2 /dev/sdb2
 check_part 3 fs_type /dev/sdb2 ext4
+mount | grep 'sdb2' | tee -a $outfile
 blank_line
 
 check_existence 3 /dev/vg_matrix/lv_matrix b
