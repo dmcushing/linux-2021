@@ -27,7 +27,7 @@ entity_exists 1 han passwd
 user_param 1 comment han "Harrison Ford"
 user_param 1 user_in_group han falcon
 user_param 1 user_in_group han speeder
-user_param 1 user_in_group han ship
+user_param 1 user_in_group han rebel
 blank_line
 entity_exists 1 leia passwd
 user_param 1 comment leia "Carrie Fisher"
@@ -79,7 +79,7 @@ check_part 3 mount_mount /media/starwars-lv_deathstar
 check_part 3 fs_type /dev/mapper/vg_starwars-lv_deathstar ext4
 blank_line
 
-lsblk -l -o NAME,SIZE,FSTYPE,MOUNTPOINT /dev/sdb1 /dev/sdb2 /dev/vg_starwars/lv_starwars | tee -a $outfile
+lsblk -l -o NAME,SIZE,FSTYPE,MOUNTPOINT /dev/sdb1 /dev/sdb2 /dev/vg_starwars/lv_deathstar | tee -a $outfile
 blank_line
 
 check_owner 5 ~/StarWars linuxuser
