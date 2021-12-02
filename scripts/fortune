@@ -1,5 +1,6 @@
 service fortune
 {
+disabled = yes
 port = !!CHANGEME!!
 socket_type = stream
 protocol = tcp
