@@ -7,7 +7,7 @@ source /scripts/functions.sh
 
 clear
 is_super_user
-student_info Final Exam
+student_info_midterm Final Exam
 
 # Question 1
 
@@ -48,9 +48,9 @@ check_existence 2 ~/StarTrek/Engineering d
 check_existence 2 ~/StarTrek/Engineering/WarpCore d
 check_existence 2 ~/StarTrek/SickBay d
 check_existence 2 ~/StarTrek/SickBay/Quarantine d
-check_existence 2 /media/StarTrek-sdb1
-check_existence 2 /media/StarTrek-sdb2
-check_existence 2 /media/StarTrek-lv_StarTrek
+check_existence 2 /media/StarTrek-sdb1 d
+check_existence 2 /media/StarTrek-sdb2 d
+check_existence 2 /media/StarTrek-lv_StarTrek d
 check_existence 2 ~/StarTrek/Engineering/Phaser f
 check_existence 2 ~/StarTrek/SickBay/Tricorder f
 blank_line
@@ -69,9 +69,9 @@ mount | grep 'sdb2' | tee -a $outfile
 blank_line
 
 check_existence 3 /dev/vg_StarTrek/lv_StarTrek b
-check_part 3 is_mounted /dev/mapper/vg_StarTrek/lv_StarTrek
+check_part 3 is_mounted /dev/mapper/vg_StarTrek-lv_StarTrek
 check_part 3 mount_mount /media/StarTrek-lv_StarTrek
-check_part 3 fs_type /dev/mapper/vg_StarTrek/lv_StarTrek ext3
+check_part 3 fs_type /dev/mapper/vg_StarTrek-lv_StarTrek ext3
 blank_line
 
 lsblk -l -o NAME,SIZE,FSTYPE,MOUNTPOINT /dev/sdb1 /dev/sdb2 /dev/vg_StarTrek/lv_StarTrek | tee -a $outfile
