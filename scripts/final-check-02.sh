@@ -11,121 +11,116 @@ student_info Final Exam
 
 # Question 1
 
-entity_exists 1 university group
-entity_exists 1 apartment group
-entity_exists 1 physics group
+entity_exists 1 bridge group
+entity_exists 1 command group
+entity_exists 1 engineering group
+entity_exists 1 sickbay group
 blank_line
-entity_exists 1 sheldon passwd
-user_param 1 comment sheldon "Sheldon Cooper"
-user_param 1 user_in_group sheldon apartment
-user_param 1 user_in_group sheldon physics
-user_param 1 user_in_group sheldon university
-user_param 1 pass_exists sheldon
+entity_exists 1 kirk passwd
+user_param 1 comment kirk "William Shatner"
+user_param 1 user_in_group kirk bridge
+user_param 1 user_in_group kirk command
 blank_line
-entity_exists 1 leonard passwd
-user_param 1 comment leonard "Leonard Hofstadter"
-user_param 1 user_in_group leonard apartment
-user_param 1 user_in_group leonard physics
-user_param 1 user_in_group leonard university
-user_param 1 pass_exists leonard
+entity_exists 1 spock passwd
+user_param 1 comment spock "Leonard Nimoy"
+user_param 1 user_in_group spock bridge
+user_param 1 user_in_group spock command
 blank_line
-entity_exists 1 penny passwd
-user_param 1 comment penny "Penny"
-user_param 1 user_in_group penny apartment
-user_param 1 account_expiry penny 2025-03-01
-user_param 1 pass_exists penny
+entity_exists 1 mccoy passwd
+user_param 1 comment mccoy "DeForest Kelley"
+user_param 1 user_in_group mccoy sickbay
+user_param 1 account_expiry mccoy 2063-06-01
 blank_line
-entity_exists 1 bernadette passwd
-user_param 1 comment bernadette "Bernadette"
-user_param 1 user_in_group bernadette university
-user_param 1 account_expiry bernadette 2025-03-02
-user_param 1 pass_exists bernadette
+entity_exists 1 uhura passwd
+user_param 1 comment uhura "Nichelle Nichols"
+user_param 1 user_in_group uhura bridge
+user_param 1 account_expiry uhura 2063-06-01
 blank_line
-entity_exists 1 amy passwd
-user_param 1 comment amy "Amy Farrah Fowler"
-user_param 1 user_in_group amy university
-user_param 1 account_expiry amy 2025-03-03
-user_param 1 pass_exists amy
+entity_exists 1 scotty passwd
+user_param 1 comment scotty "James Doohan"
+user_param 1 user_in_group scotty engineering
+user_param 1 account_expiry scotty 2063-06-01
 blank_line
 
-check_existence 2 /home/BigBang d
-check_existence 2 /home/BigBang/Apartment d
-check_existence 2 /home/BigBang/University d
-check_existence 2 /home/BigBang/University/Kripke f
-check_existence 2 /home/BigBang/ComicBookStore d
-check_existence 2 /home/BigBang/ComicBookStore/WilWheaton f
-check_existence 2 /home/BigBang/ComicBookStore/TheCounter d
+check_existence 2 ~/StarTrek d
+check_existence 2 ~/StarTrek/Bridge d
+check_existence 2 ~/StarTrek/Engineering d
+check_existence 2 ~/StarTrek/Engineering/WarpCore d
+check_existence 2 ~/StarTrek/SickBay d
+check_existence 2 ~/StarTrek/SickBay/Quarantine d
+check_existence 2 /media/StarTrek-sdb1
+check_existence 2 /media/StarTrek-sdb2
+check_existence 2 /media/StarTrek-lv_StarTrek
+check_existence 2 ~/StarTrek/Engineering/Phaser f
+check_existence 2 ~/StarTrek/SickBay/Tricorder f
 blank_line
 
-check_existence 3 /dev/sdd1 b
-check_part 3 part_size /dev/sdd1 1044193
-check_part 3 is_mounted /dev/sdd1
-check_part 3 mount_point /home/BigBang/Apartment /dev/sdd1
-check_part 3 fs_type /dev/sdd1 ext3
+check_existence 3 /dev/sdb1 b
+check_part 3 is_mounted /dev/sdb1
+check_part 3 mount_point /media/StarTrek-sdb1 /dev/sdb1
+check_part 3 fs_type /dev/sdb1 ext3
 blank_line
 
-check_existence 3 /dev/sde1 b
-check_part 3 part_size /dev/sde1 1044193
-check_part 3 is_mounted /dev/sde1
-check_part 3 mount_point /home/BigBang/ComicBookStore/TheCounter /dev/sde1
-check_part 3 fs_type /dev/sde1 fuseblk
+check_existence 3 /dev/sdb2 b
+check_part 3 is_mounted /dev/sdb2
+check_part 3 mount_point /media/StarTrek-sdb2 /dev/sdb2
+check_part 3 fs_type /dev/sdb2 ext4
+mount | grep 'sdb2' | tee -a $outfile
 blank_line
 
-check_part 4 in_fstab /dev/sdd1
-check_part 4 in_fstab /dev/sde1
+check_existence 3 /dev/vg_StarTrek/lv_StarTrek b
+check_part 3 is_mounted /dev/mapper/vg_StarTrek/lv_StarTrek
+check_part 3 mount_mount /media/StarTrek-lv_StarTrek
+check_part 3 fs_type /dev/mapper/vg_StarTrek/lv_StarTrek ext3
 blank_line
 
-check_owner 5 /home/BigBang root
-check_group 5 /home/BigBang root
-check_permissions 5 /home/BigBang drwxrwxrwx
-check_owner 5 /home/BigBang/Apartment sheldon
-check_group 5 /home/BigBang/Apartment apartment
-check_permissions 5 /home/BigBang/Apartment drwxrwx---
-check_owner 5 /home/BigBang/University root
-check_group 5 /home/BigBang/University university
-check_permissions 5 /home/BigBang/University drwxrwxr-x
-check_owner 5 /home/BigBang/ComicBookStore root
-check_group 5 /home/BigBang/ComicBookStore university
-check_permissions 5 /home/BigBang/ComicBookStore dr-xr-x---
-check_owner 5 /home/BigBang/University/Kripke root
-check_group 5 /home/BigBang/University/Kripke university
-check_permissions 5 /home/BigBang/University/Kripke -rw-r-----
+lsblk -l -o NAME,SIZE,FSTYPE,MOUNTPOINT /dev/sdb1 /dev/sdb2 /dev/vg_StarTrek/lv_StarTrek | tee -a $outfile
+blank_line
+
+check_owner 5 ~/StarTrek linuxuser
+check_group 5 ~/StarTrek linuxuser
+check_permissions 5 ~/StarTrek drwxrwxrwx
+check_owner 5 ~/StarTrek/Bridge kirk
+check_group 5 ~/StarTrek/Bridge command
+check_permissions 5 ~/StarTrek/Bridge drwxrwx---
+check_owner 5 ~/StarTrek/SickBay mccoy
+check_group 5 ~/StarTrek/SickBay sickbay
+check_permissions 5 ~/StarTrek/SickBay drwxrwxr-x
+check_owner 5 ~/StarTrek/Engineering scotty
+check_group 5 ~/StarTrek/Engineering engineering
+check_permissions 5 ~/StarTrek/Engineering dr-xr-x---
+check_owner 5 ~/StarTrek/Engineering/Phaser scotty
+check_group 5 ~/StarTrek/Engineering/Phaser command
+check_permissions 5 ~/StarTrek/Engineering/Phaser -r--r-----
 blank_line
 
 echo -e "Find Command Files:" | tee -a $outfile
-ls -l /home/BigBang/BIG* | tee -a $outfile
+ls -l ~/StarTrek/warp* | tee -a $outfile
 blank_line
-echo -e "Find Command contents of /home/BigBang/bang.txt" | tee -a $outfile
-cat /home/BigBang/big.txt | tee -a $outfile
-blank_line
-
-echo -e "Contents of /home/BigBang/kernel.txt" | tee -a $outfile
-cat /home/BigBang/kernel.txt | nl | tee -a $outfile
+echo -e "Find Command contents of ~/StarTrek/STart.txt" | tee -a $outfile
+check_existence 6 ~/StarTrek/STart.txt f
+check_line_count 6 ~/StarTrek/STart.txt 3
+tail -5 ~/StarTrek/STart.txt | tee -a $outfile
 blank_line
 
-check_existence 8 /tmp/BigBang.tar.gz f
+echo -e "Grep:" | tee -a $outfile
+check_existence 7 ~/StarTrek/startrek.txt f
+check_line_count 7 ~/StarTrek/startrek.txt 51
+tail -5 ~/StarTrek/startrek.txt | tee -a $outfile
+blank_line
+
+check_existence 8 ~/StarTrek.tar.gz f
+file ~/StarTrek.tar.gz 2>/dev/null | tee -a $outfile
+tar -tzvf ~/StarTrek.tar.gz 2> /dev/null | tail -5 | tee -a $outfile
 blank_line
 
 echo -e "cron jobs:" | tee -a $outfile
-crontab -l | tee -a $outfile
+crontab -l | tail -5 | tee -a $outfile
 blank_line
 
-echo -e "/proc - is net.ipv4.ip_default_ttl = 32?" | tee -a $outfile
-sysctl net.ipv4.ip_default_ttl | tee -a $outfile
+package_check 10 moon-buggy
+dpkg --list moon-buggy | tee -a $outfile
 blank_line
-echo -e "Is there an entry in the correct file?" | tee -a $outfile
-grep 'net.ipv4.ip_default_ttl' /etc/sysctl.conf | tee -a $outfile
+package_check 10 nmap
 blank_line
-package_check 10 rpl
-blank_line
-package_check 11 xinetd
-package_check 11 rsh
-package_check 11 rsh-server
-blank_line
-echo -e "Does xinetd start *only* on 3 and 5?" | tee -a $outfile
-chkconfig --list xinetd | tee -a $outfile
-blank_line
-echo -e "Is rsh on?" | tee -a $outfile
-chkconfig --list | grep 'rsh' | tee -a $outfile
-blank_line
-mail_out Final Exam
+mail_out_test 02 Final Exam
