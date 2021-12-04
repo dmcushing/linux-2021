@@ -32,7 +32,7 @@ rm -rf ~/thirdrock
 
 
 # Delete crontab entries
-crontab -r 2&1>/dev/null
+crontab -r
 
 # Wipe all the disks
 sgdisk --zap-all /dev/sdb 2>&1>/dev/null
