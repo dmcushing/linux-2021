@@ -22,22 +22,22 @@ do
 done
 
 # Clean up Disks + Dirs
-umount /dev/sdb1
-umount /dev/sdb2
-umount /dev/vg_practice/lv_practice
-vgremove -ff vg_practice
-pvremove -q -y /dev/sdc1 /dev/sdd1
+umount /dev/sdb1 2>&1>/dev/null
+umount /dev/sdb2 2>&1>/dev/null
+umount /dev/vg_practice/lv_practice 2>&1>/dev/null
+vgremove -ff vg_practice 2>&1>/dev/null
+pvremove -q -y /dev/sdc1 /dev/sdd1 2>&1>/dev/null
 rm -rf /media/tr-*
 rm -rf ~/thirdrock
 
 
 # Delete crontab entries
-crontab -r >/dev/null
+crontab -r 2&1>/dev/null
 
 # Wipe all the disks
-sgdisk --zap-all /dev/sdb
-sgdisk --zap-all /dev/sdc
-sgdisk --zap-all /dev/sdd
+sgdisk --zap-all /dev/sdb 2>&1>/dev/null
+sgdisk --zap-all /dev/sdc 2>&1>/dev/null
+sgdisk --zap-all /dev/sdd 2>&1>/dev/null
 
 
 # remove iftop
