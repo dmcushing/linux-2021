@@ -21,29 +21,26 @@ do
 	sed -i /$GRP/d /etc/group
 done
 
-# Clean up Third Rock
+# Clean up Disks + Dirs
 umount /dev/sdb1
 umount /dev/sdb2
-rm -rf /usr/local/thirdrock
+umount /dev/vg_practice/lv_practice
+vgremove -ff vg_practice
+pvremove -q -y /dev/sdc1 /dev/sdd1
+rm -rf /media/tr-*
+rm -rf ~/thirdrock
 
 
 # Delete crontab entries
 crontab -r >/dev/null
 
 # Wipe all the disks
-dd if=/dev/zero of=/dev/sdb bs=512 count=1 >/dev/null
-dd if=/dev/zero of=/dev/sdc bs=512 count=1 >/dev/null
-dd if=/dev/zero of=/dev/sdd bs=512 count=1 >/dev/null
-dd if=/dev/zero of=/dev/sde bs=512 count=1 >/dev/null
-
-# Clean up fstab
-sed -i /sdb/d /etc/fstab
-sed -i /sdc/d /etc/fstab
-sed -i /sdd/d /etc/fstab
-sed -i /sde/d /etc/fstab
-sed -i /assign/d /etc/fstab
-sed -i /practice/d /etc/fstab
+sgdisk --zap-all /dev/sdb
+sgdisk --zap-all /dev/sdc
+sgdisk --zap-all /dev/sdd
 
 
 # remove iftop
-apt -y remove iftop
+apt -y purge iftop 2>&1>/dev/null
+
+echo -e "Done clean up."
