@@ -53,12 +53,16 @@ check_existence 3 /dev/sdb2 b
 check_part 3 is_mounted /dev/sdb2
 check_part 3 mount_point /media/tr-sdb2 /dev/sdb2
 check_part 3 fs_type /dev/sdb2 ext3
+mount | grep 'sdb2' | tee -a $outfile
 blank_line
 check_existence 3 /dev/vg_practice/lv_practice b
 check_part 3 is_mounted /dev/mapper/vg_practice-lv_practice
-check_part 3 mount_point /media/tr-lvm /dev/mapper/practice-lv_practice
-check_part 3 fs_type /dev/mapper/practice-lv_practice ext4
+check_part 3 mount_point /media/tr-lvm /dev/mapper/vg_practice-lv_practice
+check_part 3 fs_type /dev/mapper/vg_practice-lv_practice ext4
 blank_line
+lsblk -l -o NAME,SIZE,FSTYPE,MOUNTPOINT /dev/sdb1 /dev/sdb2 /dev/vg_starwars/lv_deathstar | tee -a $outfile
+blank_line
+
 echo -e "Question 4 - Permissions and Ownership"| tee -a $outfile
 check_owner 4 /home/linuxuser/thirdrock dick
 check_group 4 /home/linuxuser/thirdrock aliens
