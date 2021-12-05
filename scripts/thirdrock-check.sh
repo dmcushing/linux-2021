@@ -89,9 +89,9 @@ blank_line
 
 echo -e "Question 6 - Grep" | tee -a $outfile
 
-check_existence 6 /home/linuxuser/thirdrock/firstlast.txt f
-check_line_count 5 ~/thirdrock/firstlast.txt 4
-tail -5 ~/thirdrock/firstlast.txt | tee -a $outfile
+check_existence 6 /home/linuxuser/thirdrock/finallast.txt f
+check_line_count 5 ~/thirdrock/finallast.txt 8
+tail -5 ~/thirdrock/finallast.txt | tee -a $outfile
 blank_line
 
 echo -e "Question 7 - tar and cron" | tee -a $outfile
