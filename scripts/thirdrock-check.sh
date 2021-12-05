@@ -97,12 +97,16 @@ blank_line
 echo -e "Question 7 - tar and cron" | tee -a $outfile
 
 check_existence 7 ~/thirdrock.tar.gz f
+file ~/thirdrock.tar.gz 2>/dev/null | tee -a $outfile
+tar -tzvf ~/thirdrock.tar.gz 2> /dev/null | tail -5 | tee -a $outfile
 
 crontab -l | tail -3 | tee -a $outfile
 blank_line
 echo -e "Question 8 - Installing Software" | tee -a $outfile
 package_check 8 calcurse
+blank_line
 dpkg --list calcurse | tee -a $outfile
+blank_line
 package_check 8 iftop
 blank_line
 
