@@ -99,7 +99,8 @@ echo -e "Question 7 - tar and cron" | tee -a $outfile
 check_existence 7 ~/thirdrock.tar.gz f
 file ~/thirdrock.tar.gz 2>/dev/null | tee -a $outfile
 tar -tzvf ~/thirdrock.tar.gz 2> /dev/null | tail -5 | tee -a $outfile
-
+blank_line
+echo -e "Crontab"
 crontab -l | tail -3 | tee -a $outfile
 blank_line
 echo -e "Question 8 - Installing Software" | tee -a $outfile
