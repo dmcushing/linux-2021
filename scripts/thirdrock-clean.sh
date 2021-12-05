@@ -41,6 +41,6 @@ sgdisk --zap-all /dev/sdd 2>&1>/dev/null
 
 
 # remove iftop
-apt -y purge iftop 2>&1>/dev/null
+apt -y purge iftop calcurse 2>&1>/dev/null
 
 echo -e "Done clean up."
