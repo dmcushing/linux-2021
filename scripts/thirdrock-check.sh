@@ -60,7 +60,7 @@ check_part 3 is_mounted /dev/mapper/vg_practice-lv_practice
 check_part 3 mount_point /media/tr-lvm /dev/mapper/vg_practice-lv_practice
 check_part 3 fs_type /dev/mapper/vg_practice-lv_practice ext4
 blank_line
-lsblk -l -o NAME,SIZE,FSTYPE,MOUNTPOINT /dev/sdb1 /dev/sdb2 /dev/vg_starwars/lv_deathstar | tee -a $outfile
+lsblk -l -o NAME,SIZE,FSTYPE,MOUNTPOINT /dev/sdb1 /dev/sdb2 /dev/vg_practice-lv_practice | tee -a $outfile
 blank_line
 
 echo -e "Question 4 - Permissions and Ownership"| tee -a $outfile
