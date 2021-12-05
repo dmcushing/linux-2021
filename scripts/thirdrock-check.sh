@@ -64,7 +64,7 @@ lsblk -l -o NAME,SIZE,FSTYPE,MOUNTPOINT /dev/sdb1 /dev/sdb2 /dev/vg_starwars/lv_
 blank_line
 
 echo -e "Question 4 - Permissions and Ownership"| tee -a $outfile
-check_owner 4 /home/linuxuser/thirdrock dick
+check_owner 4 /home/linuxuser/thirdrock linuxuser
 check_group 4 /home/linuxuser/thirdrock aliens
 check_permissions 4 /home/linuxuser/thirdrock drwxrwxrwx
 check_owner 4 /home/linuxuser/thirdrock/biggianthead dick
