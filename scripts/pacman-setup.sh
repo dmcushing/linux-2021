@@ -3,7 +3,7 @@
 
 clear
 echo -e "Chasing down the ghosts!"
-rm -Rf ~/Pacman
+rm -Rf ~/Pacman ~/quarantine
 mkdir -p ~/Pacman/1980s
 mkdir -p ~/Pacman/Galaxian
 mkdir -p ~/Pacman/SpaceInvaders
