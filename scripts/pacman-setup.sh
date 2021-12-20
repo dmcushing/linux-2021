@@ -1,8 +1,8 @@
 #!/bin/bash
-# Avengers file copy/remove/cat/nl
+# Pacman
 
 clear
-echo -e "Setting up the ghosts!"
+echo -e "Chasing down the ghosts!"
 rm -Rf ~/Pacman
 mkdir -p ~/Pacman/1980s
 mkdir -p ~/Pacman/Galaxian
