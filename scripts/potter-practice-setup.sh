@@ -1,4 +1,5 @@
 ﻿#!/bin/bash
+
 # Potter Practice - Setup Script
 
 source /scripts/functions.sh
