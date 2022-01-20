@@ -2,6 +2,8 @@
 # Pacman
 
 clear
+is_super_user
+
 echo -e "Chasing down the ghosts!"
 rm -Rf ~/Pacman ~/quarantine
 mkdir -p ~/Pacman/1980s
@@ -27,5 +29,6 @@ cp -R /scripts/work/noname/ ~/Pacman/
 cp -R /scripts/work/pac-man/ ~/Pacman/
 cp -R /scripts/work/spooks/ ~/Pacman/
 cp -R /scripts/work/uptown/ ~/Pacman/
+chown -R linuxuser:linuxuser ~/Pacman
 echo -e "....Files created"
 echo -e "......Ghosts are here!"
