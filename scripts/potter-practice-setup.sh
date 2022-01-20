@@ -46,4 +46,4 @@ for potters in ${potters[*]}
 do
 	echo -e "potter\npotter\n" | passwd $potters &> /dev/null
 done
-echo -e "All set..\n\n Time for quiddich"
+echo -e "....All set\n\n Time for quiddich"
