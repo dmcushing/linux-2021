@@ -44,7 +44,6 @@ potters=("harry" "hermione" "ron" "godric" "snapes" "lucius" "draco" "bryce" "bu
 
 for potters in ${potters[*]}
 do
-	echo $potters
-	echo -e "potter\npotter\n" | passwd $potters >> /dev/null
+	echo -e "potter\npotter\n" | passwd $potters &> /dev/null
 done
 echo -e "All set..\n\n Time for quiddich"
