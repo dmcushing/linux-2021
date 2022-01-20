@@ -1,27 +1,24 @@
-﻿#!/bin/bash
+#!/bin/bash
 # Potter Practice - Cleanup Script
 
+source /scripts/functions.sh
 clear
-echo -e "Potter practice clean up - ignore any errors below"
-if [[ $EUID -ne 0 ]]
-then
-        echo "Insufficient permissions. Run this script as root, or with sudo."
-        exit 1
-fi
+is_super_user
+
+echo -e "Potter practice clean up"
 rm -rf /home/linuxuser/Hogwarts
-userdel -r harry
-userdel -r hermione
-userdel -r ron
-userdel -r godric
-userdel -r snapes
-userdel -r lucius
-userdel -r draco
-userdel -r bryce
-userdel -r burbidge
-userdel -r bayliss
-groupdel gryffindor
-groupdel slytherin
-groupdel muggles
-groupdel rowling
-clear
-echo -e "All set..\n\n Time for quiddich"
+userdel -r harry &> /dev/null
+userdel -r hermione &> /dev/null
+userdel -r ron &> /dev/null
+userdel -r godric &> /dev/null
+userdel -r snapes &> /dev/null
+userdel -r lucius &> /dev/null
+userdel -r draco &> /dev/null
+userdel -r bryce &> /dev/null
+userdel -r burbidge &> /dev/null
+userdel -r bayliss &> /dev/null
+groupdel gryffindor &> /dev/null
+groupdel slytherin &> /dev/null
+groupdel muggles &> /dev/null
+groupdel rowling &> /dev/null
+echo -e "..All done\n\n Quiddich season is over"
