@@ -26,5 +26,6 @@ cp -R /scripts/work/aboynamed/ ~/Pacman/
 cp -R /scripts/work/noname/ ~/Pacman/
 cp -R /scripts/work/pac-man/ ~/Pacman/
 cp -R /scripts/work/spooks/ ~/Pacman/
+cp -R /scripts/work/uptown/ ~/Pacman/
 echo -e "....Files created"
 echo -e "......Ghosts are here!"
