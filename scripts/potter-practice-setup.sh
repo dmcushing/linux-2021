@@ -47,5 +47,4 @@ do
 	echo $potters
 	echo -e "potter\npotter\n" | passwd $potters >> /dev/null
 done
-clear
 echo -e "All set..\n\n Time for quiddich"
