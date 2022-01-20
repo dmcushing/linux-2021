@@ -2,7 +2,7 @@
 # Potter Practice - Setup Script
 
 clear
-is_super_user
+is_super_user()
 
 echo -e "Potter practice set up - ignore any errors below"
 echo -e "..Hogwart's Express leaving track 9 3/4"

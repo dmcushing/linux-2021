@@ -2,7 +2,7 @@
 # Pacman
 
 clear
-is_super_user
+is_super_user()
 
 echo -e "Chasing down the ghosts!"
 rm -Rf ~/Pacman ~/quarantine
