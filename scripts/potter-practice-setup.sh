@@ -27,7 +27,7 @@ userdel -r snapes &> /dev/null
 userdel -r lucius &> /dev/null
 userdel -r draco &> /dev/null
 userdel -r bryce &> /dev/null
-userdel -r burbidge &> /dev/null
+userdel -r burbage &> /dev/null
 userdel -r bayliss &> /dev/null
 useradd -G gryffindor,rowling -m -s /bin/bash harry
 useradd -G gryffindor,rowling -m -s /bin/bash hermione
@@ -37,10 +37,10 @@ useradd -G slytherin,rowling -m -s /bin/bash snapes
 useradd -G slytherin,rowling -m -s /bin/bash lucius
 useradd -G slytherin,rowling -m -s /bin/bash draco
 useradd -G muggles,rowling -m -s /bin/bash bryce
-useradd -G muggles,rowling -m -s /bin/bash burbidge
+useradd -G muggles,rowling -m -s /bin/bash burbage
 useradd -G muggles,rowling -m -s /bin/bash bayliss
 
-potters=("harry" "hermione" "ron" "godric" "snapes" "lucius" "draco" "bryce" "burbidge" "bayliss")
+potters=("harry" "hermione" "ron" "godric" "snapes" "lucius" "draco" "bryce" "burbage" "bayliss")
 
 for potters in ${potters[*]}
 do

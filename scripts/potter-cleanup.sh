@@ -16,7 +16,7 @@ userdel -r snapes &> /dev/null
 userdel -r lucius &> /dev/null
 userdel -r draco &> /dev/null
 userdel -r bryce &> /dev/null
-userdel -r burbidge &> /dev/null
+userdel -r burbage &> /dev/null
 userdel -r bayliss &> /dev/null
 groupdel gryffindor &> /dev/null
 groupdel slytherin &> /dev/null

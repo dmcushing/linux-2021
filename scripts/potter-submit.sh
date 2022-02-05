@@ -56,8 +56,8 @@ check_permissions 7 /home/linuxuser/Hogwarts/Muggles/Bryce/killedbyvoldemort.txt
 check_owner 7 /home/linuxuser/Hogwarts/Muggles/Bryce/killedbyvoldemort.txt bryce
 check_group 7 /home/linuxuser/Hogwarts/Muggles/Bryce/killedbyvoldemort.txt bryce
 check_permissions 7 /home/linuxuser/Hogwarts/Muggles/Burbidge/killedbyvoldemort.txt -r--------
-check_owner 7 /home/linuxuser/Hogwarts/Muggles/Burbidge/killedbyvoldemort.txt burbidge
-check_group 7 /home/linuxuser/Hogwarts/Muggles/Burbidge/killedbyvoldemort.txt burbidge
+check_owner 7 /home/linuxuser/Hogwarts/Muggles/Burbage/killedbyvoldemort.txt burbage
+check_group 7 /home/linuxuser/Hogwarts/Muggles/Burbage/killedbyvoldemort.txt burbage
 blank_line
 
 # Question 8

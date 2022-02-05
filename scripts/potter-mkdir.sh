@@ -21,6 +21,6 @@ touch /home/linuxuser/Hogwarts/Slytherin/Lucius/brylcreem.txt
 touch /home/linuxuser/Hogwarts/Slytherin/Draco/hairproduct.txt
 touch /home/linuxuser/Hogwarts/dumbledoreisdead.txt
 touch /home/linuxuser/Hogwarts/Muggles/Bryce/killedbyvoldemort.txt
-touch /home/linuxuser/Hogwarts/Muggles/Burbidge/killedbyvoldemort.txt
+touch /home/linuxuser/Hogwarts/Muggles/Burbage/killedbyvoldemort.txt
 touch /home/linuxuser/Hogwarts/Muggles/Bayliss/yaynotkilledbyvoldemort.txt
 
