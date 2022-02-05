@@ -71,6 +71,6 @@ blank_line
 check_existence 9 ~/archiving/sorted.txt f
 tail -5 ~/archiving/sorted.txt | tee -a $outfile
 blank_line
-tree ~/archiving | tee -a $outfile
+tree -I hello-2.8 ~/archiving | tee -a $outfile
 blank_line
 mail_out Archiving_Lab
