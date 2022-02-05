@@ -12,6 +12,7 @@ student_info Assignment 02
 # Question 1
 
 check_existence 1 ~/archiving d
+blank_line
 
 # Question 2
 
