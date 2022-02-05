@@ -23,19 +23,19 @@ blank_line
 # Question 2
 
 check_existence 2 ~/archiving/hellospace.txt f
-cat ~/archiving/hellospace.txt | tee -a $outfile
+tail -5 ~/archiving/hellospace.txt | tee -a $outfile
 blank_line
 
 # Question 3
 
 check_existence 3 ~/archiving/workspace.txt f
-cat ~/archiving/workspace.txt | tee -a $outfile
+tail -5 ~/archiving/workspace.txt | tee -a $outfile
 blank_line
 
 # Question 4
 
 check_existence 4 ~/archiving/sda1.txt f
-cat ~/archiving/sda1.txt | tee -a $outfile
+tail -5 ~/archiving/sda1.txt | tee -a $outfile
 blank_line
 
 # Question 5
@@ -64,7 +64,6 @@ blank_line
 
 # Question 9
 check_existence 9 ~/archiving/assign2 d
-ls ~/archiving/assign2 | tee -a $outfile
 blank_line
 check_existence 9 ~/archiving/unsorted.txt f
 tail -5 ~/archiving/unsorted.txt | tee -a $outfile
@@ -72,5 +71,6 @@ blank_line
 check_existence 9 ~/archiving/sorted.txt f
 tail -5 ~/archiving/sorted.txt | tee -a $outfile
 blank_line
-
+tree ~/archiving | tee -a $outfile
+blank_line
 mail_out Archiving_Lab
