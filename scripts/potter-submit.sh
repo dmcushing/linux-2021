@@ -67,6 +67,3 @@ tree /home/linuxuser/assignment1 | tee -a $outfile
 
 # Submit the work
 mail_out Potter Assignment
-
-clear
-echo -e "Submitted - Time for Quiddich!"

@@ -6,7 +6,8 @@ clear
 is_super_user
 
 echo -e "Potter practice clean up"
-rm -rf /home/linuxuser/Hogwarts
+rm -Rf /home/linuxuser/Hogwarts
+rm -Rf /home/linuxuser/assignment1
 userdel -r harry &> /dev/null
 userdel -r hermione &> /dev/null
 userdel -r ron &> /dev/null
