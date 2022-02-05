@@ -12,9 +12,12 @@ student_info Assignment 02
 # Question 1
 
 check_existence 1 ~/archiving/hello-2.8.tar.gz f
+file ~/archiving/hello-2.8.tar.gz | tee -a $outfile
 check_existence 1 ~/archiving/hello-2.8 d
 check_existence 1 ~/archiving/hello-2.8.tar.bz2 f
+file ~/archiving/hello-2.8.tar.bz2 | tee -a $outfile
 check_existence 1 ~/archiving/hello-2.8.tar f
+file ~/archiving/hello-2.8.tar | tee -a $outfile
 blank_line
 
 # Question 2
