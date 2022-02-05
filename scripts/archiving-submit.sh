@@ -85,7 +85,6 @@ blank_line
 # Question 14
 
 check_existence 14 ~/archiving/hello-dave h
-tail -5 ~/archiving/sorted.txt | tee -a $outfile
 blank_line
 
 tree -I hello-2.8 ~/archiving | tee -a $outfile
