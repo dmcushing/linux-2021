@@ -11,7 +11,7 @@ student_info Assignment 02
 
 # Question 1
 
-check_existence 1 ~/archiving
+check_existence 1 ~/archiving d
 
 # Question 2
 
