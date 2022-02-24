@@ -47,11 +47,6 @@ if [ $? -eq 0 ]; then
 else
     echo -e "$USERID: user DOES NOT exist - please create" | tee -a $outfile
 fi
-if [ "`grep $USERID /etc/shadow | cut -d: -f2`" == "!!" ]; then
-    echo -e "$USERID: has NO PASSWORD - please set" | tee -a $outfile
-else
-    echo -e "$USERID: has a password." | tee -a $outfile
-fi
 echo " " | tee -a $outfile
 done
 
