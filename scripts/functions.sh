@@ -38,8 +38,8 @@ read mailaddy
 fname=`echo $fname | sed 's/ /_/g'`
 lname=`echo $lname | sed 's/ /_/g'`
 filename=$snumber-$1_$2_${fname:0:1}_$lname.txt
-tarfile=$snumber-$1_$2_${fname:0:1}_$lname.tar.gz
-outfile=/tmp/$filename
+mkdir ~/.output 2>/tmp/null
+outfile=~/.output/$filename
 
 echo -e "Work will be saved in $outfile \n"
 echo $HOSTNAME $( TZ=America/Toronto date ) > $outfile
@@ -58,11 +58,11 @@ read snumber
 fname=`echo $fname | sed 's/ /_/g'`
 lname=`echo $lname | sed 's/ /_/g'`
 filename=$snumber-$1_$2_${fname:0:1}_$lname.txt
-tarfile=$snumber-$1_$2_${fname:0:1}_$lname.tar.gz
-outfile=/tmp/$filename
+mkdir ~/.output 2>/tmp/null
+outfile=~/.output/$filename
 
 echo -e "Work will be saved in $outfile \n"
-echo $HOSTNAME > $outfile
+echo $HOSTNAME $( TZ=America/Toronto date ) > $outfile
 echo -e "CET1025 $1 $2 - ($snumber) $fname $lname \n" | tee -a $outfile
 return 0
 }
