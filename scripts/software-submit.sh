@@ -16,22 +16,23 @@ package_check 1.1 pacman4console
 blank_line
 
 # Question 1.2
-check_existence 1.2 ~/software/joefiles-dpkg.txt f
-tail -5 ~/software/joefiles-dpkg.txt | tee -a $outfile
+check_existence 1.2 ~/software/dpkg-joefiles.txt f
+tail -5 ~/software/dpkg-joefiles.txt | tee -a $outfile
 blank_line
 
 # Question 1.3
-check_existence 1.3 ~/software/joestatus.txt f
-tail -5  ~/software/joestatus.txt | tee -a $outfile
+check_existence 1.3 ~/software/apt-joestatus.txt f
+tail -5  ~/software/apt-joestatus.txt | tee -a $outfile
 blank_line
 
 # Question 1.4
-check_existence 1.4 ~/software/joemaintainer.txt f
-tail  -5 ~/software/joemaintainer.txt | tee -a $outfile
+check_existence 1.4 ~/software/apt-joemaintainer.txt f
+tail  -5 ~/software/apt-joemaintainer.txt | tee -a $outfile
 blank_line
 
 # Question 1.5
-check_existence 1.5 ~/software/joeremoved.txt f
+check_existence 1.5 ~/software/dpkg-joeremoved.txt f
+tail -5 ~/software/dpkg-joeremoved.txt | tee -a $outfile
 dpkg --list joe | tee -a $outfile
 blank_line
 
@@ -80,13 +81,14 @@ tail -5 ~/software/Hfiles.txt | tee -a $outfile
 blank_line
 
 # Question 4.4
-check_existence 4.4 ~/software/aljoegrep.txt f
-tail -5 ~/software/aljoegrep.txt | tee -a $outfile
+check_existence 4.4 ~/software/grep-alpine-joe.txt f
+tail -5 ~/software/grep-alpine-joe.txt | tee -a $outfile
 blank_line
 
 # Question 4.5
-check_existence 4.5 ~/software/alpinejoe.tar.bz2 f
+check_existence 4.5 ~/software/dpkg-apt.tar.bz2 f
 tar tjvf ~/software/alpinejoe.tar.bz2 | tee -a $outfile
+file ~/software/dpkg-apt.tar.bz2 | tee -a $outfile
 blank_line
 
 # Toughie!
