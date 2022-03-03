@@ -16,8 +16,8 @@ package_check 1.1 pacman4console
 blank_line
 
 # Question 1.2
-check_existence 1.2 ~/software/joefiles.txt f
-tail -5 ~/software/joefiles.txt | tee -a $outfile
+check_existence 1.2 ~/software/joefiles-dpkg.txt f
+tail -5 ~/software/joefiles-dpkg.txt | tee -a $outfile
 blank_line
 
 # Question 1.3
