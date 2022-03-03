@@ -87,7 +87,7 @@ blank_line
 
 # Question 4.5
 check_existence 4.5 ~/software/dpkg-apt.tar.bz2 f
-tar tjvf ~/software/alpinejoe.tar.bz2 | tee -a $outfile
+tar tjvf ~/software/dpkg-apt.tar.bz2 | tee -a $outfile
 file ~/software/dpkg-apt.tar.bz2 | tee -a $outfile
 blank_line
 
