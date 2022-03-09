@@ -1,0 +1,7 @@
+[Unit]
+Description = A humourous? message generator
+After = network.target
+[Service]
+ExecStart = /usr/local/sbin/fortuned.sh
+[Install]
+WantedBy = multi-user.target
