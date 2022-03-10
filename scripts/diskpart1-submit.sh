@@ -7,7 +7,7 @@ student_info StartUnit_Filesystems_Mountpoints
 #
 # Check mounts and fstab
 #
-echo -e "Status of fortune.service"
+echo -e "Status of fortune.service" | tee -a $outfile
 systemctl status fortune --no-pager | head -5 | tee -a $outfile
 blank_line
 echo -e "Partitions/Filesystems/Mountpoints" | tee -a $outfile
