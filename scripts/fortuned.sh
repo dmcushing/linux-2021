@@ -1,9 +1,13 @@
-#!/bin/sh
+#!/bin/bash
 #loop forever
 while :
 do
 # sleep for 30 seconds
 sleep 30
 # wakeup send fortune to all users
-fortune | wall
+echo -e " "
+echo -e " "
+echo -n "`/usr/games/fortune`"
+echo -e " "
+echo -e " "
 done
