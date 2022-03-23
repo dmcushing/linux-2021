@@ -22,7 +22,7 @@ check_existence 4 "/home/quiz7" d
 blank_line
 
 package_check 5 xinetd
-check_existence 5 ~/Quiz07/xinetd-status.txt
+check_existence 5 ~/Quiz07/xinetd-status.txt f
 head -5 ~/Quiz07/xinetd-status.txt | tee -a $outfile
 blank_line
 
