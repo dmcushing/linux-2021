@@ -21,7 +21,9 @@ user_param 4 user_in_group quiz7 linuxuser
 check_existence 4 "/home/quiz7" d
 blank_line
 
-package_check 5 tilde
+package_check 5 xinetd
+check_existence 5 ~/Quiz07/xinetd-status.txt
+head -5 ~/Quiz07/xinetd-status.txt | tee -a $outfile
 blank_line
 
 check_existence 6 ~/Quiz07/YaTa.tar.gz f

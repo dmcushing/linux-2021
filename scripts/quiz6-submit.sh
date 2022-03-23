@@ -40,7 +40,7 @@ blank_line
 
 # Question 5
 check_existence 5 ~/quiz6.tar.gz f
-tar tzvf ~/quiz6.tar.gz 2</dev/null | tee -a $outfile
+tar tzvf ~/quiz6.tar.gz 2</dev/null | tail -5 | tee -a $outfile
 blank_line
 
 mail_out Packages Quiz

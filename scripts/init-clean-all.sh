@@ -11,7 +11,7 @@ chmod 755 /linux-2021/scripts/init-1025
 ln -s /linux-2021/scripts/ /scripts
 cd /home/linuxuser/
 rm -Rf *
-apt purge ninvaders moon-buggy joe nudoku pacman4console alpine-pico
+apt purge ninvaders moon-buggy joe nudoku pacman4console alpine-pico tilde fortune 
 echo -e "...All done!"
 
 
