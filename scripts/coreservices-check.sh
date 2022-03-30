@@ -6,10 +6,10 @@ is_super_user
 student_info Core Services Lab
 
 echo -e "1. Does mailperson exist?" | tee -a $outfile
-check_existence 2 /var/mail/mailperson f
+check_existence 1 /var/mail/mailperson f
 blank_line
 echo -e "2. Mail to mailperson in /var/mail/mailperson:" | tee -a $outfile
-tail -5 /var/mail/mailperson 2>/dev/null | tee -a $outfile
+tail -7 /var/mail/mailperson 2>/dev/null | tee -a $outfile
 blank_line
 echo -e "3. /var/www/html/index2.html created" | tee -a $outfile
 check_existence 3 /var/www/html/index2.html f
