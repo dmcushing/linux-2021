@@ -5,15 +5,15 @@ is_super_user
 #
 # Clean up disks
 #
-umount -a 2>/dev/null
-vgremove -y $( vgdisplay --colon | cut -f1 -d: ) 2>/dev/null
-pvremove -y $( pvdisplay -C -o pvname --noheadings | cut -f1 ) 2>/dev/null
-sgdisk --zap-all /dev/sdb 2>/dev/null
-sgdisk --zap-all /dev/sdc 2>/dev/null
-sgdisk --zap-all /dev/sdd 2>/dev/null
-sgdisk --zap-all /dev/sde 2>/dev/null
-sgdisk --zap-all /dev/sdf 2>/dev/null
-sgdisk --zap-all /dev/sdg 2>/dev/null
-sgdisk --zap-all /dev/sdh 2>/dev/null
-sgdisk --zap-all /dev/sdi 2>/dev/null
+umount -a >/dev/null 2>&1
+vgremove -y $( vgdisplay --colon | cut -f1 -d: ) >/dev/null 2>&1
+pvremove -y $( pvdisplay -C -o pvname --noheadings | cut -f1 ) >/dev/null 2>&1
+sgdisk --zap-all /dev/sdb >/dev/null 2>&1
+sgdisk --zap-all /dev/sdc >/dev/null 2>&1
+sgdisk --zap-all /dev/sdd >/dev/null 2>&1
+sgdisk --zap-all /dev/sde >/dev/null 2>&1
+sgdisk --zap-all /dev/sdf >/dev/null 2>&1
+sgdisk --zap-all /dev/sdg >/dev/null 2>&1
+sgdisk --zap-all /dev/sdh >/dev/null 2>&1
+sgdisk --zap-all /dev/sdi >/dev/null 2>&1
 rm -Rf /media/*
