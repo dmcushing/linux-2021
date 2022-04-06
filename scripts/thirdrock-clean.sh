@@ -2,7 +2,9 @@
 source /scripts/functions.sh
 clear
 is_super_user
-echo "Cleaning up..."
+
+echo -e "Cleaning up..."
+echo -e " Clean up users and groups.."
 
 # Clean up old users
 USERS=( "dick" "sally" "harry" "tommy" "mary" "nina" "mamie" "don" )
@@ -21,6 +23,8 @@ do
 	sed -i /$GRP/d /etc/group
 done
 
+echo -e " Clean up disks and directories.."
+
 # Clean up Disks + Dirs
 umount -a >/dev/null 2>&1
 vgremove -y $( vgdisplay --colon | cut -f1 -d: ) >/dev/null 2>&1
@@ -36,11 +40,12 @@ sgdisk --zap-all /dev/sdi >/dev/null 2>&1
 rm -Rf /media/*
 rm -Rf ~/thirdrock
 
-
+echo -e " Clean up crontab.."
 # Delete crontab entries
-crontab -r
+crontab -r  >/dev/null 2>&1
 
+echo -e " Clean up software installs.."
 # remove iftop + calcurse
-apt -y purge iftop calcurse 2>&1>/dev/null
+apt -y purge iftop calcurse  >/dev/null 2>&1
 
 echo -e "Done clean up."
