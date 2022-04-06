@@ -4,7 +4,7 @@ source /scripts/functions.sh
 
 clear
 is_super_user
-student_info Third-Rock-Practice
+student_info Third-Rock-Review
 
 echo -e "Question 1 - Users and Groups" | tee -a $outfile
 GROUPID=("aliens" "university" "security" "comm" "humans")
@@ -112,4 +112,4 @@ package_check 8 iftop
 blank_line
 
 # Submit the work
-mail_out Third-Rock-Practice
+mail_out Third-Rock-Review
