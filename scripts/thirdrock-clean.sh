@@ -10,7 +10,7 @@ for USERS in ${USERS[*]}
 do
 	sed -i /$USERS/d /etc/passwd
 	sed -i /$USERS/d /etc/shadow
-	rm -rf /home/$USERS
+	rm -Rf /home/$USERS
 done
 
 
@@ -22,25 +22,25 @@ do
 done
 
 # Clean up Disks + Dirs
-umount /dev/sdb1 2>&1>/dev/null
-umount /dev/sdb2 2>&1>/dev/null
-umount /dev/vg_practice/lv_practice 2>&1>/dev/null
-vgremove -ff vg_practice 2>&1>/dev/null
-pvremove -q -y /dev/sdc1 /dev/sdd1 2>&1>/dev/null
-rm -rf /media/tr-*
-rm -rf ~/thirdrock
+umount -a >/dev/null 2>&1
+vgremove -y $( vgdisplay --colon | cut -f1 -d: ) >/dev/null 2>&1
+pvremove -y $( pvdisplay -C -o pvname --noheadings | cut -f1 ) >/dev/null 2>&1
+sgdisk --zap-all /dev/sdb >/dev/null 2>&1
+sgdisk --zap-all /dev/sdc >/dev/null 2>&1
+sgdisk --zap-all /dev/sdd >/dev/null 2>&1
+sgdisk --zap-all /dev/sde >/dev/null 2>&1
+sgdisk --zap-all /dev/sdf >/dev/null 2>&1
+sgdisk --zap-all /dev/sdg >/dev/null 2>&1
+sgdisk --zap-all /dev/sdh >/dev/null 2>&1
+sgdisk --zap-all /dev/sdi >/dev/null 2>&1
+rm -Rf /media/*
+rm -Rf ~/thirdrock
 
 
 # Delete crontab entries
 crontab -r
 
-# Wipe all the disks
-sgdisk --zap-all /dev/sdb 2>&1>/dev/null
-sgdisk --zap-all /dev/sdc 2>&1>/dev/null
-sgdisk --zap-all /dev/sdd 2>&1>/dev/null
-
-
-# remove iftop
+# remove iftop + calcurse
 apt -y purge iftop calcurse 2>&1>/dev/null
 
 echo -e "Done clean up."
