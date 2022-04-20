@@ -27,4 +27,7 @@ sgdisk --zap-all /dev/sdh >/dev/null 2>&1
 echo -e "zap /dev/sdi"
 sgdisk --zap-all /dev/sdi >/dev/null 2>&1
 rm -Rf /media/*
+lsblk /dev/sdb /dev/sdc /dev/sdd /dev/sde /dev/sdf /dev/sdg /dev/sdh /dev/sdi
 echo -e "Done."
+echo -e " "
+echo -e "Report any missing disks to your instructor."
