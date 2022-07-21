@@ -9,14 +9,14 @@ student_info Potter Lab
 
 # Question 1
 
-check_permissions 1 /home/linuxuser/Hogwarts/Slytherin/Snapes/potions.txt -rw-rw----
-check_owner 1 /home/linuxuser/Hogwarts/Slytherin/Snapes/potions.txt snapes
-check_group 1 /home/linuxuser/Hogwarts/Slytherin/Snapes/potions.txt slytherin
+check_permissions 1 /home/linuxuser/Hogwarts/Slytherin/Snape/potions.txt -rw-rw----
+check_owner 1 /home/linuxuser/Hogwarts/Slytherin/Snape/potions.txt snapes
+check_group 1 /home/linuxuser/Hogwarts/Slytherin/Snape/potions.txt slytherin
 blank_line
 
 # Question 2
 
-check_owner 2 /home/linuxuser/Hogwarts/Slytherin/Snapes snapes
+check_owner 2 /home/linuxuser/Hogwarts/Slytherin/Snape snape
 check_owner 2 /home/linuxuser/Hogwarts/Slytherin/Draco draco
 check_owner 2 /home/linuxuser/Hogwarts/Slytherin/Draco/hairproduct.txt draco
 check_owner 2 /home/linuxuser/Hogwarts/Slytherin/Lucius lucius
@@ -50,15 +50,6 @@ check_owner 6 /home/linuxuser/Hogwarts/Slytherin/Lucius/hairgel.txt lucius
 check_group 6 /home/linuxuser/Hogwarts/Slytherin/Lucius/hairgel.txt muggles
 blank_line
 
-# Question 7
-
-check_permissions 7 /home/linuxuser/Hogwarts/Muggles/Bryce/killedbyvoldemort.txt -r--------
-check_owner 7 /home/linuxuser/Hogwarts/Muggles/Bryce/killedbyvoldemort.txt bryce
-check_group 7 /home/linuxuser/Hogwarts/Muggles/Bryce/killedbyvoldemort.txt bryce
-check_permissions 7 /home/linuxuser/Hogwarts/Muggles/Burbidge/killedbyvoldemort.txt -r--------
-check_owner 7 /home/linuxuser/Hogwarts/Muggles/Burbage/killedbyvoldemort.txt burbage
-check_group 7 /home/linuxuser/Hogwarts/Muggles/Burbage/killedbyvoldemort.txt burbage
-blank_line
 
 # Question 8
 
