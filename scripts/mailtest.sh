@@ -1,9 +1,25 @@
-echo -n "Enter your first name: "
-read fname
-echo -n "Enter your last name: "
-read lname
-echo -n "Enter your email address: "
-read mailaddy
+
+while [ $alldone -ne "y" ]
+do
+	clear
+	echo -n "Enter INSTRUCTOR email address: "
+	read inmailaddy
+	echo -n "         Enter your first name: "
+	read fname
+	echo -n "          Enter your last name: "
+	read lname
+	echo -n "      Enter YOUR email address: "
+	read mailaddy
+	echo -n " "
+	echo -n "Instructor: $inmailaddy"
+	echo -n " "
+	echo -n " Your Name: $fname $lname"
+	echo -n " Your Email: $mailaddy"
+	echo -n " "
+	echo -n "Correct? [y|n]? "
+	read alldone
+done
+
 fname=`echo $fname | sed 's/ /_/g'`
 lname=`echo $lname | sed 's/ /_/g'`
 
