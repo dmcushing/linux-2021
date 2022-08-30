@@ -1,6 +1,6 @@
 #!/bin/bash
 alldone="n"
-while [ $alldone -ne "y" ]
+while [ $alldone != [Yy] ]
 do
 	clear
 	echo -n "Enter INSTRUCTOR email address: "
