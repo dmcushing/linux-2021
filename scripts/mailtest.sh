@@ -11,12 +11,12 @@ do
 	read lname
 	echo -n "      Enter YOUR email address: "
 	read mailaddy
-	echo -n " "
-	echo -n "Instructor: $inmailaddy"
-	echo -n " "
-	echo -n " Your Name: $fname $lname"
-	echo -n " Your Email: $mailaddy"
-	echo -n " "
+	echo -e " "
+	echo -e "Instructor: $inmailaddy"
+	echo -e " "
+	echo -e " Your Name: $fname $lname"
+	echo -e " Your Email: $mailaddy"
+	echo -e " "
 	echo -n "Correct? [y|n]? "
 	read alldone
 done
