@@ -3,6 +3,7 @@ alldone="n"
 while [ $alldone != [Yy] ]
 do
 	clear
+	echo $alldone
 	echo -n "Enter INSTRUCTOR email address: "
 	read inmailaddy
 	echo -n "         Enter your first name: "
@@ -14,7 +15,7 @@ do
 	echo -e " "
 	echo -e "Instructor: $inmailaddy"
 	echo -e " "
-	echo -e " Your Name: $fname $lname"
+	echo -e "  Your Name: $fname $lname"
 	echo -e " Your Email: $mailaddy"
 	echo -e " "
 	echo -n "Correct? [y|n]? "
