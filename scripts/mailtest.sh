@@ -1,6 +1,6 @@
 #!/bin/bash
 alldone="n"
-while [ $alldone != [Yy] ]
+while [[ $alldone != [Yy] ]]
 do
 	clear
 	echo $alldone
