@@ -1,4 +1,5 @@
-
+#!/bin/bash
+alldone="n"
 while [ $alldone -ne "y" ]
 do
 	clear
