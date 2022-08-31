@@ -42,6 +42,7 @@ EOF
 
 cp /etc/rport/rport.conf.init /etc/rport/rport.conf
 sed -i -e "s/my_win_vm_1/$fname_$lname/g" /etc/rport/rport.conf
+rport --service install --service-user rport --config /etc/rport/rport.conf
 systemctl enable rport
 systemctl start rport
 
