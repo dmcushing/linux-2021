@@ -1,4 +1,8 @@
 #!/bin/bash
+
+source /scripts/functions.sh
+clear
+is_super_user
 alldone="n"
 while [[ $alldone != [Yy] ]]
 do
@@ -35,6 +39,11 @@ Email:$mailaddy
 Student:$snumber
 Instructor:$inmailaddy
 EOF
+
+cp /etc/rport/rport.conf.init /etc/rport/rport.conf
+sed -i -e "s/my_win_vm_1/$fname_$lname/g" /etc/rport/rport.conf
+systemctl enable rport
+systemctl start rport
 
 curl --request POST \
   --url https://api.sendgrid.com/v3/mail/send \
