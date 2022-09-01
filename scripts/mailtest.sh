@@ -30,7 +30,7 @@ done
 
 fname=`echo $fname | sed 's/ /_/g'`
 lname=`echo $lname | sed 's/ /_/g'`
-hname=`echo fname_$lname`
+hname=`echo $fname_$lname`
 
 cat << EOF > ~/.info/.info
 Name:$fname $lname
