@@ -7,7 +7,6 @@ alldone="n"
 while [[ $alldone != [Yy] ]]
 do
 	clear
-	echo $alldone
 	echo -n "Enter INSTRUCTOR email address: "
 	read inmailaddy
 	echo -n "     Enter your student number: "
