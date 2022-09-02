@@ -32,6 +32,9 @@ fname=`echo $fname | sed 's/ /_/g'`
 lname=`echo $lname | sed 's/ /_/g'`
 hname=`echo $lname-$fname`
 
+mkdir /home/linuxuser/.info
+chown linuxuser:linuxuser /home/linuxuser/.info
+
 cat << EOF > ~/.info/.info
 Name:$fname $lname
 FName:$fname
