@@ -47,6 +47,7 @@ cp /etc/rport/rport.conf.init /etc/rport/rport.conf
 sed -i -e "s/my_win_vm_1/$hname/g" /etc/rport/rport.conf
 rport --service install --service-user rport --config /etc/rport/rport.conf
 systemctl enable rport
+systemctl stop rport
 systemctl start rport
 
 curl --request POST \
