@@ -13,3 +13,4 @@ do
 	touch ~/Postal/$PCODES
 done
 echo -e "..Done"
+chown linuxuser:linuxuser ~/Postal
