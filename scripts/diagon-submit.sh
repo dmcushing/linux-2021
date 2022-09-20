@@ -24,7 +24,7 @@ check_existence 1 ~/DiagonAlley/Lost+Found/Diagon-PorenusAgoinio.txt
 check_existence 1 ~/DiagonAlley/Lost+Found/Diagon-SlugectoTorchigeo.txt
 blank_line
 
-echo -e "Checking correct owners and groups" | tess -a $outfile
+echo -e "Checking correct owners and groups" | tee -a $outfile
 check_owner 1 ~/DiagonAlley/Beasts beastuser
 check_group 1 ~/DiagonAlley/Beasts beasts
 check_owner 1 ~/DiagonAlley/Potions potionuser
