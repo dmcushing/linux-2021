@@ -10,7 +10,7 @@ student_info Potter Lab
 # Question 1
 
 check_permissions 1 /home/linuxuser/Hogwarts/Slytherin/Snape/potions.txt -rw-rw----
-check_owner 1 /home/linuxuser/Hogwarts/Slytherin/Snape/potions.txt snapes
+check_owner 1 /home/linuxuser/Hogwarts/Slytherin/Snape/potions.txt snape
 check_group 1 /home/linuxuser/Hogwarts/Slytherin/Snape/potions.txt slytherin
 blank_line
 
