@@ -12,16 +12,24 @@ echo -e "Output of tree -pug ~/DiagonAlley" | tee -a $outfile
 tree -pug ~/DiagonAlley | tee -a $outfile
 blank_line
 
+echo -e "Did you create the correct directories?" | tee -a $outfile
+check_existence 1 ~/DiagonAlley/Beasts/ d
+check_existence 1 ~/DiagonAlley/Lost+Found/ d
+check_existence 1 ~/DiagonAlley/Potions/ d
+check_existence 1 ~/DiagonAlley/Spells/ d
+
+blank_line
+
 echo -e "Did you find all the lost Diagon files?" | tee -a $outfile
-check_existence 1 ~/DiagonAlley/Beasts/Diagon-Acromantula.txt
-check_existence 1 ~/DiagonAlley/Lost+Found/Diagon-ApearerbusDemonundo.txt
-check_existence 1 ~/DiagonAlley/Lost+Found/Diagon-Ashwinder.txt
-check_existence 1 ~/DiagonAlley/Lost+Found/Diagon-BrewOfWeakness.txt
-check_existence 1 ~/DiagonAlley/Lost+Found/Diagon-BriarToad.txt
-check_existence 1 ~/DiagonAlley/Lost+Found/Diagon-ElixirOfSteelskin.txt
-check_existence 1 ~/DiagonAlley/Lost+Found/Diagon-PhilterOfIntuition.txt
-check_existence 1 ~/DiagonAlley/Lost+Found/Diagon-PorenusAgoinio.txt
-check_existence 1 ~/DiagonAlley/Lost+Found/Diagon-SlugectoTorchigeo.txt
+check_existence 1 ~/DiagonAlley/Beasts/Diagon-Acromantula.txt f
+check_existence 1 ~/DiagonAlley/Lost+Found/Diagon-ApearerbusDemonundo.txt f
+check_existence 1 ~/DiagonAlley/Lost+Found/Diagon-Ashwinder.txt f
+check_existence 1 ~/DiagonAlley/Lost+Found/Diagon-BrewOfWeakness.txt f
+check_existence 1 ~/DiagonAlley/Lost+Found/Diagon-BriarToad.txt f
+check_existence 1 ~/DiagonAlley/Lost+Found/Diagon-ElixirOfSteelskin.txt f
+check_existence 1 ~/DiagonAlley/Lost+Found/Diagon-PhilterOfIntuition.txt f
+check_existence 1 ~/DiagonAlley/Lost+Found/Diagon-PorenusAgoinio.txt f
+check_existence 1 ~/DiagonAlley/Lost+Found/Diagon-SlugectoTorchigeo.txt f
 blank_line
 
 echo -e "Checking correct owners and groups" | tee -a $outfile
