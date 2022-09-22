@@ -9,7 +9,7 @@ clear
 is_super_user
 student_info Quiz 02
 
-tree /home/linuxuser/Quiz2 | tee -a $outfile
+tree -ug /home/linuxuser/Quiz2 | tee -a $outfile
 check_owner 1 ~/Quiz2/TomHanks tomhanks
 check_owner 1 ~/Quiz2/TomHanks/2019 tomhanks
 check_owner 1 ~/Quiz2/TomHanks/2020 tomhanks
