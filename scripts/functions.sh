@@ -187,6 +187,7 @@ if [ -e $2 ]; then
 else
     echo -e "!! ERROR !! Question $1: $2 - doesn't exist, can't determine group." | tee -a $outfile
 	return 0
+fi
 }
 
 # Check if file or directory exists
