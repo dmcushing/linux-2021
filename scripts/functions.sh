@@ -140,11 +140,16 @@ fi
 # parameters question, filename, permissions -rwxrwxrwx
 
 check_permissions(){
-if [ `stat -c %A $2` == $3 ]; then
-        echo -e "Question $1: $2 - correct permissions" | tee -a $outfile
-	return 0
+if [ -e $2 ]; then
+	if [ `stat -c %A $2` == $3 ]; then
+			echo -e "Question $1: $2 - correct permissions" | tee -a $outfile
+		return 0
+	else
+			echo -e "!! ERROR !! Question $1: $2 - incorrect permissions, should be $3." | tee -a $outfile
+		return 0
+	fi
 else
-        echo -e "!! ERROR !! Question $1: $2 - incorrect permissions, should be $3." | tee -a $outfile
+    echo -e "!! ERROR !! Question $1: $2 - doesn't exist, can't determine line count." | tee -a $outfile
 	return 0
 fi
 }
