@@ -158,11 +158,16 @@ fi
 # Parameters question, filename, owner
 
 check_owner(){
-if [ `stat -c %U $2` == $3 ]; then
-        echo -e "Question $1: $2 - correct owner" | tee -a $outfile
-	return 0
+if [ -e $2 ]; then
+	if [ `stat -c %U $2` == $3 ]; then
+			echo -e "Question $1: $2 - correct owner" | tee -a $outfile
+		return 0
+	else
+			echo -e "!! ERROR !! Question $1: $2 - incorrect owner, should be $3." | tee -a $outfile
+		return 0
+	fi
 else
-        echo -e "!! ERROR !! Question $1: $2 - incorrect owner, should be $3." | tee -a $outfile
+    echo -e "!! ERROR !! Question $1: $2 - doesn't exist, can't determine owner." | tee -a $outfile
 	return 0
 fi
 }
@@ -171,13 +176,17 @@ fi
 # Parameters question, filename, group
 
 check_group(){
-if [ `stat -c %G $2` == $3 ]; then
-        echo -e "Question $1: $2 - correct group" | tee -a $outfile
-	return 0
+if [ -e $2 ]; then
+	if [ `stat -c %G $2` == $3 ]; then
+			echo -e "Question $1: $2 - correct group" | tee -a $outfile
+		return 0
+	else
+			echo -e "!! ERROR !! Question $1: $2 - incorrect group, should be $3." | tee -a $outfile
+		return 0
+	fi
 else
-        echo -e "!! ERROR !! Question $1: $2 - incorrect group, should be $3." | tee -a $outfile
+    echo -e "!! ERROR !! Question $1: $2 - doesn't exist, can't determine group." | tee -a $outfile
 	return 0
-fi
 }
 
 # Check if file or directory exists
