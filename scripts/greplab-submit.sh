@@ -8,50 +8,44 @@ source /scripts/functions.sh
 
 clear
 is_super_user
-student_info Lab 01
+student_info Grep Lab
 
-# Question 1
-
-if [ -h "/home/linuxuser/terms" ]; then
-	echo -e "Question 1: terms - is a symbolic link" | tee -a $outfile
-else
-	echo -e "!! ERROR !! Question 1: terms - is not a symbolic link" | tee -a $outfile
-fi
-blank_line
-# Question 2
-
-check_existence 2 /home/linuxuser/2berry.txt f
-tail -5 /home/linuxuser/2berry.txt | tee -a $outfile
+check_existence 1 ~/greplab/terms h
 blank_line
 
-# Question 3
-
-check_existence 3 /home/linuxuser/3shark.txt f
-cat /home/linuxuser/3shark.txt | tee -a $outfile
+check_existence 2 ~/greplab/grep d
+check_existence 2 ~/greplab/find d
 blank_line
 
-# Question 4
-
-check_existence 4 /home/linuxuser/4stonerate.txt f
-tail -5 /home/linuxuser/4stonerate.txt | tee -a $outfile
+check_existence 3 ~/greplab/grep/berry.txt f
+check_line_count 3 ~/greplab/grep/berry.txt 21
+tail -5 ~/greplab/grep/berry.txt | tee -a $outfile
 blank_line
 
-# Question 5
-
-check_existence 5 /home/linuxuser/5find.txt f
-tail -5 /home/linuxuser/5find.txt | tee -a $outfile
+check_existence 4 ~/greplab/grep/shark.txt f
+check_line_count 4 ~/greplab/grep/shark.txt 2
+cat ~/greplab/grep/shark.txt | tee -a $outfile
 blank_line
 
-# Question 6
-
-check_existence 6 /home/linuxuser/zygnemaceous f
-tail -5 /home/linuxuser/zygnemaceous | tee -a $outfile
+check_existence 5 ~/greplab/grep/stonerate.txt f
+check_line_count 5 ~/greplab/grep/stonerate.txt 24
+tail -5 ~/greplab/grep/stonerate.txt | tee -a $outfile
 blank_line
 
-# Question 7
+check_existence 6 ~/greplab/find/find.txt f
+check_line_count 6 ~/greplab/find/find.txt 2
+tail -5 ~/greplab/find/find.txt | tee -a $outfile
+blank_line
 
-check_existence 7 /home/linuxuser/bonus.txt f
-cat /home/linuxuser/bonus.txt | tee -a $outfile
+check_existence 7 ~/greplab/find/zygnemaceous f
+tail -5 /home/linuxuser/zygnemaceous | nl | tee -a $outfile
+blank_line
+
+check_group 8 ~/greplab/words greplab
+check_permissions 8 ~/greplab/words -rw-rw----
+
+check_existence TOUGHIE ~/greplab/bonus.txt f
+cat ~/greplab/bonus.txt | tee -a $outfile
 blank_line
 
 # Submit the work
