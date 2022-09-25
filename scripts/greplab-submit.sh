@@ -38,7 +38,7 @@ tail -5 ~/greplab/find/find.txt | tee -a $outfile
 blank_line
 
 check_existence 7 ~/greplab/find/zygnemaceous f
-tail -5 ~/greplab/find/zygnemaceous | nl | tee -a $outfile
+nl ~/greplab/find/zygnemaceous | tail -5 | tee -a $outfile
 blank_line
 
 check_group 8 ~/greplab/words greplab
