@@ -49,6 +49,7 @@ blank_line
 check_existence TOUGHIE ~/greplab/bonus.txt f
 cat ~/greplab/bonus.txt | tee -a $outfile
 blank_line
+tree ~/greplab
 
 # Submit the work
 
