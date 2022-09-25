@@ -38,11 +38,12 @@ tail -5 ~/greplab/find/find.txt | tee -a $outfile
 blank_line
 
 check_existence 7 ~/greplab/find/zygnemaceous f
-tail -5 /home/linuxuser/zygnemaceous | nl | tee -a $outfile
+tail -5 ~/greplab/find/zygnemaceous | nl | tee -a $outfile
 blank_line
 
 check_group 8 ~/greplab/words greplab
 check_permissions 8 ~/greplab/words -rw-rw----
+blank_line
 
 check_existence TOUGHIE ~/greplab/bonus.txt f
 cat ~/greplab/bonus.txt | tee -a $outfile
