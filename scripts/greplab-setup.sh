@@ -8,9 +8,10 @@ is_super_user
 
 echo -e "grep lab set up - ignore any errors below"
 echo -e "..trying not to lose my grep on reality"
-rm -Rf /home/linuxuser/greplab
-mkdir /home/linuxuser/greplab
-chown -R linuxuser:linuxuser /home/linuxuser/greplab
+rm -Rf ~/greplab
+mkdir ~/greplab
+cp /scripts/work/words ~/greplab/
+chown -R linuxuser:linuxuser ~/greplab
 groupdel greplab &> /dev/null
 groupadd greplab  &> /dev/null
 
