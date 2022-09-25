@@ -9,7 +9,7 @@ clear
 is_super_user
 student_info Grep Fishing
 
-check_existence - ~/dictionary l
+check_existence - ~/dictionary h
 check_existence - ~/Fishing/findgrepfish.txt f
 check_line_count - ~/Fishing/findgrepfish.txt 10
 check_existence - ~/Fishing/greprecurse.txt f
