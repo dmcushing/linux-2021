@@ -24,7 +24,7 @@ check_line_count - ~/Fishing/t_fish.txt 14
 blank_line
 tree /home/linuxuser/Fishing | tee -a $outfile
 
-mail_out Grepping for Fish
+mail_out Grepping Fish
 
 
 
