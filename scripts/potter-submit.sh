@@ -7,6 +7,8 @@ clear
 is_super_user
 student_info Potter Lab
 
+tree -pug ~/Hogwarts/ | tee -a $outfile
+blank_line
 # Question 1
 
 check_permissions 1 /home/linuxuser/Hogwarts/Slytherin/Snape/potions.txt -rw-rw----
