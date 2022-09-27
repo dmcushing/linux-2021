@@ -96,7 +96,7 @@ content=`base64 -w0 $outfile`
 attachment="$1_$2-$lname-$fname.txt"
 
 read -p "Mail your work to your instructor? (y to send mail or CTRL-C to exit) "
-[ "$REPLY" != "y" ] || curl --request POST \
+[ "${REPLY,,}" != "y" ] || curl --request POST \
   --url https://api.sendgrid.com/v3/mail/send \
   --header "Authorization: Bearer $SENDGRID_API_KEY" \
   --header 'Content-Type: application/json' \
