@@ -10,6 +10,7 @@ is_super_user
 student_info Quiz 02
 
 tree -ug /home/linuxuser/Quiz02 | tee -a $outfile
+blank_line
 check_owner 1 ~/Quiz02/TomHanks tomhanks
 check_owner 1 ~/Quiz02/TomHanks/2011 tomhanks
 check_owner 1 ~/Quiz02/TomHanks/2013 tomhanks
