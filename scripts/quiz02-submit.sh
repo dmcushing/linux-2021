@@ -19,14 +19,13 @@ check_owner 1 ~/Quiz02/TomHanks/2011/ToyStory3 tomhanks
 check_owner 1 ~/Quiz02/TomHanks/2013/CaptainPhillips tomhanks
 check_owner 1 ~/Quiz02/TomHanks/2013/MrBanks tomhanks
 blank_line
-check_group 2 ~/Quiz02/TomHanks/2011 2011
-check_group 2 ~/Quiz02/TomHanks/2011/30Rock 2011
-check_group 2 ~/Quiz02/TomHanks/2011/LarryCrowne 2011
-check_group 2 ~/Quiz02/TomHanks/2011/ToyStory3 2011
+check_group 2 ~/Quiz02/TomHanks/2011 year2011
+check_group 2 ~/Quiz02/TomHanks/2011/30Rock year2011
+check_group 2 ~/Quiz02/TomHanks/2011/LarryCrowne year2011
 blank_line
-check_group 3 ~/Quiz02/TomHanks/2013 2013
-check_group 3 ~/Quiz02/TomHanks/2013/CaptainPhillips 2013
-check_group 3 ~/Quiz02/TomHanks/2013/MrBanks 2013
+check_group 3 ~/Quiz02/TomHanks/2013 year2013
+check_group 3 ~/Quiz02/TomHanks/2013/CaptainPhillips year2013
+check_group 3 ~/Quiz02/TomHanks/2013/MrBanks year2013
 blank_line
 check_group 4 ~/Quiz02/TomHanks/2011/ToyStory3 toystory
 blank_line

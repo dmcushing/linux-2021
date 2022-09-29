@@ -6,8 +6,8 @@ is_super_user
 echo -e "Setting up..."
 useradd -m -s /bin/bash tomhanks 2>/dev/null
 groupadd toystory 2>/dev/null
-groupadd 2011 2>/dev/null
-groupadd 2013 2>/dev/null
+groupadd year2011 2>/dev/null
+groupadd year2013 2>/dev/null
 rm -Rf /home/linuxuser/Quiz02
 mkdir /home/linuxuser/Quiz02
 chown linuxuser:linuxuser /home/linuxuser/Quiz02
