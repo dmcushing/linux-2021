@@ -10,6 +10,7 @@ is_super_user
 student_info Quiz 02
 
 tree -ug /home/linuxuser/Quiz2 | tee -a $outfile
+blank_line
 check_owner 1 ~/Quiz2/TomHanks tomhanks
 check_owner 1 ~/Quiz2/TomHanks/2019 tomhanks
 check_owner 1 ~/Quiz2/TomHanks/2020 tomhanks
@@ -19,13 +20,13 @@ check_owner 1 ~/Quiz2/TomHanks/2020/BigCity tomhanks
 check_owner 1 ~/Quiz2/TomHanks/2020/Greyhound tomhanks
 check_owner 1 ~/Quiz2/TomHanks/2020/NewsoftheWorld tomhanks
 blank_line
-check_group 2 ~/Quiz2/TomHanks/2019 2019
-check_group 2 ~/Quiz2/TomHanks/2019/MrRogers 2019
+check_group 2 ~/Quiz2/TomHanks/2019 year2019
+check_group 2 ~/Quiz2/TomHanks/2019/MrRogers year2019
 blank_line
-check_group 3 ~/Quiz2/TomHanks/2020 2020
-check_group 3 ~/Quiz2/TomHanks/2020/BigCity 2020
-check_group 3 ~/Quiz2/TomHanks/2020/Greyhound 2020
-check_group 3 ~/Quiz2/TomHanks/2020/NewsoftheWorld 2020
+check_group 3 ~/Quiz2/TomHanks/2020 year2020
+check_group 3 ~/Quiz2/TomHanks/2020/BigCity year2020
+check_group 3 ~/Quiz2/TomHanks/2020/Greyhound year2020
+check_group 3 ~/Quiz2/TomHanks/2020/NewsoftheWorld year2020
 blank_line
 check_group 4 ~/Quiz2/TomHanks/2019/ToyStory4 toystory
 blank_line
