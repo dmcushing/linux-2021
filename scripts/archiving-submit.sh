@@ -69,7 +69,7 @@ tail -6 ~/archiving/sorted.txt | tee -a $outfile
 blank_line
 
 check_owner 16 ~/archiving/words archuser
-check_group 16 ~/archiving/words archuser
+check_group 16 ~/archiving/words archgroup
 blank_line
 
 check_existence 18 ~/archiving/hello-dave h
