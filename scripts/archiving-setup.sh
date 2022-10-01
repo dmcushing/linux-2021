@@ -8,6 +8,6 @@ useradd -m -s /bin/bash archuser 2>/dev/null
 groupadd archgroup 2>/dev/null
 rm -Rf ~/archiving
 mkdir ~/archiving
-cp /scripts/work/words ~/archiving/
 chown linuxuser:linuxuser ~/archiving
+cp /scripts/work/whitethroats ~/archiving/unsorted.txt
 echo -e "Done setting up."
