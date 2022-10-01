@@ -9,5 +9,5 @@ groupadd archgroup 2>/dev/null
 rm -Rf ~/Arch1
 mkdir ~/Arch1
 cp /scripts/work/words ~/Arch1/
-chown linuxuser:linuxuser ~/Arch1
+chown -R linuxuser:linuxuser ~/Arch1
 echo -e "Done setting up."
