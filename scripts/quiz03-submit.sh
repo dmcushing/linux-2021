@@ -9,6 +9,10 @@ clear
 is_super_user
 student_info Quiz 03 Postal Codes II
 
+export TZ=America/Toronto
+echo -e "Postal Codes II: $( date +"%D %T" )" | tee -a $outfile
+blank_line
+
 tree ~/Quiz03 | tee -a $outfile
 blank_line
 

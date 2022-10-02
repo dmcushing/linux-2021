@@ -9,6 +9,10 @@ clear
 is_super_user
 student_info Quiz 02
 
+export TZ=America/Toronto
+echo -e "Tom Hanks I: $( date +"%D %T" )" | tee -a $outfile
+blank_line
+
 tree -ug /home/linuxuser/Quiz2 | tee -a $outfile
 blank_line
 check_owner 1 ~/Quiz2/TomHanks tomhanks
