@@ -2,4 +2,4 @@ apples
 oranges
 potatoes
 lemons
-garlic
+Garlic
