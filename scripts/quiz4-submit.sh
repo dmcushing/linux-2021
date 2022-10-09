@@ -17,7 +17,7 @@ blank_line
 
 check_existence 2 ~/Quiz4/sorted2.txt f
 check_line_count 2 ~/Quiz4/sorted2.txt 20
-head -5 /Quiz4/sorted2.txt 2>/dev/null| tee -a $outfile
+head -5 ~/Quiz4/sorted2.txt 2>/dev/null| tee -a $outfile
 blank_line
 
 check_existence 3 ~/Quiz4/psaux.txt f
