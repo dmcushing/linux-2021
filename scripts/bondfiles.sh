@@ -94,7 +94,7 @@ cp /scripts/themanwiththegoldengun.txt ~/bond/roger/
 sudo chown roger:pre80s ~/bond/roger/themanwiththegoldengun.txt
 sudo chmod 660 ~/bond/roger/themanwiththegoldengun.txt
 
-grep -nw "Scaramanga" | nl > ~/bond/scaramanga.txt
+grep -nw "Scaramanga" ~/bond/roger/themanwiththegoldengun.txt | nl > ~/bond/scaramanga.txt
 
 find ~/bond -iname "*197?" | nl > ~/bond/70sflicks.txt
 
