@@ -7,5 +7,5 @@ echo -e "Cleaning up..."
 userdel -r sortuser 2>/dev/null
 groupdel sortgroup 2>/dev/null
 rm -Rf ~/Quiz04
-rm -f ~/quiz04.tar.gz
+rm -f ~/quiz04.tar.bz2
 echo -e "Done cleaning up."
