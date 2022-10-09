@@ -16,4 +16,4 @@ groupdel bonds 2>/dev/null
 groupdel pre80s 2>/dev/null
 groupdel post80s 2>/dev/null
 
-rm -Rf /home/bond
+rm -Rf ~/bond

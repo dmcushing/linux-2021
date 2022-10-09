@@ -5,11 +5,14 @@ source /scripts/functions.sh
 clear
 is_super_user
 
-# Create the home directories
-mkdir -p /home/bond/pre80s
-mkdir -p /home/bond/post80s
-chown -R linuxuser:linuxuser /home/bond
-chmod 755 /home/bond/pre80s /home/bond/post80s
+# Create the directories
+mkdir -p ~/bond/roger
+mkdir -p ~/bond/pre80s/george
+mkdir -p ~/bond/pre80s/sean
+mkdir -p ~/bond/post80s/daniel
+mkdir -p ~/bond/post80s/pierce
+mkdir -p ~/bond/post80s/timothy
+chown -R linuxuser:linuxuser ~/bond
 
 # Add the Groups
 groupadd bonds
@@ -17,21 +20,21 @@ groupadd pre80s
 groupadd post80s
 
 # Add the users
-useradd -b /home/bond/post80s -m -G post80s,bonds -c "Daniel Craig" -s /bin/bash daniel
-useradd -b /home/bond/post80s -m -G post80s,bonds -c "Timothy Dalton" -s /bin/bash timothy
-useradd -b /home/bond/post80s -m -G post80s,bonds -c "Pierce Brosnan" -s /bin/bash pierce
-useradd -b /home/bond/pre80s -m -G post80s,bonds -c "Sean Connery" -s /bin/bash sean
-useradd -b /home/bond/pre80s -m -G post80s,bonds -c "George Lazenby" -s /bin/bash george
-useradd -b /home/bond/ -m -G pre80s,post80s,bonds -c "Roger Moore" -s /bin/bash roger
+useradd -m -G post80s,bonds -c "Daniel Craig" -s /bin/bash daniel
+useradd -m -G post80s,bonds -c "Timothy Dalton" -s /bin/bash timothy
+useradd -m -G post80s,bonds -c "Pierce Brosnan" -s /bin/bash pierce
+useradd -m -G post80s,bonds -c "Sean Connery" -s /bin/bash sean
+useradd -m -G post80s,bonds -c "George Lazenby" -s /bin/bash george
+useradd -m -G pre80s,post80s,bonds -c "Roger Moore" -s /bin/bash roger
 
 # Create the file structure
-seanFILES=("/home/bond/pre80s/sean/drno-1962" "/home/bond/pre80s/sean/fromrussiawithlove-1963" "/home/bond/pre80s/sean/goldfinger-1964" "/home/bond/pre80s/sean/thunderball-1965" "/home/bond/pre80s/sean/youonlylivetwice-1967" "/home/bond/pre80s/sean/diamondsareforever-1971")
-georgeFILES=("/home/bond/pre80s/george/onhermajestyssecretservice-1969")
-pre80srogerFILES=("/home/bond/roger/liveandletdie-1973" "/home/bond/roger/manwiththegoldengun-1974" "/home/bond/roger/spywholovedme-1977" "/home/bond/roger/moonraker-1979")
-post80srogerFILES=("/home/bond/roger/foryoureyesonly-1981" "/home/bond/roger/octopussy-1983" "/home/bond/roger/aviewtoakill-1985") 
-timothyFILES=("/home/bond/post80s/timothy/livingdaylights-1987" "/home/bond/post80s/timothy/licencetokill-1989")
-pierceFILES=("/home/bond/post80s/pierce/goldeneye-1995" "/home/bond/post80s/pierce/tomorrowneverdies-1997" "/home/bond/post80s/pierce/worldisnotenough-1999" "/home/bond/post80s/pierce/dieanotherday-2002" "/home/bond/post80s/pierce/script-run")
-danielFILES=("/home/bond/post80s/daniel/casinoroyale-2006" "/home/bond/post80s/daniel/quantumofsolace-2008" "/home/bond/post80s/daniel/skyfall-2012" "/home/bond/post80s/daniel/spectre-2015" "/home/bond/post80s/daniel/notimetodie-2021")
+seanFILES=("~/bond/pre80s/sean/drno-1962" "~/bond/pre80s/sean/fromrussiawithlove-1963" "~/bond/pre80s/sean/goldfinger-1964" "~/bond/pre80s/sean/thunderball-1965" "~/bond/pre80s/sean/youonlylivetwice-1967" "~/bond/pre80s/sean/diamondsareforever-1971")
+georgeFILES=("~/bond/pre80s/george/onhermajestyssecretservice-1969")
+pre80srogerFILES=("~/bond/roger/liveandletdie-1973" "~/bond/roger/manwiththegoldengun-1974" "~/bond/roger/spywholovedme-1977" "~/bond/roger/moonraker-1979")
+post80srogerFILES=("~/bond/roger/foryoureyesonly-1981" "~/bond/roger/octopussy-1983" "~/bond/roger/aviewtoakill-1985") 
+timothyFILES=("~/bond/post80s/timothy/livingdaylights-1987" "~/bond/post80s/timothy/licencetokill-1989")
+pierceFILES=("~/bond/post80s/pierce/goldeneye-1995" "~/bond/post80s/pierce/tomorrowneverdies-1997" "~/bond/post80s/pierce/worldisnotenough-1999" "~/bond/post80s/pierce/dieanotherday-2002" "~/bond/post80s/pierce/script-run")
+danielFILES=("~/bond/post80s/daniel/casinoroyale-2006" "~/bond/post80s/daniel/quantumofsolace-2008" "~/bond/post80s/daniel/skyfall-2012" "~/bond/post80s/daniel/spectre-2015" "~/bond/post80s/daniel/notimetodie-2021")
 
 for seanFILES in ${seanFILES[*]}
 do
@@ -78,15 +81,15 @@ done
 
 # Everything Else
 
-ln -s /home/bond/roger /home/bond/pre80s/roger
-ln -s /home/bond/roger /home/bond/post80s/roger
+ln -s ~/bond/roger ~/bond/pre80s/roger
+ln -s ~/bond/roger ~/bond/post80s/roger
 
-cp /scripts/themanwiththegoldengun.txt /home/bond/roger/
-chown roger:pre80s /home/bond/roger/themanwiththegoldengun.txt
-chmod 660 /home/bond/roger/themanwiththegoldengun.txt
+cp /scripts/themanwiththegoldengun.txt ~/bond/roger/
+chown roger:pre80s ~/bond/roger/themanwiththegoldengun.txt
+chmod 660 ~/bond/roger/themanwiththegoldengun.txt
 
-grep -n 'Scramanga' | nl > /home/bond/scramanga.txt
+grep -n 'Scramanga' | nl > ~/bond/scramanga.txt
 
-find /home/bond -iname "*197?" | nl > /home/bond/70sflicks.txt
+find ~/bond -iname "*197?" | nl > ~/bond/70sflicks.txt
 
-du -sh /home/bond > /home/bond/usedspace.txt
+du -sh ~/bond > ~/bond/usedspace.txt
