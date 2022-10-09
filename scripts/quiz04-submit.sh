@@ -47,7 +47,7 @@ blank_line
 
 check_existence 9 ~/quiz04.tar.bz2 f
 file ~/quiz04.tar.bz2 2>/dev/null | tee -a $outfile
-tar -tzf ~/quiz04.tar.bz2 2>/dev/null | tee -a $outfile
+tar -tjf ~/quiz04.tar.bz2 2>/dev/null | tee -a $outfile
 blank_line
 tree ~/Quiz04 | tee -a $outfile
 
