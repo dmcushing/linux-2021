@@ -3,7 +3,13 @@
 source /scripts/functions.sh
 
 clear
-is_super_user
+echo -e "***"
+echo -e "***"
+echo -e "***"
+echo -e "*** RUN THIS WITHOUT SUDO"
+echo -e "***"
+echo -e "***"
+echo -e "***"
 
 # Create the directories
 mkdir -p ~/bond/roger
@@ -12,20 +18,20 @@ mkdir -p ~/bond/pre80s/sean
 mkdir -p ~/bond/post80s/daniel
 mkdir -p ~/bond/post80s/pierce
 mkdir -p ~/bond/post80s/timothy
-chown -R linuxuser:linuxuser ~/bond
+sudo chown -R linuxuser:linuxuser ~/bond
 
 # Add the Groups
-groupadd bonds
-groupadd pre80s
-groupadd post80s
+sudo groupadd bonds
+sudo groupadd pre80s
+sudo groupadd post80s
 
 # Add the users
-useradd -m -G post80s,bonds -c "Daniel Craig" -s /bin/bash daniel
-useradd -m -G post80s,bonds -c "Timothy Dalton" -s /bin/bash timothy
-useradd -m -G post80s,bonds -c "Pierce Brosnan" -s /bin/bash pierce
-useradd -m -G post80s,bonds -c "Sean Connery" -s /bin/bash sean
-useradd -m -G post80s,bonds -c "George Lazenby" -s /bin/bash george
-useradd -m -G pre80s,post80s,bonds -c "Roger Moore" -s /bin/bash roger
+sudo useradd -m -G post80s,bonds -c "Daniel Craig" -s /bin/bash daniel
+sudo useradd -m -G post80s,bonds -c "Timothy Dalton" -s /bin/bash timothy
+sudo useradd -m -G post80s,bonds -c "Pierce Brosnan" -s /bin/bash pierce
+sudo useradd -m -G post80s,bonds -c "Sean Connery" -s /bin/bash sean
+sudo useradd -m -G post80s,bonds -c "George Lazenby" -s /bin/bash george
+sudo useradd -m -G pre80s,post80s,bonds -c "Roger Moore" -s /bin/bash roger
 
 # Create the file structure
 seanFILES=("~/bond/pre80s/sean/drno-1962" "~/bond/pre80s/sean/fromrussiawithlove-1963" "~/bond/pre80s/sean/goldfinger-1964" "~/bond/pre80s/sean/thunderball-1965" "~/bond/pre80s/sean/youonlylivetwice-1967" "~/bond/pre80s/sean/diamondsareforever-1971")
@@ -39,44 +45,44 @@ danielFILES=("~/bond/post80s/daniel/casinoroyale-2006" "~/bond/post80s/daniel/qu
 for seanFILES in ${seanFILES[*]}
 do
 	touch $seanFILES
-	chown sean:pre80s $seanFILES
-	chmod 660 $seanFILES
+	sudo chown sean:pre80s $seanFILES
+	sudo chmod 660 $seanFILES
 done
 for georgeFILES in ${georgeFILES[*]}
 do
 	touch $georgeFILES
-	chown george:pre80s $georgeFILES
-	chmod 660 $georgeFILES
+	sudo chown george:pre80s $georgeFILES
+	sudo chmod 660 $georgeFILES
 done
 for pre80srogerFILES in ${pre80srogerFILES[*]}
 do
 	touch $pre80srogerFILES
-	chown roger:pre80s $pre80srogerFILES
-	chmod 660 $pre80srogerFILES
+	sudo chown roger:pre80s $pre80srogerFILES
+	sudo chmod 660 $pre80srogerFILES
 done
 for post80srogerFILES in ${post80srogerFILES[*]}
 do
 	touch $post80srogerFILES
-	chown roger:post80s $post80srogerFILES
-	chmod 660 $post80srogerFILES
+	sudo chown roger:post80s $post80srogerFILES
+	sudo chmod 660 $post80srogerFILES
 done
 for timothyFILES in ${timothyFILES[*]}
 do
 	touch $timothyFILES
-	chown timothy:post80s $timothyFILES
-	chmod 660 $timothyFILES
+	sudo chown timothy:post80s $timothyFILES
+	sudo chmod 660 $timothyFILES
 done
 for pierceFILES in ${pierceFILES[*]}
 do
 	touch $pierceFILES
-	chown pierce:post80s $pierceFILES
-	chmod 660 $pierceFILES
+	sudo chown pierce:post80s $pierceFILES
+	sudo chmod 660 $pierceFILES
 done
 for danielFILES in ${danielFILES[*]}
 do
 	touch $danielFILES
-	chown daniel:post80s $danielFILES
-	chmod 660 $danielFILES
+	sudo chown daniel:post80s $danielFILES
+	sudo chmod 660 $danielFILES
 done
 
 # Everything Else
@@ -85,10 +91,10 @@ ln -s ~/bond/roger ~/bond/pre80s/roger
 ln -s ~/bond/roger ~/bond/post80s/roger
 
 cp /scripts/themanwiththegoldengun.txt ~/bond/roger/
-chown roger:pre80s ~/bond/roger/themanwiththegoldengun.txt
-chmod 660 ~/bond/roger/themanwiththegoldengun.txt
+sudo chown roger:pre80s ~/bond/roger/themanwiththegoldengun.txt
+sudo chmod 660 ~/bond/roger/themanwiththegoldengun.txt
 
-grep -n 'Scramanga' | nl > ~/bond/scramanga.txt
+grep -nw "Scaramanga" | nl > ~/bond/scaramanga.txt
 
 find ~/bond -iname "*197?" | nl > ~/bond/70sflicks.txt
 
