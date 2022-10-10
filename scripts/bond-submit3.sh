@@ -6,7 +6,7 @@ source /scripts/functions.sh
 is_super_user
 student_info Bond Lab
 
-BASEDIR = "/home/linuxuser/bond"
+BASEDIR="/home/linuxuser/bond"
 DIRECTORY=("$BASEDIR/roger" "$BASEDIR/pre80s/sean" "$BASEDIR/pre80s/george" "$BASEDIR/post80s/timothy" "$BASEDIR/post80s/pierce" "$BASEDIR/post80s/daniel")
 for DIRECTORY in ${DIRECTORY[*]}
 do
