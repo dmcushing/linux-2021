@@ -15,7 +15,7 @@ do
     else
                 echo -e "Directory $DIRECTORY doesn't exist - please check" | tee -a $outfile
 fi
-if [[ "`stat -c %A $DIRECTORY`" == "drwxr-xr-x" ]]; then
+if [[ "`stat -c %A $DIRECTORY`" == "drwxrwxr-x" ]]; then
  	echo -e "$DIRECTORY - correct permissions" | tee -a $outfile
 else
         echo -e "$DIRECTORY - incorrect permissions, try again." | tee -a $outfile
@@ -195,11 +195,19 @@ else
     echo -e "file: $BASEDIR/usedspace.txt - DOES NOT exist - try again" | tee -a $outfile
 fi
 
-if [ -e /home/linuxuser/bondassignment.tar.gz ]; then
-    echo -e "file: /home/linuxuser/bondassignment.tar.gz - exists" | tee -a $outfile
-    tar -tzvf /home/linuxuser/bondassignment.tar.gz | head -5 | tee -a $outfile
+if [ -e /home/linuxuser/bondlab.tar.gz ]; then
+    echo -e "file: /home/linuxuser/bondlab.tar.gz - exists" | tee -a $outfile
+    file /home/linuxuser/bondlab.tar.gz | tee -a $outfile
+    tar -tzvf /home/linuxuser/bondlab.tar.gz | head -5 | tee -a $outfile
 else
-    echo -e "file: /home/linuxuser/bondassignment.tar.gz - DOES NOT exist - try again" | tee -a $outfile
+    echo -e "file: /home/linuxuser/bondlab.tar.gz - DOES NOT exist - try again" | tee -a $outfile
+fi
+if [ -e /home/linuxuser/bondlab.tar.bz2 ]; then
+    echo -e "file: /home/linuxuser/bondlab.tar.bz2 - exists" | tee -a $outfile
+    file /home/linuxuser/bondlab.tar.bz2 | tee -a $outfile
+    tar -tzvf /home/linuxuser/bondlab.tar.bz2 | head -5 | tee -a $outfile
+else
+    echo -e "file: /home/linuxuser/bondlab.tar.bz2 - DOES NOT exist - try again" | tee -a $outfile
 fi
 
 # Submit the work
