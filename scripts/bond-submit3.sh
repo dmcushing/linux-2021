@@ -202,10 +202,12 @@ if [ -e /home/linuxuser/bondlab.tar.gz ]; then
 else
     echo -e "file: /home/linuxuser/bondlab.tar.gz - DOES NOT exist - try again" | tee -a $outfile
 fi
+echo " " | tee -a $outfile
+
 if [ -e /home/linuxuser/bondlab.tar.bz2 ]; then
     echo -e "file: /home/linuxuser/bondlab.tar.bz2 - exists" | tee -a $outfile
     file /home/linuxuser/bondlab.tar.bz2 | tee -a $outfile
-    tar -tzvf /home/linuxuser/bondlab.tar.bz2 | head -5 | tee -a $outfile
+    tar -tjvf /home/linuxuser/bondlab.tar.bz2 | head -5 | tee -a $outfile
 else
     echo -e "file: /home/linuxuser/bondlab.tar.bz2 - DOES NOT exist - try again" | tee -a $outfile
 fi
