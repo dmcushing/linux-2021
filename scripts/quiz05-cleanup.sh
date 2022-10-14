@@ -4,12 +4,12 @@ source /scripts/functions.sh
 clear
 is_super_user
 echo -e "Cleaning up..."
-rm -Rf ~/Quiz5
+rm -Rf ~/Quiz05
 rm -f ~/quiz5*
-groupdel IT &> /dev/null
+groupdel sales &> /dev/null
 groupdel management &> /dev/null
-groupdel countdown &> /dev/null
-userdel -r roy &> /dev/null
-userdel -r jen &> /dev/null
-userdel -r moss &> /dev/null
+groupdel office &> /dev/null
+userdel -r pam &> /dev/null
+userdel -r jim &> /dev/null
+userdel -r michael &> /dev/null
 echo -e "Done cleaning up."
