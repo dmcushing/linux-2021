@@ -8,7 +8,6 @@ source /scripts/functions.sh
 clear
 is_super_user
 student_info Quiz 05 Users and Groups
-tree /home/linuxuser/Quiz5 | tee -a $outfile
 
 echo -e "Users:" | tee -a $outfile
 USERID=("roy" "moss" "jen")
@@ -76,5 +75,8 @@ blank_line
 check_existence 3 /home/linuxuser/quiz5.tar.bz2 f
 file /home/linuxuser/quiz5.tar.bz2 2>/dev/null | tee -a $outfile
 tar -tjvf /home/linuxuser/quiz5.tar.bz2 2>/dev/null | tee -a $outfile
+blank_line
+
+tree /home/linuxuser/Quiz5 | tee -a $outfile
 
 mail_out Users_and_Groups Quiz5
