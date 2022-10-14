@@ -8,7 +8,7 @@ source /scripts/functions.sh
 clear
 is_super_user
 student_info Quiz 05 Users and Groups
-tree /home/linuxuser/Quiz05 | tee -a $outfile
+tree /home/linuxuser/Quiz5 | tee -a $outfile
 
 echo -e "Users:" | tee -a $outfile
 USERID=("roy" "moss" "jen")
@@ -49,7 +49,7 @@ user_param 1 shell jen "/bin/bash"
 blank_line
 
 echo -e "Expiry Dates:" | tee -a $outfile
-user_param 1 account_expiry jen 2013-06-05
+user_param 1 account_expiry jen 2030-06-05
 blank_line
 
 echo -e "Home Directories:" | tee -a $outfile
@@ -61,16 +61,16 @@ do
 done
 blank_line
 
-check_existence 1 /home/linuxuser/Quiz05/mimesort.txt f
-check_line_count 1 /home/linuxuser/Quiz05/mimesort.txt 72
-tail -5 /home/linuxuser/Quiz05/mimesort.txt 2>/dev/null | tee -a $outfile
+check_existence 1 /home/linuxuser/Quiz5/parksort.txt f
+check_line_count 1 /home/linuxuser/Quiz5/parksort.txt 12
+head -5 /home/linuxuser/Quiz5/parksort.txt 2>/dev/null | tee -a $outfile
 blank_line
 
-check_owner 2 /home/linuxuser/Quiz05/basement/IT roy
-check_group 2 /home/linuxuser/Quiz05/basement/IT IT
-check_owner 2 /home/linuxuser/Quiz05/basement/office jen
-check_group 2 /home/linuxuser/Quiz05/basement/office management
-check_permissions 2 /home/linuxuser/Quiz05/basement/IT drwxr-x---
+check_owner 2 /home/linuxuser/Quiz5/basement/IT roy
+check_group 2 /home/linuxuser/Quiz5/basement/IT IT
+check_owner 2 /home/linuxuser/Quiz5/basement/office jen
+check_group 2 /home/linuxuser/Quiz5/basement/office management
+check_permissions 2 /home/linuxuser/Quiz5/basement/IT drwxr-x---
 blank_line
 
 check_existence 3 /home/linuxuser/quiz5.tar.bz2 f
