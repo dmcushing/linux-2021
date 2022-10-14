@@ -74,7 +74,7 @@ blank_line
 
 check_existence 3 /home/linuxuser/quiz5.tar.gz f
 file /home/linuxuser/quiz5.tar.gz 2>/dev/null | tee -a $outfile
-tar -tjvf /home/linuxuser/quiz5.tar.gz 2>/dev/null | tee -a $outfile
+tar -tzvf /home/linuxuser/quiz5.tar.gz 2>/dev/null | tee -a $outfile
 blank_line
 
 tree /home/linuxuser/Quiz05 | tee -a $outfile
