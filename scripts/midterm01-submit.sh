@@ -94,9 +94,9 @@ blank_line
 
 echo -e "Find:" | tee -a $outfile
 
-check_existence 5 ~/midterm/find/we.txt f
-check_line_count 5 ~/midterm/find/we.txt 7
-tail -5 ~/midterm/find/we.txt | tee -a $outfile
+check_existence 5 ~/midterm/find/rmen.txt f
+check_line_count 5 ~/midterm/find/rmen.txt 3
+tail -5 ~/midterm/find/rmen.txt | tee -a $outfile
 blank_line
 check_existence 5 ~/midterm/find/nas.txt f
 check_line_count 5 ~/midterm/find/nas.txt 4
@@ -114,7 +114,7 @@ check_line_count 6 ~/midterm/grep/M9A5.txt 90
 tail -5 ~/midterm/grep/M9A5.txt | tee -a $outfile
 blank_line
 check_existence 6 ~/midterm/grep/fly.txt f
-check_line_count 6 ~/midterm/grep/fly.txt 1
+check_line_count 6 ~/midterm/grep/fly.txt 3
 tail -5 ~/midterm/grep/fly.txt | tee -a $outfile
 blank_line
 

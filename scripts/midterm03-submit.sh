@@ -115,7 +115,7 @@ check_line_count 6 ~/midterm/grep/C1N6.txt 127
 tail -5 ~/midterm/grep/C1N6.txt | tee -a $outfile
 blank_line
 check_existence 6 ~/midterm/grep/chicken.txt f
-check_line_count 6 ~/midterm/grep/chicken.txt 1
+check_line_count 6 ~/midterm/grep/chicken.txt 3
 tail -5 ~/midterm/grep/chicken.txt | tee -a $outfile
 blank_line
 

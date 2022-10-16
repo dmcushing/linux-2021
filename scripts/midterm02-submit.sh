@@ -115,7 +115,7 @@ check_line_count 6 ~/midterm/grep/B2G2.txt 59
 tail -5 ~/midterm/grep/B2G2.txt | tee -a $outfile
 blank_line
 check_existence 6 ~/midterm/grep/horse.txt f
-check_line_count 6 ~/midterm/grep/horse.txt 1
+check_line_count 6 ~/midterm/grep/horse.txt 3
 tail -5 ~/midterm/grep/horse.txt | tee -a $outfile
 blank_line
 
