@@ -114,7 +114,7 @@ read -p "Mail your work to your instructor? (y to send mail or CTRL-C to exit) "
   --url https://api.sendgrid.com/v3/mail/send \
   --header "Authorization: Bearer $SENDGRID_API_KEY" \
   --header 'Content-Type: application/json' \
-  --data '{"personalizations": [{"to": [{"email": "dave@davecushing.ca"}]}],"from": {"email": "dave@davecushing.ca"},"subject": "'"$1 $2: $lname $fname"'","content": [{"type": "text/plain", "value": "Sent as attachment:"}] , "attachments": [{"content": "'"$content"'", "type": "text/plain", "filename": "'"$attachment"'"}]}'
+  --data '{"personalizations": [{"to": [{"email": "cet1025@davecushing.ca"}]}],"from": {"email": "dave@davecushing.ca"},"subject": "'"$1 $2: $lname $fname"'","content": [{"type": "text/plain", "value": "Sent as attachment:"}] , "attachments": [{"content": "'"$content"'", "type": "text/plain", "filename": "'"$attachment"'"}]}'
 
 exit 0
 }
