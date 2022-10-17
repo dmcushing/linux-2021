@@ -26,7 +26,7 @@ fi
 # Gather Student Information and Create Information File
 
 student_info(){
-echo -e "CET1025 $1 $2 Submission"
+echo -e "$1 $2 Submission"
 while IFS=: read -r c1 c2; do
     [[ $c1 == Name ]] && name=$c1
     [[ $c1 == FName ]] && fname=$c1
@@ -51,13 +51,13 @@ mkdir ~/.output 2>/tmp/null
 outfile=~/.output/$filename
 
 echo -e "Work will be saved in $outfile \n"
-echo $HOSTNAME $( TZ=America/Toronto date ) > $outfile
-echo -e "CET1025 $1 $2 - ($snumber) $fname $lname \n" | tee -a $outfile
+echo $( cat /etc/machine-id ) $( TZ=America/Toronto date ) > $outfile
+echo -e "$1 $2 - ($snumber) $fname $lname \n" | tee -a $outfile
 return 0
 }
 
 student_info_midterm(){
-echo -e "CET1025 $1 $2 Submission"
+echo -e "$1 $2 Submission"
 echo -n "Enter your first name: "
 read fname
 echo -n "Enter your last name: "
@@ -71,8 +71,8 @@ mkdir ~/.output 2>/tmp/null
 outfile=~/.output/$filename
 
 echo -e "Work will be saved in $outfile \n"
-echo $HOSTNAME $( TZ=America/Toronto date ) > $outfile
-echo -e "CET1025 $1 $2 - ($snumber) $fname $lname \n" | tee -a $outfile
+echo $(cat /etc/machine-id ) $( TZ=America/Toronto date ) > $outfile
+echo -e "$1 $2 - ($snumber) $fname $lname \n" | tee -a $outfile
 return 0
 }
 
