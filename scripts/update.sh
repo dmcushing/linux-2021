@@ -15,7 +15,7 @@ echo -e "Updating scripts.."
 git -C /linux-2021/ stash
 git -C /linux-2021/ pull origin
 chmod 777 /linux-2021/scripts/*.sh
-chmod 777 /linux-2021/scripts/init-1025
+
 #
 # Clean up disks
 #
