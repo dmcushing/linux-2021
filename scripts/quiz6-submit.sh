@@ -10,31 +10,27 @@ is_super_user
 student_info Packages Quiz
 
 # Question 1
-package_check 1 figlet
 package_check 1 cowsay
 blank_line
 
-check_existence 1 ~/Quiz06/cowsay.txt f
-cat ~/Quiz06/cowsay.txt | tee -a $outfile
-blank_line
-
-check_existence 1 ~/Quiz06/figlet.txt f
-cat ~/Quiz06/figlet.txt | tee -a $outfile
+check_existence 1 ~/Quiz6/cowsay.txt f
+cat ~/Quiz6/cowsay.txt | tee -a $outfile
 blank_line
 
 # Question 2
-check_existence 2 ~/Quiz06/figletfiles.txt f
-tail  -5 ~/Quiz06/figletfiles.txt | tee -a $outfile
+check_existence 2 ~/Quiz6/cowsayfiles.txt f
+check_line_count 2 ~Quiz6/cowsayfiles.txt 67
+tail  -5 ~/Quiz6/cowsayfiles.txt | tee -a $outfile
 blank_line
 
 # Question 3
-check_existence 3 ~/Quiz06/homepage.txt f
-tail  -5 ~/Quiz06/homepage.txt | tee -a $outfile
+check_existence 3 ~/Quiz6/homepage.txt f
+tail  -5 ~/Quiz6/homepage.txt | tee -a $outfile
 blank_line
 
 #Question 4
 entity_exists 4 quiz6 passwd
-user_param 4 account_expiry quiz6 2022-11-11
+user_param 4 account_expiry quiz6 2035-11-11
 check_existence 4 "/home/quiz6" d
 blank_line
 

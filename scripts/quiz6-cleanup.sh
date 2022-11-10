@@ -3,9 +3,8 @@
 source /scripts/functions.sh
 clear
 is_super_user
-echo -e "Setting up..."
+echo -e "Cleaning up..."
+sudo apt purge -y cowsay figlet
 userdel -r quiz6 2>/dev/null
 rm -Rf /home/linuxuser/Quiz6
-mkdir /home/linuxuser/Quiz6
-chown linuxuser:linuxuser /home/linuxuser/Quiz6
-echo -e "Done setting up."
+echo -e "Done cleaning up."
