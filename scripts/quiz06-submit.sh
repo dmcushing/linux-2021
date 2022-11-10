@@ -19,7 +19,7 @@ blank_line
 
 # Question 2
 check_existence 2 ~/Quiz06/figletfiles.txt f
-check_line_count 2 ~Quiz6/figletfiles.txt 87
+check_line_count 2 ~/Quiz06/figletfiles.txt 87
 tail  -5 ~/Quiz06/figletfiles.txt | tee -a $outfile
 blank_line
 
