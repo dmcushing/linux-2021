@@ -19,7 +19,7 @@ blank_line
 
 # Question 2
 check_existence 2 ~/Quiz6/cowsayfiles.txt f
-check_line_count 2 ~Quiz6/cowsayfiles.txt 67
+check_line_count 2 ~/Quiz6/cowsayfiles.txt 67
 tail  -5 ~/Quiz6/cowsayfiles.txt | tee -a $outfile
 blank_line
 
