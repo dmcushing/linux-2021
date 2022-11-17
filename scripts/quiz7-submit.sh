@@ -12,9 +12,9 @@ student_info File System Quiz
 tree ~/Quiz7 | tee -a $outfile
 blank_line
 
-lsblk -l -o NAME,SIZE,RO,FSTYPE,MOUNTPOINT /dev/sde /dev/sdf | tee -a $outfile
+lsblk -l -o NAME,SIZE,RO,FSTYPE,MOUNTPOINT /dev/sde1 /dev/sdf1 | tee -a $outfile
 blank_line
-mount | grep "sde\|sdf" | tee -a $outfile
+mount | grep "sde1\|sdf1" | tee -a $outfile
 blank_line
 
 entity_exists 4 quiz7 passwd
