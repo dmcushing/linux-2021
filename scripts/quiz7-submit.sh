@@ -24,12 +24,12 @@ check_existence 4 "/home/quiz7" d
 blank_line
 
 package_check 5 xinetd
-check_existence 5 ~/Quiz07/xinetd-status.txt f
-head -5 ~/Quiz07/xinetd-status.txt | tee -a $outfile
+check_existence 5 ~/Quiz7/xinetd-status.txt f
+head -5 ~/Quiz7/xinetd-status.txt | tee -a $outfile
 blank_line
 
-check_existence 6 ~/Quiz07/YaTa.tar.gz f
-tar tzvf ~/Quiz07/YaTa.tar.gz | tail -5 | tee -a $outfile
+check_existence 6 ~/Quiz7/YaTa.tar.gz f
+tar tzvf ~/Quiz7/YaTa.tar.gz | tail -5 | tee -a $outfile
 blank_line
 
 mail_out Filesystem Quiz7
