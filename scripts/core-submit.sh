@@ -39,6 +39,7 @@ blank_line
 
 echo -e "Partitions and Mount Points" | tee -a $outfile
 lsblk /dev/sdb /dev/sdc /dev/sdd /dev/sde /dev/sdf /dev/sdg | tee -a $outfile
+blank_line
 mount | grep "core" | tee -a $outfile
 
 # Submit the work
