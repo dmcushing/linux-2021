@@ -43,7 +43,7 @@ blank_line
 mount | grep "core" | tee -a $outfile
 blank_line
 check_existence 14 ~/corelab/txtbackup.tar.gz f
-tar -tzvf ~/corelab/txtbackup.tar.gz | tail -5 /var/www/html/index2.html 2>/dev/null | tee -a $outfile
+tar -tzvf ~/corelab/txtbackup.tar.gz | nl | tail -5 2>/dev/null | tee -a $outfile
 blank_line
 
 
