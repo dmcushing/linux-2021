@@ -2,14 +2,14 @@
 source /scripts/functions.sh
 clear
 is_super_user
-student_info LVM Quiz
-echo -e "Is the LVM created and mounted?" | tee -a $outfile
+student_info Quiz 8
+lsblk -l -o NAME,SIZE,FSTYPE,MOUNTPOINT,RO /dev/vg_quiz8/lv_quiz8 | tee -a $outfile
 blank_line
-lsblk -l -o NAME,SIZE,FSTYPE,MOUNTPOINT /dev/vg_quiz/lv_quiz | tee -a $outfile
+mount | grep 'media' | tee -a $outfile
 blank_line
-mount | grep 'quiz' | tee -a $outfile
+pvdisplay --short
 blank_line
-vgdisplay vg_quiz | tee -a $outfile
+vgdisplay vg_quiz8 | tee -a $outfile
 blank_line
 
-mail_out LVM Quiz
+mail_out Quiz 8
