@@ -3,7 +3,7 @@ source /scripts/functions.sh
 clear
 is_super_user
 student_info cron Lab
-tree -s ~/cronlab
+tree -s ~/cronlab | tee -a $outfile
 echo -e "crontab entries:" | tee -a $outfile
 blank_line
 grep "^[^#;]" /var/spool/cron/crontabs/root 2> /dev/null | tee -a $outfile
