@@ -19,7 +19,7 @@ USERID=("dick" "sally" "harry" "tommy")
 for USERID in ${USERID[*]}
 do
 	entity_exists 1 $USERID passwd
-	user_param 1 account_expiry $USERID 2021-06-01
+	user_param 1 account_expiry $USERID 2031-06-01
 done
 USERID=("mary" "nina" "mamie" "don")
 for USERID in ${USERID[*]}
@@ -82,6 +82,10 @@ blank_line
 
 echo -e "Question 5 - Find" | tee -a $outfile
 
+check_existence 5 /home/linuxuser/thirdrock/trichoblast f
+check_line_count 5 ~/thirdrock/trichoblast 50
+tail -5 ~/thirdrock/trichoblast | tee -a $outfile
+blank_line
 check_existence 5 /home/linuxuser/thirdrock/fgain.txt f
 check_line_count 5 ~/thirdrock/fgain.txt 4
 tail -5 ~/thirdrock/fgain.txt | tee -a $outfile
@@ -90,15 +94,19 @@ blank_line
 echo -e "Question 6 - Grep" | tee -a $outfile
 
 check_existence 6 /home/linuxuser/thirdrock/finallast.txt f
-check_line_count 5 ~/thirdrock/finallast.txt 8
+check_line_count 6 ~/thirdrock/finallast.txt 63
 tail -5 ~/thirdrock/finallast.txt | tee -a $outfile
+blank_line
+check_existence 6 /home/linuxuser/thirdrock/final.txt f
+check_line_count 6 ~/thirdrock/final.txt 9
+tail -5 ~/thirdrock/final.txt | tee -a $outfile
 blank_line
 
 echo -e "Question 7 - tar and cron" | tee -a $outfile
 
 check_existence 7 ~/thirdrock.tar.gz f
 file ~/thirdrock.tar.gz 2>/dev/null | tee -a $outfile
-tar -tzvf ~/thirdrock.tar.gz 2> /dev/null | tail -5 | tee -a $outfile
+tar -tzf ~/thirdrock.tar.gz 2> /dev/null | tail -5 | tee -a $outfile
 blank_line
 echo -e "Crontab"
 crontab -l | tail -3 | tee -a $outfile
