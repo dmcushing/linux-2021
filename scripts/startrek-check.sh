@@ -65,7 +65,7 @@ blank_line
 
 echo -e "Question 2 - Create Directory Structure" | tee -a $outfile
 blank_line
-DIRECTORY=("/home/linuxuser/thirdrock" "/home/linuxuser/thirdrock/house" "/home/linuxuser/thirdrock/university" "/home/linuxuser/thirdrock/biggianthead" "/home/linuxuser/thirdrock/roof" "/media/tr-sdb1" "/media/tr-sdb2" "/media/tr-lvm")
+DIRECTORY=("/home/linuxuser/startrek" "/home/linuxuser/startrek/bridge" "/home/linuxuser/startrek/planet" "/home/linuxuser/startrek/sickbay" "/home/linuxuser/startrek/trnasporter" "/media/sdb" "/media/sdc" "/media/trek1" "/media/trek2")
 
 for DIRECTORY in ${DIRECTORY[*]}
 do

@@ -15,7 +15,7 @@ done
 
 
 # Clean up old groups
-GRP=( "command" "bridge" "engine" "medical")
+GRP=( "command" "bridge" "engine" "medical" "helm")
 for GRP in ${GRP[*]}
 do
 	groupdel $GRP
