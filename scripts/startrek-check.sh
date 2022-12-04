@@ -104,20 +104,21 @@ lsblk -l -o NAME,SIZE,FSTYPE,MOUNTPOINT /dev/sdb1 /dev/sdc1 /dev/vg_trek1/lv_tre
 blank_line
 
 echo -e "Question 4 - Permissions and Ownership"| tee -a $outfile
-check_owner 4 /home/linuxuser/thirdrock linuxuser
-check_group 4 /home/linuxuser/thirdrock aliens
-check_permissions 4 /home/linuxuser/thirdrock drwxrwxrwx
-check_owner 4 /home/linuxuser/thirdrock/biggianthead dick
-check_group 4 /home/linuxuser/thirdrock/biggianthead aliens
-check_permissions 4 /home/linuxuser/thirdrock/biggianthead drwxrwx---
-check_owner 4 /home/linuxuser/thirdrock/university dick
-check_group 4 /home/linuxuser/thirdrock/university university
-check_permissions 4 /home/linuxuser/thirdrock/university drwxrwx---
-check_owner 4 /home/linuxuser/thirdrock/house mamie
-check_permissions 4 /home/linuxuser/thirdrock/house drwxrwxrwx
-check_owner 4 /home/linuxuser/thirdrock/biggianthead/StonePhillips harry
-check_group 4 /home/linuxuser/thirdrock/biggianthead/StonePhillips aliens
-check_permissions 4 /home/linuxuser/thirdrock/biggianthead/StonePhillips -rw-r-----
+check_owner 4 ~/startrek linuxuser
+check_group 4 ~/startrek bridge
+check_permissions 4 ~/startrek drwxrwxr-x
+check_owner 4 ~/startrek/bridge kirk
+check_group 4 ~/startrek/bridge bridge
+check_permissions 4 ~/startrek/bridge drwxrwxr-x
+check_owner 4 ~/startrek/transporter scotty
+check_group 4 ~/startrek/transporter engine
+check_permissions 4 ~/startrek/transporter drwxrwxr-x
+check_owner 4 ~/startrek/sickbay mccoy
+check_group 4 ~/startrek/sickbay medical
+check_permissions 4 ~/startrek/sickbay drwxrwxrwx
+check_owner 4 ~/startrek/planet/redshirt spock
+check_group 4 ~/startrek/planet/redshirt medical
+check_permissions 4 ~/startrek/planet/redshirt -rw-r-----
 blank_line
 
 echo -e "Question 5 - Find" | tee -a $outfile
