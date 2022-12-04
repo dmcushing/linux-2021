@@ -123,41 +123,39 @@ blank_line
 
 echo -e "Question 5 - Find" | tee -a $outfile
 
-check_existence 5 /home/linuxuser/thirdrock/trichoblast f
-check_line_count 5 ~/thirdrock/trichoblast 50
-tail -5 ~/thirdrock/trichoblast | tee -a $outfile
+check_existence 5 ~/startrek/univalvular f
+check_line_count 5 ~/startrek/univalvular 50
+tail -5 ~/startrek/univalvular | tee -a $outfile
 blank_line
-check_existence 5 /home/linuxuser/thirdrock/fgain.txt f
-check_line_count 5 ~/thirdrock/fgain.txt 4
-tail -5 ~/thirdrock/fgain.txt | tee -a $outfile
+check_existence 5 ~/startrek/wanes.txt f
+check_line_count 5 ~/startrek/wanes.txt 3
+tail -5 ~/startrek/wanes.txt | tee -a $outfile
 blank_line
 
 echo -e "Question 6 - Grep" | tee -a $outfile
 
-check_existence 6 /home/linuxuser/thirdrock/finallast.txt f
-check_line_count 6 ~/thirdrock/finallast.txt 63
-tail -5 ~/thirdrock/finallast.txt | tee -a $outfile
+check_existence 6 ~/startrek/enterprise.txt f
+check_line_count 6 ~/startrek/enterprise.txt 268
+tail -5 ~/startrek/enterprise.txt | tee -a $outfile
 blank_line
-check_existence 6 /home/linuxuser/thirdrock/final.txt f
-check_line_count 6 ~/thirdrock/final.txt 9
-tail -5 ~/thirdrock/final.txt | tee -a $outfile
+check_existence 6 ~/startrek/mission.txt f
+check_line_count 6 ~/startrek/mission.txt 71
+tail -5 ~/startrek/mission.txt | tee -a $outfile
 blank_line
 
 echo -e "Question 7 - tar and cron" | tee -a $outfile
 
-check_existence 7 ~/thirdrock.tar.gz f
-file ~/thirdrock.tar.gz 2>/dev/null | tee -a $outfile
-tar -tzf ~/thirdrock.tar.gz 2> /dev/null | tail -5 | tee -a $outfile
+check_existence 7 ~/startrek.tar.gz f
+file ~/startrek.tar.gz 2>/dev/null | tee -a $outfile
+tar -tzf ~/startrek.tar.gz 2> /dev/null | tail -5 | tee -a $outfile
 blank_line
 echo -e "Crontab"
 crontab -l | tail -3 | tee -a $outfile
 blank_line
 echo -e "Question 8 - Installing Software" | tee -a $outfile
-package_check 8 calcurse
+package_check 8 colossal-cave-adventure
 blank_line
-dpkg --list calcurse | tee -a $outfile
-blank_line
-package_check 8 iftop
+package_check 8 logtop
 blank_line
 
 # Submit the work
