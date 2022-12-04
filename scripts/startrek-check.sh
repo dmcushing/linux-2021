@@ -81,7 +81,7 @@ echo -e "Question 3 - Filesystems"| tee -a $outfile
 blank_line
 check_existence 3 /dev/sdb1 b
 check_part 3 is_mounted /dev/sdb1
-check_part 3 mount_point /media/sdb1 /dev/sdb1
+check_part 3 mount_point /media/sdb /dev/sdb1
 check_part 3 fs_type /dev/sdb1 ext2
 blank_line
 check_existence 3 /dev/sdc1 b
