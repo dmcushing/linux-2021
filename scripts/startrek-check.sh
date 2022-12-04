@@ -154,7 +154,6 @@ crontab -l | tail -3 | tee -a $outfile
 blank_line
 echo -e "Question 8 - Installing Software" | tee -a $outfile
 package_check 8 colossal-cave-adventure
-blank_line
 package_check 8 logtop
 blank_line
 
