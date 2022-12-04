@@ -65,13 +65,13 @@ blank_line
 
 echo -e "Question 2 - Create Directory Structure" | tee -a $outfile
 blank_line
-DIRECTORY=("/home/linuxuser/startrek" "/home/linuxuser/startrek/bridge" "/home/linuxuser/startrek/planet" "/home/linuxuser/startrek/sickbay" "/home/linuxuser/startrek/trnasporter" "/media/sdb" "/media/sdc" "/media/trek1" "/media/trek2")
+DIRECTORY=("/home/linuxuser/startrek" "/home/linuxuser/startrek/bridge" "/home/linuxuser/startrek/planet" "/home/linuxuser/startrek/sickbay" "/home/linuxuser/startrek/transporter" "/media/sdb" "/media/sdc" "/media/trek1" "/media/trek2")
 
 for DIRECTORY in ${DIRECTORY[*]}
 do
 	check_existence 2 $DIRECTORY d
 done
-FILE=("/home/linuxuser/thirdrock/biggianthead/StonePhillips" )
+FILE=("/home/linuxuser/startrek/planet/redshirt" )
 for FILE in ${FILE[*]}
 do
 	check_existence 2 $FILE f
@@ -81,21 +81,26 @@ echo -e "Question 3 - Filesystems"| tee -a $outfile
 blank_line
 check_existence 3 /dev/sdb1 b
 check_part 3 is_mounted /dev/sdb1
-check_part 3 mount_point /media/tr-sdb1 /dev/sdb1
-check_part 3 fs_type /dev/sdb1 ext4
+check_part 3 mount_point /media/sdb1 /dev/sdb1
+check_part 3 fs_type /dev/sdb1 ext2
 blank_line
-check_existence 3 /dev/sdb2 b
-check_part 3 is_mounted /dev/sdb2
-check_part 3 mount_point /media/tr-sdb2 /dev/sdb2
-check_part 3 fs_type /dev/sdb2 ext3
-mount | grep 'sdb2' | tee -a $outfile
+check_existence 3 /dev/sdc1 b
+check_part 3 is_mounted /dev/sdc1
+check_part 3 mount_point /media/sdc /dev/sdc1
+check_part 3 fs_type /dev/sdc1 ext3
+mount | grep 'sdc1' | tee -a $outfile
 blank_line
-check_existence 3 /dev/vg_practice/lv_practice b
-check_part 3 is_mounted /dev/mapper/vg_practice-lv_practice
-check_part 3 mount_point /media/tr-lvm /dev/mapper/vg_practice-lv_practice
-check_part 3 fs_type /dev/mapper/vg_practice-lv_practice ext4
+check_existence 3 /dev/vg_trek1/lv_trek1 b
+check_part 3 is_mounted /dev/mapper/vg_trek1-lv_trek1
+check_part 3 mount_point /media/trek1 /dev/mapper/vg_trek1-lv_trek1
+check_part 3 fs_type /dev/mapper/vg_trek1-lv_trek1 ext4
 blank_line
-lsblk -l -o NAME,SIZE,FSTYPE,MOUNTPOINT /dev/sdb1 /dev/sdb2 /dev/vg_practice/lv_practice | tee -a $outfile
+check_existence 3 /dev/vg_trek2/lv_trek2 b
+check_part 3 is_mounted /dev/mapper/vg_trek2-lv_trek2
+check_part 3 mount_point /media/trek2 /dev/mapper/vg_trek2-lv_trek2
+check_part 3 fs_type /dev/mapper/vg_trek2-lv_trek2 ext4
+blank_line
+lsblk -l -o NAME,SIZE,FSTYPE,MOUNTPOINT /dev/sdb1 /dev/sdc1 /dev/vg_trek1/lv_trek1 /dev/vg_trek2/lv_trek2 | tee -a $outfile
 blank_line
 
 echo -e "Question 4 - Permissions and Ownership"| tee -a $outfile
