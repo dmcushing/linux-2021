@@ -102,13 +102,13 @@ ls -l ~/BigBang/Bang* | tee -a $outfile
 blank_line
 echo -e "Find Command contents of ~/BigBang/BLaong.txt" | tee -a $outfile
 check_existence 6 ~/BigBang/BLaong.txt f
-check_line_count 6 ~/BigBang/BLaong.txt 3
+check_line_count 6 ~/BigBang/BLaong.txt 2
 tail -5 ~/BigBang/BLaong.txt | tee -a $outfile
 blank_line
 
 echo -e "Grep:" | tee -a $outfile
 check_existence 7 ~/BigBang/big-bang.txt f
-check_line_count 7 ~/BigBang/big-bang.txt 33
+check_line_count 7 ~/BigBang/big-bang.txt 36
 tail -5 ~/BigBang/big-bang.txt | tee -a $outfile
 blank_line
 

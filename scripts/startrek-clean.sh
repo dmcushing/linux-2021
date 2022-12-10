@@ -43,7 +43,5 @@ echo -e " Clean up crontab.."
 crontab -r  >/dev/null 2>&1
 
 echo -e " Clean up software installs.."
-# remove iftop + calcurse
-apt -y purge httping logtop  >/dev/null 2>&1
 
 echo -e "Done clean up."
