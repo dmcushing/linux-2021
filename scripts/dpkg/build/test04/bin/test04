@@ -1,0 +1,3 @@
+#!/bin/bash
+. test04.conf
+echo "Best of Luck!"

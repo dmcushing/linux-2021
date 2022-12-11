@@ -52,7 +52,7 @@ check_existence 2 ~/StarWars/Falcon/Smuggler d
 check_existence 2 ~/StarWars/Destroyer d
 check_existence 2 ~/StarWars/Destroyer/DetentionLevel d
 check_existence 2 /media/StarWars-sdb1 d
-check_existence 2 /media/StarWars-sdb2 d
+check_existence 2 /media/StarWars-sdc1 d
 check_existence 2 /media/StarWars-lv_deathstar d
 blank_line
 
@@ -66,11 +66,11 @@ check_part 3 mount_point /media/StarWars-sdb1 /dev/sdb1
 check_part 3 fs_type /dev/sdb1 vfat
 blank_line
 
-check_existence 3 /dev/sdb2 b
-check_part 3 is_mounted /dev/sdb2
-check_part 3 mount_point /media/StarWars-sdb2 /dev/sdb2
-check_part 3 fs_type /dev/sdb2 ext4
-mount | grep 'sdb2' | tee -a $outfile
+check_existence 3 /dev/sdc1 b
+check_part 3 is_mounted /dev/sdc1
+check_part 3 mount_point /media/StarWars-sdc1 /dev/sdc1
+check_part 3 fs_type /dev/sdc1 ext4
+mount | grep 'sdc1' | tee -a $outfile
 blank_line
 
 check_existence 3 /dev/vg_starwars/lv_deathstar b
@@ -79,7 +79,7 @@ check_part 3 mount_mount /media/starwars-lv_deathstar
 check_part 3 fs_type /dev/mapper/vg_starwars-lv_deathstar ext4
 blank_line
 
-lsblk -l -o NAME,SIZE,FSTYPE,MOUNTPOINT /dev/sdb1 /dev/sdb2 /dev/vg_starwars/lv_deathstar | tee -a $outfile
+lsblk -l -o NAME,SIZE,FSTYPE,MOUNTPOINT /dev/sdb1 /dev/sdc1 /dev/vg_starwars/lv_deathstar | tee -a $outfile
 blank_line
 
 check_owner 5 ~/StarWars linuxuser
@@ -100,17 +100,17 @@ check_permissions 5 ~/StarWars/Destroyer/MoffTarkin -r--r-----
 blank_line
 
 echo -e "Find Command Files:" | tee -a $outfile
-ls -l ~/StarWars/warp* | tee -a $outfile
+ls -l ~/StarWars/Tie* | tee -a $outfile
 blank_line
 echo -e "Find Command contents of ~/StarWars/SAtlr.txt" | tee -a $outfile
 check_existence 6 ~/StarWars/SAtlr.txt f
-check_line_count 6 ~/StarWars/SAtlr.txt 2
+check_line_count 6 ~/StarWars/SAtlr.txt 5
 tail -5 ~/StarWars/SAtlr.txt | tee -a $outfile
 blank_line
 
 echo -e "Grep:" | tee -a $outfile
 check_existence 7 ~/StarWars/starwars.txt f
-check_line_count 7 ~/StarWars/starwars.txt 132
+check_line_count 7 ~/StarWars/starwars.txt 77
 tail -5 ~/StarWars/starwars.txt | tee -a $outfile
 blank_line
 
@@ -123,8 +123,7 @@ echo -e "cron jobs:" | tee -a $outfile
 crontab -l | tail -5 |  tee -a $outfile
 blank_line
 
-package_check 10 moon-buggy
-dpkg --list moon-buggy | tee -a $outfile
+package_check 10 test04
 blank_line
 package_check 10 nmap
 blank_line

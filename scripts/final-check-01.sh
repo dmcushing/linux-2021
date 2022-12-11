@@ -64,11 +64,11 @@ check_part 3 mount_point /media/BigBang-sdb1 /dev/sdb1
 check_part 3 fs_type /dev/sdb1 vfat
 blank_line
 
-check_existence 3 /dev/sdb2 b
-check_part 3 is_mounted /dev/sdb2
-check_part 3 mount_point /media/BigBang-sdb2 /dev/sdb2
-check_part 3 fs_type /dev/sdb2 ext4
-mount | grep 'sdb2' | tee -a $outfile
+check_existence 3 /dev/sdc1 b
+check_part 3 is_mounted /dev/sdc1
+check_part 3 mount_point /media/BigBang-sdc1 /dev/sdc1
+check_part 3 fs_type /dev/sdc1 ext4
+mount | grep 'sdc1' | tee -a $outfile
 blank_line
 
 check_existence 3 /dev/vg_final/lv_final b
@@ -77,7 +77,7 @@ check_part 3 mount_mount /media/BigBang-lv_final
 check_part 3 fs_type /dev/mapper/vg_final-lv_final ext4
 blank_line
 
-lsblk -l -o NAME,SIZE,FSTYPE,MOUNTPOINT /dev/sdb1 /dev/sdb2 /dev/vg_final/lv_final | tee -a $outfile
+lsblk -l -o NAME,SIZE,FSTYPE,MOUNTPOINT /dev/sdb1 /dev/sdc1 /dev/vg_final/lv_final | tee -a $outfile
 blank_line
 
 check_owner 5 ~/BigBang linuxuser
@@ -121,8 +121,7 @@ echo -e "cron jobs:" | tee -a $outfile
 crontab -l | tail -5 |  tee -a $outfile
 blank_line
 
-package_check 10 moon-buggy
-dpkg --list moon-buggy | tee -a $outfile
+package_check 10 test01
 blank_line
 package_check 10 nmap
 blank_line

@@ -1,0 +1,8 @@
+Package: test04
+Version: 1.0-1
+Section: utils
+Priority: optional
+Architecture: all
+Maintainer: Dave <dave@davecushing.ca>
+Description: Application package 
+ for testing

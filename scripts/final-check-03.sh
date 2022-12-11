@@ -52,7 +52,7 @@ check_existence 2 ~/Matrix/Whiterabbit d
 check_existence 2 ~/Matrix/Agents d
 check_existence 2 ~/Matrix/Agents/Rooftop d
 check_existence 2 /media/Matrix-sdb1 d
-check_existence 2 /media/Matrix-sdb2 d
+check_existence 2 /media/Matrix-sdc1 d
 check_existence 2 /media/Matrix-lv_matrix d
 blank_line
 
@@ -66,11 +66,11 @@ check_part 3 mount_point /media/Matrix-sdb1 /dev/sdb1
 check_part 3 fs_type /dev/sdb1 ext3
 blank_line
 
-check_existence 3 /dev/sdb2 b
-check_part 3 is_mounted /dev/sdb2
-check_part 3 mount_point /media/Matrix-sdb2 /dev/sdb2
-check_part 3 fs_type /dev/sdb2 ext4
-mount | grep 'sdb2' | tee -a $outfile
+check_existence 3 /dev/sdc1 b
+check_part 3 is_mounted /dev/sdc1
+check_part 3 mount_point /media/Matrix-sdc1 /dev/sdc1
+check_part 3 fs_type /dev/sdc1 ext4
+mount | grep 'sdc1' | tee -a $outfile
 blank_line
 
 check_existence 3 /dev/vg_matrix/lv_matrix b
@@ -79,7 +79,7 @@ check_part 3 mount_mount /media/Matrix-lv_matrix
 check_part 3 fs_type /dev/mapper/vg_matrix-lv_matrix ext4
 blank_line
 
-lsblk -l -o NAME,SIZE,FSTYPE,MOUNTPOINT /dev/sdb1 /dev/sdb2 /dev/vg_matrix/lv_matrix | tee -a $outfile
+lsblk -l -o NAME,SIZE,FSTYPE,MOUNTPOINT /dev/sdb1 /dev/sdc1 /dev/vg_matrix/lv_matrix | tee -a $outfile
 blank_line
 
 check_owner 5 ~/Matrix linuxuser
@@ -110,7 +110,7 @@ blank_line
 
 echo -e "Grep:" | tee -a $outfile
 check_existence 7 ~/Matrix/redblue.txt f
-check_line_count 7 ~/Matrix/redblue.txt 182
+check_line_count 7 ~/Matrix/redblue.txt 8
 tail -5 ~/Matrix/redblue.txt | tee -a $outfile
 blank_line
 
@@ -123,8 +123,7 @@ echo -e "cron jobs:" | tee -a $outfile
 crontab -l | tail -5 |  tee -a $outfile
 blank_line
 
-package_check 10 moon-buggy
-dpkg --list moon-buggy | tee -a $outfile
+package_check 10 test03
 blank_line
 package_check 10 nmap
 blank_line
