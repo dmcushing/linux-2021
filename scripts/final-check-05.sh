@@ -114,7 +114,7 @@ blank_line
 echo -e "Grep:" | tee -a $outfile
 check_existence 7 ~/BTTF/docmarty.txt f
 check_line_count 7 ~/BTTF/docmarty.txt 62
-tail -5 ~/StarWars/starwars.txt | tee -a $outfile
+tail -5 ~/BTTF/docmarty.txt | tee -a $outfile
 blank_line
 
 check_existence 8 ~/bttf.tar.gz f
