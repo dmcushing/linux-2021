@@ -105,7 +105,6 @@ blank_line
 echo -e "Find Command Files:" | tee -a $outfile
 ls -l ~/BTTF/back* | tee -a $outfile
 blank_line
-echo -e "Find Command contents of ~/StarWars/SAtlr.txt" | tee -a $outfile
 check_existence 6 ~/BTTF/MDaol.txt f
 check_line_count 6 ~/BTTF/MDaol.txt 6
 tail -5 ~/BTTF/MDaol.txt | tee -a $outfile
