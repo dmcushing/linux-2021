@@ -111,7 +111,7 @@ blank_line
 
 check_existence 8 ~/StarTrek.tar.gz f
 file ~/StarTrek.tar.gz 2>/dev/null | tee -a $outfile
-tar -tzvf ~/StarTrek.tar.gz 2> /dev/null | tail -5 | tee -a $outfile
+tar -tzf ~/StarTrek.tar.gz 2> /dev/null | tail -5 | tee -a $outfile
 blank_line
 
 echo -e "cron jobs:" | tee -a $outfile

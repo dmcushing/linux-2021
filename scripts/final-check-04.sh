@@ -116,7 +116,7 @@ blank_line
 
 check_existence 8 ~/starwars.tar.gz f
 file ~/starwars.tar.gz 2>/dev/null | tee -a $outfile
-tar -tzvf ~/starwars.tar.gz 2> /dev/null | tail -5 | tee -a $outfile
+tar -tzf ~/starwars.tar.gz 2> /dev/null | tail -5 | tee -a $outfile
 blank_line
 
 echo -e "cron jobs:" | tee -a $outfile

@@ -50,7 +50,7 @@ check_existence 2 ~/BigBang/University/PhysicsLab d
 check_existence 2 ~/BigBang/ComicBookStore d
 check_existence 2 ~/BigBang/ComicBookStore/StuartsApartment d
 check_existence 2 /media/BigBang-sdb1 d
-check_existence 2 /media/BigBang-sdb2 d
+check_existence 2 /media/BigBang-sdc1 d
 check_existence 2 /media/BigBang-lv_final d
 blank_line
 
@@ -114,7 +114,7 @@ blank_line
 
 check_existence 8 ~/BigBang.tar.gz f
 file ~/BigBang.tar.gz 2>/dev/null | tee -a $outfile
-tar -tzvf ~/BigBang.tar.gz 2> /dev/null | tail -5 | tee -a $outfile
+tar -tzf ~/BigBang.tar.gz 2> /dev/null | tail -5 | tee -a $outfile
 blank_line
 
 echo -e "cron jobs:" | tee -a $outfile
