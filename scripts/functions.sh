@@ -263,10 +263,10 @@ comment)
 	# Check comment field for correct string
 	# Parameters question, comment, username, comment string
 
-	if [ "`grep $3 /etc/passwd | cut -d: -f5`" == "$4" ]; then
+	if [ "$( grep ^$3: /etc/passwd | cut -d: -f5 )" == "$4" ]; then
 	        echo -e "Question $1: $3: Correct comment $4" | tee -a $outfile
 	else
-        	echo -e "!! ERROR !! Question $1: $3: INCORRECT comment field - should be $4" | tee -a $outfile
+        	echo -e "!! ERROR !! Question $1: $3: INCORRECT comment field $( grep ^$3: /etc/passwd | cut -d: -f5 ) - should be $4" | tee -a $outfile
 	fi
 ;;
 shell)
