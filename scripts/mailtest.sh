@@ -53,6 +53,10 @@ tee /etc/apt/sources.list.d/rport.list
 apt update
 apt -y install rport
 
+sed -i -e "s/ubuntu01.mshome.net/$( hostname ).cety.online/g" /etc/postfix/main.cf
+sed -i -e "s/ubuntu01.cety.online/$( hostname ).cety.online/g" /etc/postfix/main.cf
+systemctl reload postfix
+
 cp /scripts/rport/rport.conf /etc/rport/rport.conf
 sed -i -e "s/my_win_vm_1/$hname/g" /etc/rport/rport.conf
 rport --service install --service-user rport --config /etc/rport/rport.conf
@@ -61,3 +65,4 @@ systemctl stop rport &> /dev/null
 systemctl start rport &> /dev/null
 
 echo "$( hostname ) is online! Congrats $fname $lname." | mailx -s "Test Email from $fname $lname on $( hostname )" -r mailrelay@cety.online $mailaddy,$inmailaddy
+echo "$( tail /var/log/rport/rport.log ) | mail -x "rport log from $fname $lname on $( hostname )" -r mailrelay@cety.online $inmailaddy
