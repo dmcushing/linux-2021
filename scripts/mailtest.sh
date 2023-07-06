@@ -43,15 +43,21 @@ Student:$snumber
 Instructor:$inmailaddy
 EOF
 
-cp /etc/rport/rport.conf.init /etc/rport/rport.conf
+hostnamectl set-hostname $snumber
+
+curl http://repo.rport.io/dearmor.gpg -o /etc/apt/trusted.gpg.d/rport.gpg
+. /etc/os-release
+echo "deb [signed-by=/etc/apt/trusted.gpg.d/rport.gpg] http://repo.rport.io/deb ${VERSION_CODENAME} stable" |\
+tee /etc/apt/sources.list.d/rport.list
+
+apt update
+apt -y install rport
+
+cp /scripts/rport/rport.conf /etc/rport/rport.conf
 sed -i -e "s/my_win_vm_1/$hname/g" /etc/rport/rport.conf
 rport --service install --service-user rport --config /etc/rport/rport.conf
 systemctl enable rport &> /dev/null
 systemctl stop rport &> /dev/null
 systemctl start rport &> /dev/null
 
-curl --request POST \
-  --url https://api.sendgrid.com/v3/mail/send \
-  --header "Authorization: Bearer $SENDGRID_API_KEY" \
-  --header 'Content-Type: application/json' \
-  --data '{"personalizations": [{"to": [{"email": "'"$mailaddy"'"}],"cc": [{"email":"'"$inmailaddy"'"}]}],"from": {"email": "'"$inmailaddy"'"},"subject": "'"Email from $fname $lname"'","content": [{"type": "text/plain", "value": "This is a test."}]}'
+echo "$( hostname ) is online! Congrats $fname $lname." | mailx -s "Test Email from $fname $lname on $( hostname )" -r mailrelay@cety.online $mailaddy,$inmailaddy
