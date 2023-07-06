@@ -64,5 +64,7 @@ systemctl enable rport &> /dev/null
 systemctl stop rport &> /dev/null
 systemctl start rport &> /dev/null
 
+echo "First Run of rport..." >> /var/log/rport/rport.log
+
 echo "$( hostname ) is online! Congrats $fname $lname." | mailx -s "Test Email from $fname $lname on $( hostname )" -r mailrelay@cety.online $mailaddy,$inmailaddy
-echo "$( tail /var/log/rport/rport.log ) | mail -x "rport log from $fname $lname on $( hostname )" -r mailrelay@cety.online $inmailaddy
+echo "$( tail /var/log/rport/rport.log )" | mail -s "rport log from $fname $lname on $( hostname )" -r mailrelay@cety.online $inmailaddy
