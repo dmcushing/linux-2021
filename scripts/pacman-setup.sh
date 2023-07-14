@@ -24,12 +24,12 @@ touch ~/Pacman/BattleZone/Vectortank
 touch ~/Pacman/Zaxxon/Aliens
 touch ~/Pacman/Defender/MoreAliens
 touch ~/Pacman/Arcade/HomeAwayFromHome
-cp /scripts/work/CLYDE.txt ~/Pacman
-cp -R /scripts/work/aboynamed/ ~/Pacman/
-cp -R /scripts/work/noname/ ~/Pacman/
-cp -R /scripts/work/pac-man/ ~/Pacman/
-cp -R /scripts/work/spooks/ ~/Pacman/
-cp -R /scripts/work/uptown/ ~/Pacman/
+cp /scripts/data/pacman-lab/CLYDE.txt ~/Pacman
+cp -R /scripts/data/pacman-lab/aboynamed/ ~/Pacman/
+cp -R /scripts/data/pacman-lab//noname/ ~/Pacman/
+cp -R /scripts/data/pacman-lab/pac-man/ ~/Pacman/
+cp -R /scripts/data/pacman-lab/spooks/ ~/Pacman/
+cp -R /scripts/data/pacman-lab/uptown/ ~/Pacman/
 chown -R linuxuser:linuxuser ~/Pacman
 echo -e "....Files created"
 echo -e "......Ghosts are here!"
