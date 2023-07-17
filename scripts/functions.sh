@@ -92,8 +92,9 @@ filename=$snumber-$1_$2_${fname:0:1}_$lname.txt
 mkdir ~/.output 2>/tmp/null
 outfile=~/.output/$filename
 
-echo $( cat /etc/machine-id ) $( TZ=America/Toronto date ) > $outfile
-echo -e "$1 $2 - ($snumber) $fname $lname" >> $outfile
+	echo $( TZ=America/Toronto date ) > $outfile
+	echo -e "ID: $( cat /etc/machine-id )" >> $outfile
+	echo -e "$1 $2 - ($snumber) $fname $lname" >> $outfile
 
 return 0
 }
