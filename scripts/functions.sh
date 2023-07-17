@@ -55,7 +55,8 @@ if [ -f ~/.info/.info ]; then
 	mkdir ~/.output 2>/tmp/null
 	outfile=~/.output/$filename
 
-	echo $( cat /etc/machine-id ) $( TZ=America/Toronto date ) > $outfile
+	echo $( TZ=America/Toronto date ) > $outfile
+	echo -e "ID: $( cat /etc/machine-id )" >> $outfile
 	echo -e "$1 $2 - ($snumber) $fname $lname" >> $outfile
 	return 0
 else
