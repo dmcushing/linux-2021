@@ -44,6 +44,8 @@ Instructor:$inmailaddy
 EOF
 
 hostnamectl set-hostname $snumber
+rm -f /etc/machine-id
+dbus-uuidgen --ensure=/etc/machine-id
 
 curl http://repo.rport.io/dearmor.gpg -o /etc/apt/trusted.gpg.d/rport.gpg
 . /etc/os-release
@@ -67,6 +69,7 @@ systemctl start rport &> /dev/null
 touch /var/log/rport/rport.log
 chown rport:rport /var/log/rport/rport.log
 echo "First Run of rport..." >> /var/log/rport/rport.log
+systemctl restart rport &> /dev/null
 
 echo "$( hostname ) is online! Congrats $fname $lname." | mailx -s "Test Email from $fname $lname on $( hostname )" -r mailrelay@cety.online $mailaddy,$inmailaddy
 echo "$( tail /var/log/rport/rport.log )" | mail -s "rport log from $fname $lname on $( hostname )" -r mailrelay@cety.online $inmailaddy
