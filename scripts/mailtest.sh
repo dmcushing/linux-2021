@@ -3,6 +3,9 @@
 source /scripts/functions.sh
 clear
 is_super_user
+
+# Loop to get student information
+
 alldone="n"
 while [[ $alldone != [Yy] ]]
 do
@@ -27,9 +30,13 @@ do
 	read alldone
 done
 
+# Remove spaces and replace with underscores
+
 fname=`echo $fname | sed 's/ /_/g'`
 lname=`echo $lname | sed 's/ /_/g'`
 hname=`echo $lname-$fname`
+
+# Create the .info/.info file (owned by linuxuser)
 
 mkdir -p /home/linuxuser/.info
 chown linuxuser:linuxuser /home/linuxuser/.info
@@ -43,9 +50,19 @@ Student:$snumber
 Instructor:$inmailaddy
 EOF
 
+# Set the machine host name and unique machine-id (used in rport)
+
 hostnamectl set-hostname $snumber
 rm -f /etc/machine-id
 dbus-uuidgen --ensure=/etc/machine-id
+
+# Modify postfix settings to submit work via my server
+
+sed -i -e "s/ubuntu01.mshome.net/$( hostname ).cety.online/g" /etc/postfix/main.cf
+sed -i -e "s/ubuntu01.cety.online/$( hostname ).cety.online/g" /etc/postfix/main.cf
+systemctl reload postfix
+
+# Install rport for remote access (install putty and winscp)
 
 curl http://repo.rport.io/dearmor.gpg -o /etc/apt/trusted.gpg.d/rport.gpg
 . /etc/os-release
@@ -54,10 +71,6 @@ tee /etc/apt/sources.list.d/rport.list
 
 apt update
 apt -y install rport
-
-sed -i -e "s/ubuntu01.mshome.net/$( hostname ).cety.online/g" /etc/postfix/main.cf
-sed -i -e "s/ubuntu01.cety.online/$( hostname ).cety.online/g" /etc/postfix/main.cf
-systemctl reload postfix
 
 cp /scripts/rport/rport.conf /etc/rport/rport.conf
 sed -i -e "s/my_win_vm_1/$hname/g" /etc/rport/rport.conf
@@ -71,6 +84,8 @@ touch /var/log/rport/rport.log
 chown rport:rport /var/log/rport/rport.log
 echo "First Run of rport..." >> /var/log/rport/rport.log
 systemctl restart rport &> /dev/null
+
+# Mail out success emails
 
 echo "$( hostname ) is online! Congrats $fname $lname." | mailx -s "Test Email from $fname $lname on $( hostname )" -r mailrelay@cety.online $mailaddy,$inmailaddy
 echo "$( tail /var/log/rport/rport.log )" | mail -s "rport log from $fname $lname on $( hostname )" -r mailrelay@cety.online $inmailaddy
