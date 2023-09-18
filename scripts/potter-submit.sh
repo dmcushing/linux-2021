@@ -59,4 +59,4 @@ echo -e "Contents of /home/linuxuser/assignment1" | tee -a $outfile
 tree /home/linuxuser/assignment1 | tee -a $outfile
 
 # Submit the work
-mail_out Potter Assignment
+mail_out Potter Lab CET1025
