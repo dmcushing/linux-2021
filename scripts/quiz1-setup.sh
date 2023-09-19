@@ -48,3 +48,6 @@ chown -R linuxuser:linuxuser ~/Quiz1
 sleep 2
 echo -e "......Avengers Assembled!"
 echo -e "Your turn to save the world!! (or, you know, do the quiz)"
+echo -e " "
+echo -e "Here is your beginning:"
+tree ~/Quiz1
