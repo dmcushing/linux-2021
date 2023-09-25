@@ -10,7 +10,7 @@ echo -e "Fishing for grep set up - ignore any errors below"
 echo -e "..Hunting for worms"
 rm -Rf ~/Fishing
 mkdir ~/Fishing
-cp /scripts/work/words ~/Fishing/
+cp /scripts/data/words ~/Fishing/
 chown -R linuxuser:linuxuser ~/Fishing
 
 echo -e "....All set\n\n So long and thanks for all the fish!"
