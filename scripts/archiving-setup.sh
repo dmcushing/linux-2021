@@ -30,4 +30,5 @@ if ! dpkg -l | grep -q "^ii  $package_name "; then
 else
     echo "Package '$package_name' is already installed."
 fi
+chown -R linuxuser:linuxuser ~/archiving/
 echo -e "Done setting up."
