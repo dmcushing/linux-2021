@@ -114,7 +114,7 @@ check_line_count 6 ~/midterm/grep/M9A5.txt 90
 tail -5 ~/midterm/grep/M9A5.txt | tee -a $outfile
 blank_line
 check_existence 6 ~/midterm/grep/fly.txt f
-check_line_count 6 ~/midterm/grep/fly.txt 3
+check_line_count 6 ~/midterm/grep/fly.txt 1
 tail -5 ~/midterm/grep/fly.txt | tee -a $outfile
 blank_line
 
