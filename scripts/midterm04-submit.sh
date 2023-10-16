@@ -114,7 +114,7 @@ check_line_count 6 ~/midterm/grep/A1X3.txt 6
 tail -5 ~/midterm/grep/A1X3.txt | tee -a $outfile
 blank_line
 check_existence 6 ~/midterm/grep/dog.txt f
-check_line_count 6 ~/midterm/grep/dog.txt 4
+check_line_count 6 ~/midterm/grep/dog.txt 1
 tail -5 ~/midterm/grep/dog.txt | tee -a $outfile
 blank_line
 
