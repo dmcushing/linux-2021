@@ -73,7 +73,7 @@ blank_line
 
 # Question 4.1
 check_existence 4.1 ~/software/findage.txt f
-check_line_count 41 ~/software/findage.txt 14
+check_line_count 4.1 ~/software/findage.txt 14
 tail -5 ~/software/findage.txt | tee -a $outfile
 blank_line
 
