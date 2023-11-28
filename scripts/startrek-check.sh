@@ -135,11 +135,11 @@ blank_line
 echo -e "Question 6 - Grep" | tee -a $outfile
 
 check_existence 6 ~/startrek/enterprise.txt f
-check_line_count 6 ~/startrek/enterprise.txt 268
+check_line_count 6 ~/startrek/enterprise.txt 39
 tail -5 ~/startrek/enterprise.txt | tee -a $outfile
 blank_line
 check_existence 6 ~/startrek/mission.txt f
-check_line_count 6 ~/startrek/mission.txt 71
+check_line_count 6 ~/startrek/mission.txt 9
 tail -5 ~/startrek/mission.txt | tee -a $outfile
 blank_line
 

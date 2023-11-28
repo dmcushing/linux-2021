@@ -94,11 +94,11 @@ blank_line
 echo -e "Question 6 - Grep" | tee -a $outfile
 
 check_existence 6 /home/linuxuser/thirdrock/finallast.txt f
-check_line_count 6 ~/thirdrock/finallast.txt 63
+check_line_count 6 ~/thirdrock/finallast.txt 8
 tail -5 ~/thirdrock/finallast.txt | tee -a $outfile
 blank_line
 check_existence 6 /home/linuxuser/thirdrock/final.txt f
-check_line_count 6 ~/thirdrock/final.txt 9
+check_line_count 6 ~/thirdrock/final.txt 36
 tail -5 ~/thirdrock/final.txt | tee -a $outfile
 blank_line
 
