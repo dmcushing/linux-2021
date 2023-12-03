@@ -110,7 +110,7 @@ blank_line
 
 echo -e "Grep:" | tee -a $outfile
 check_existence 7 ~/StarWars/starwars.txt f
-check_line_count 7 ~/StarWars/starwars.txt 77
+check_line_count 7 ~/StarWars/starwars.txt 24
 tail -5 ~/StarWars/starwars.txt | tee -a $outfile
 blank_line
 
