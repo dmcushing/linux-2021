@@ -105,7 +105,7 @@ blank_line
 
 echo -e "Grep:" | tee -a $outfile
 check_existence 7 ~/StarTrek/startrek.txt f
-check_line_count 7 ~/StarTrek/startrek.txt 317
+check_line_count 7 ~/StarTrek/startrek.txt 51
 tail -5 ~/StarTrek/startrek.txt | tee -a $outfile
 blank_line
 
