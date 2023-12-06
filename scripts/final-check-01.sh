@@ -108,7 +108,7 @@ blank_line
 
 echo -e "Grep:" | tee -a $outfile
 check_existence 7 ~/BigBang/big-bang.txt f
-check_line_count 7 ~/BigBang/big-bang.txt 36
+check_line_count 7 ~/BigBang/big-bang.txt 3
 tail -5 ~/BigBang/big-bang.txt | tee -a $outfile
 blank_line
 
